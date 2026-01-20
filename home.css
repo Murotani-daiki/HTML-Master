@@ -441,6 +441,37 @@ body {
     color: var(--accent-color);
 }
 
+.footer-upcoming {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.upcoming-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    opacity: 0.8;
+}
+
+.upcoming-badge {
+    font-size: 0.65rem;
+    background: rgba(56, 189, 248, 0.2);
+    color: var(--accent-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 800;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
 @media (max-width: 1024px) {
     .hero {
         grid-template-columns: 1fr;
