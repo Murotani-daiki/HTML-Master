@@ -206,10 +206,10 @@ const challenges = {
                 title: "2-3. 画像の表示（img）",
                 points: ["imgタグは画像を表示する", "src属性に画像の場所をかく", "alt属性には説明（代替えテキスト）をかく"],
                 desc: "ページに画像を表示させてみましょう。",
-                reqs: ["<img>タグを使用すること", "src属性に「https://via.placeholder.com/300」を指定すること", "alt属性を「背景」にすること"],
+                reqs: ["<img>タグを使用すること", "src属性に「https://placehold.co/300」を指定すること", "alt属性を「背景」にすること"],
                 initialCode: "",
                 prefixCode: "<!-- 画像を表示してみよう -->\n",
-                check: (code) => /<img\s+src=["']https:\/\/via\.placeholder\.com\/300["']\s+alt=["']背景["'].*?>/i.test(code) || /<img\s+alt=["']背景["']\s+src=["']https:\/\/via\.placeholder\.com\/300["'].*?>/i.test(code),
+                check: (code) => /<img\s+src=["']https:\/\/placehold\.co\/300["']\s+alt=["']背景["'].*?>/i.test(code) || /<img\s+alt=["']背景["']\s+src=["']https:\/\/placehold\.co\/300["'].*?>/i.test(code),
                 lectureHTML: `
                     <div class="lecture-text">
                         <p><strong>imgタグ</strong>（イメージ・タグ）は、画像を表示するためのタグです。</p>
