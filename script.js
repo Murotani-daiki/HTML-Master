@@ -1465,8 +1465,18 @@ showLectureBtn.addEventListener('click', () => {
 
 
 function loadChallenge(level, step = 0) {
+    // Reset code state before loading new challenge
+    userHTML = "";
+    userCSS = "";
+
     currentLevel = parseInt(level);
     currentStep = step;
+
+    // Reset scroll positions to top
+    const mainArea = document.querySelector('main');
+    const contentArea = document.querySelector('.instructions-content');
+    if (mainArea) mainArea.scrollTop = 0;
+    if (contentArea) contentArea.scrollTop = 0;
 
     if (!challenges[currentLevel]) {
         console.error("Level not found:", currentLevel);
@@ -1494,24 +1504,20 @@ function loadChallenge(level, step = 0) {
         `<li>${req.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</li>`
     ).join('');
 
-    // Load Code (from storage if exists, otherwise initial)
-    const savedHTML = localStorage.getItem(`ag_code_${currentLevel}_${currentStep}_html`);
-    const savedCSS = localStorage.getItem(`ag_code_${currentLevel}_${currentStep}_css`);
-
     prefixHTML = stepData.prefixCode || "";
-    userHTML = savedHTML !== null ? savedHTML : (stepData.initialCode || "");
+    userHTML = stepData.initialCode || "";
     suffixHTML = stepData.suffixCode || "";
     prefixCSS = stepData.prefixCSS || "";
-    userCSS = savedCSS !== null ? savedCSS : (stepData.initialCSS || "");
+    userCSS = stepData.initialCSS || "";
     suffixCSS = stepData.suffixCSS || "";
 
     // Switch tab based on content
     if (stepData.defaultFile) {
-        switchFile(stepData.defaultFile);
+        switchFile(stepData.defaultFile, true);
     } else if (stepData.initialCSS !== undefined) {
-        switchFile('css');
+        switchFile('css', true);
     } else {
-        switchFile('html');
+        switchFile('html', true);
     }
 
     // Show/Hide CSS tab
@@ -1593,19 +1599,20 @@ codeEditor.addEventListener('input', () => {
     } else {
         userCSS = codeEditor.value;
     }
-    // Save current editor content to localStorage
-    localStorage.setItem(`ag_code_${currentLevel}_${currentStep}_${currentFile}`, codeEditor.value);
+    // Storage saving removed to ensure fresh start on revisit
     updatePreview();
     updateEditorHeight();
     updateLineNumbers();
 });
 
-function switchFile(file) {
-    // Save current content
-    if (currentFile === 'html') {
-        userHTML = codeEditor.value;
-    } else {
-        userCSS = codeEditor.value;
+function switchFile(file, skipSave = false) {
+    // Save current content unless skipped
+    if (!skipSave) {
+        if (currentFile === 'html') {
+            userHTML = codeEditor.value;
+        } else {
+            userCSS = codeEditor.value;
+        }
     }
 
     currentFile = file;
