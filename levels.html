@@ -411,6 +411,11 @@
                 </div>
             </div>
         </footer>
+        <button class="scroll-to-top" id="scrollToTop" aria-label="ページトップへ戻る">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6" />
+            </svg>
+        </button>
     </div>
     <script>
         // Restore scroll position
@@ -426,11 +431,29 @@
 
         // Save scroll position on scroll (throttled)
         let scrollTimeout;
+        const scrollBtn = document.getElementById('scrollToTop');
+
         window.addEventListener('scroll', () => {
+            // Existing scroll save logic
             if (scrollTimeout) clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
                 localStorage.setItem('levels_scroll_pos', window.scrollY);
             }, 100);
+
+            // New scroll to top visibility logic
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top click logic
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         // Also save immediately when clicking a level link to be sure
