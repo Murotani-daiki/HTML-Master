@@ -458,9 +458,9 @@ main {
     text-align: center;
     color: #4b5563;
     font-family: 'Fira Code', monospace;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    /* Match editor line-height */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    /* Match editor line-height exactly */
     border-right: 1px solid var(--border-color);
     user-select: none;
     overflow: hidden;
@@ -471,7 +471,7 @@ main {
 .code-suffix {
     font-family: 'Fira Code', monospace;
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.6;
     color: rgba(255, 255, 255, 0.3);
     margin: 0;
     white-space: pre-wrap;
@@ -496,7 +496,7 @@ main {
     font-size: 0.95rem;
     padding: 0 1rem 1rem 1rem;
     /* Bottom padding only */
-    line-height: 1.5;
+    line-height: 1.6;
     resize: none;
     overflow: hidden;
     /* Auto-grow handles height */
