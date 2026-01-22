@@ -141,6 +141,7 @@ body {
     font-weight: 700;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
 }
 
 .primary-btn-home {
@@ -571,6 +572,10 @@ body {
         display: none;
     }
 
+    .nav-btn {
+        white-space: nowrap;
+    }
+
     .hero-content h1 {
         font-size: 2.8rem;
     }
@@ -614,7 +619,10 @@ body {
     .secondary-btn-home {
         width: 100%;
         text-align: center;
-        padding: 0.8rem 1rem;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .section-title h2 {
