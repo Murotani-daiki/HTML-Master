@@ -4,34 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HTML Masterの全カリキュラム一覧。基礎から応用、LP制作まで、段階的に学べるステップアップコースを用意しています。">
-
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1501905149062104"
-        crossorigin="anonymous"></script>
+    <meta name="description" content="Python Masterの全カリキュラム一覧。基礎から応用、アプリ制作まで、段階的に学べるステップアップコースを用意しています。">
 
     <!-- OGP -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="HTML Master | カリキュラム一覧">
-    <meta property="og:description" content="基礎から応用、LP制作まで。全12レベルのステップアップコース。">
+    <meta property="og:title" content="Python Master | カリキュラム一覧">
+    <meta property="og:description" content="基礎から応用まで。全レベルのステップアップコース。">
     <meta property="og:image" content="favicon.jpg">
-    <meta property="og:url" content="levels.html">
+    <meta property="og:url" content="py_levels.html">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@EduKodomo98564">
-    <meta name="twitter:title" content="HTML Master | カリキュラム一覧">
-    <meta name="twitter:description" content="基礎から応用、LP制作まで。全12レベルのステップアップコース。">
+    <meta name="twitter:title" content="Python Master | カリキュラム一覧">
+    <meta name="twitter:description" content="基礎から応用まで。全レベルのステップアップコース。">
     <meta name="twitter:image" content="favicon.jpg">
 
     <link rel="icon" href="favicon.jpg" type="image/jpeg">
-    <title>HTML Master | カリキュラム一覧</title>
+    <title>Python Master | カリキュラム一覧</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="home.css">
+    <style>
+        /* Python Theme Overrides */
+        :root {
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+        }
+
+        .logo h1 {
+            background: linear-gradient(135deg, #3b82f6, #eab308);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .lvl {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .level-curriculum li span {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .level-curriculum li a:hover span {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .level-item-wrapper.expanded {
+            border-color: #3b82f6;
+        }
+
+        .feature-card:hover {
+            border-color: #3b82f6;
+        }
+
+        .upcoming-badge {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .scroll-to-top {
+            background: #3b82f6;
+            color: #ffffff;
+        }
+    </style>
+
     <style>
         .levels-page-header {
             position: sticky;
@@ -46,7 +90,6 @@
             align-items: center;
         }
 
-        /* Reuse badge style for consistency if needed */
         .level-item-wrapper {
             background: var(--card-bg);
             border-radius: 16px;
@@ -73,7 +116,6 @@
             overflow: hidden;
             transition: all 0.3s ease-out;
             max-height: 1000px;
-            /* arbitrary large value */
             opacity: 1;
         }
 
@@ -95,7 +137,6 @@
         }
 
         .level-item-wrapper.expanded {
-            border-color: var(--accent-color);
             background: rgba(30, 41, 59, 0.8);
         }
 
@@ -121,18 +162,18 @@
     <div class="landing-container">
         <header class="levels-page-header">
             <div style="display: flex; align-items: center; gap: 2rem;">
-                <a href="index.html" class="logo">
+                <a href="py_index.html" class="logo">
                     <span class="logo-icon">⚡</span>
-                    <h1>HTML Master</h1>
+                    <h1>Python Master</h1>
                 </a>
                 <nav class="home-nav" style="margin-left: 2rem; display: flex; gap: 1.5rem;">
+                    <a href="index.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.9rem;">HTML</a>
                     <a href="js_index.html"
                         style="color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.9rem;">JavaScript</a>
-                    <a href="py_index.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.9rem;">Python</a>
                 </nav>
             </div>
-            <a href="index.html" class="secondary-btn-home">ホームに戻る</a>
+            <a href="py_index.html" class="secondary-btn-home">ホームに戻る</a>
         </header>
 
         <main>
@@ -141,7 +182,7 @@
                     <h2>全カリキュラム一覧</h2>
                     <p
                         style="text-align: center; margin-bottom: 4rem; color: #94a3b8; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        基礎から応用、そして実践まで。<br>一歩ずつ着実にスキルを積み上げられる、全12レベルのステップアップコースです。
+                        Pythonの基本構文から、データ処理、そして応用的なロジック構築まで。<br>一歩ずつ着実に実装力を身につけられる、全レベルのステップアップコースです。
                     </p>
 
                     <div class="level-list">
@@ -150,19 +191,16 @@
                             <div class="level-item-header">
                                 <span class="lvl">Lv. 1</span>
                                 <div class="lvl-text">
-                                    <h3>HTML基礎：基本タグ</h3>
-                                    <p>ウェブの骨格を作る最も重要なタグを習得します。</p>
+                                    <h3>Python基礎：基本構文</h3>
+                                    <p>print関数での出力や、変数の定義方法を学びます。</p>
                                 </div>
                                 <span class="chevron">▼</span>
                             </div>
                             <div class="level-content collapsed">
                                 <ul class="level-curriculum">
-                                    <li><a href="app.html#level1-1"><span>1-1</span> 見出し（h1）の作成</a></li>
-                                    <li><a href="app.html#level1-2"><span>1-2</span> 段落（p）での文章構造</a></li>
-                                    <li><a href="app.html#level1-3"><span>1-3</span> 改行（br）の挿入</a></li>
-                                    <li><a href="app.html#level1-4"><span>1-4</span> 範囲（span）のグループ化</a></li>
-                                    <li><a href="app.html#level1-5"><span>1-5</span> 水平線（hr）での区切り</a></li>
-                                    <li><a href="app.html#level1-6"><span>1-6</span> 強調（strong）による装飾</a></li>
+                                    <li><a href="py_app.html#level1-1"><span>1-1</span> print関数と出力</a></li>
+                                    <li><a href="py_app.html#level1-2"><span>1-2</span> 変数の定義</a></li>
+                                    <li><a href="py_app.html#level1-3"><span>1-3</span> 数値計算の基本</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -172,18 +210,16 @@
                             <div class="level-item-header">
                                 <span class="lvl">Lv. 2</span>
                                 <div class="lvl-text">
-                                    <h3>HTML基礎：リンクとリスト</h3>
-                                    <p>情報の整理とページ間の繋がりを学びます。</p>
+                                    <h3>Python基礎：データ型</h3>
+                                    <p>文字列、整数、浮動小数点数など、Pythonの基本的なデータ型を理解します。</p>
                                 </div>
                                 <span class="chevron">▼</span>
                             </div>
                             <div class="level-content collapsed">
                                 <ul class="level-curriculum">
-                                    <li><a href="app.html#level2-1"><span>2-1</span> 箇条書き（ul, li）の活用</a></li>
-                                    <li><a href="app.html#level2-2"><span>2-2</span> リンク（a）の設置方法</a></li>
-                                    <li><a href="app.html#level2-3"><span>2-3</span> 画像（img）の埋め込み</a></li>
-                                    <li><a href="app.html#level2-4"><span>2-4</span> 順序リスト（ol）の作成</a></li>
-                                    <li><a href="app.html#level2-5"><span>2-5</span> 表（table）の基礎</a></li>
+                                    <li><a href="py_app.html#level2-1"><span>2-1</span> 文字列（str）</a></li>
+                                    <li><a href="py_app.html#level2-2"><span>2-2</span> 数値型（int / float）</a></li>
+                                    <li><a href="py_app.html#level2-3"><span>2-3</span> 型変換（cast）</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -193,19 +229,16 @@
                             <div class="level-item-header">
                                 <span class="lvl">Lv. 3</span>
                                 <div class="lvl-text">
-                                    <h3>HTML応用：フォーム</h3>
-                                    <p>ユーザーと対話するインタラクティブな要素を作成します。</p>
+                                    <h3>Python応用：リスト</h3>
+                                    <p>複数のデータをまとめて扱うリスト（配列）の作成と操作を学びます。</p>
                                 </div>
                                 <span class="chevron">▼</span>
                             </div>
                             <div class="level-content collapsed">
                                 <ul class="level-curriculum">
-                                    <li><a href="app.html#level3-1"><span>3-1</span> テキスト入力（input）の基礎</a></li>
-                                    <li><a href="app.html#level3-2"><span>3-2</span> 送信ボタン（button）の配置</a></li>
-                                    <li><a href="app.html#level3-3"><span>3-3</span> 選択（select）メニューの実装</a></li>
-                                    <li><a href="app.html#level3-4"><span>3-4</span> 同意チェックボックスの作成</a></li>
-                                    <li><a href="app.html#level3-5"><span>3-5</span> 俺か俺以外か（ラジオボタン）</a></li>
-                                    <li><a href="app.html#level3-6"><span>3-6</span> 自由な感想入力（textarea）</a></li>
+                                    <li><a href="py_app.html#level3-1"><span>3-1</span> リストの作成</a></li>
+                                    <li><a href="py_app.html#level3-2"><span>3-2</span> 要素の取得と変更</a></li>
+                                    <li><a href="py_app.html#level3-3"><span>3-3</span> appendとremove</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -215,18 +248,17 @@
                             <div class="level-item-header">
                                 <span class="lvl">Lv. 4</span>
                                 <div class="lvl-text">
-                                    <h3>HTML応用：レイアウト</h3>
-                                    <p>ページの骨組みを作るための構造化タグを学びます。</p>
+                                    <h3>Python応用：条件分岐とループ</h3>
+                                    <p>if文やforループなど、プログラムの流れを制御する構文を学びます。</p>
                                 </div>
                                 <span class="chevron">▼</span>
                             </div>
                             <div class="level-content collapsed">
                                 <ul class="level-curriculum">
-                                    <li><a href="app.html#level4-1"><span>4-1</span> ヘッダー（header）の作成</a></li>
-                                    <li><a href="app.html#level4-2"><span>4-2</span> メインエリア（main）の定義</a></li>
-                                    <li><a href="app.html#level4-3"><span>4-3</span> フッター（footer）の配置</a></li>
-                                    <li><a href="app.html#level4-4"><span>4-4</span> 区画（section）による整理</a></li>
-                                    <li><a href="app.html#level4-5"><span>4-5</span> グループ化（div）の活用</a></li>
+                                    <li><a href="py_app.html#level4-1"><span>4-1</span> if文の基礎</a></li>
+                                    <li><a href="py_app.html#level4-2"><span>4-2</span> if-else文</a></li>
+                                    <li><a href="py_app.html#level4-3"><span>4-3</span> forループ（リストの反復）</a></li>
+                                    <li><a href="py_app.html#level4-4"><span>4-4</span> whileループ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -234,20 +266,20 @@
                         <!-- Level 5 -->
                         <div class="level-item-wrapper" onclick="toggleLevel(this)">
                             <div class="level-item-header">
-                                <span class="lvl" style="background: #e44d26;">Lv. 5</span>
+                                <span class="lvl" style="background: rgba(234, 179, 8, 0.2); color: #eab308;">Lv.
+                                    5</span>
                                 <div class="lvl-text">
-                                    <h3>CSS基礎：色と文字</h3>
-                                    <p>スタイルを適用して見た目を美しく変えてみましょう。</p>
+                                    <h3>Python応用：関数</h3>
+                                    <p>処理をまとめて再利用できる関数の定義と活用方法を学びます。</p>
                                 </div>
                                 <span class="chevron">▼</span>
                             </div>
                             <div class="level-content collapsed">
                                 <ul class="level-curriculum">
-                                    <li><a href="app.html#level5-1"><span>5-1</span> 文字の色を変える（color）</a></li>
-                                    <li><a href="app.html#level5-2"><span>5-2</span> 背景色をつける（background）</a></li>
-                                    <li><a href="app.html#level5-3"><span>5-3</span> 文字の大きさと太さ（font）</a></li>
-                                    <li><a href="app.html#level5-4"><span>5-4</span> フォントの種類（font-family）</a></li>
-                                    <li><a href="app.html#level5-5"><span>5-5</span> 行間の調整（line-height）</a></li>
+                                    <li><a href="py_app.html#level5-1"><span>5-1</span> 関数の定義</a></li>
+                                    <li><a href="py_app.html#level5-2"><span>5-2</span> 引数を持つ関数</a></li>
+                                    <li><a href="py_app.html#level5-3"><span>5-3</span> 戻り値（return）</a></li>
+                                    <li><a href="py_app.html#level5-4"><span>5-4</span> デフォルト引数</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -255,20 +287,20 @@
                         <!-- Level 6 -->
                         <div class="level-item-wrapper" onclick="toggleLevel(this)">
                             <div class="level-item-header">
-                                <span class="lvl" style="background: #e44d26;">Lv. 6</span>
+                                <span class="lvl" style="background: rgba(139, 92, 246, 0.2); color: #a78bfa;">Lv.
+                                    6</span>
                                 <div class="lvl-text">
-                                    <h3>CSS基礎：配置と空白</h3>
-                                    <p>要素の配置や余白を調整してレイアウトを整えます。</p>
+                                    <h3>Python実践：クラス</h3>
+                                    <p>オブジェクト指向プログラミングの基礎となるクラスの定義と活用を学びます。</p>
                                 </div>
                                 <span class="chevron">▼</span>
                             </div>
                             <div class="level-content collapsed">
                                 <ul class="level-curriculum">
-                                    <li><a href="app.html#level6-1"><span>6-1</span> 文字位置の調整（text-align）</a></li>
-                                    <li><a href="app.html#level6-2"><span>6-2</span> 内側の余白（padding）</a></li>
-                                    <li><a href="app.html#level6-3"><span>6-3</span> 外側の余白（margin）</a></li>
-                                    <li><a href="app.html#level6-4"><span>6-4</span> 要素の幅と高さ（width/height）</a></li>
-                                    <li><a href="app.html#level6-5"><span>6-5</span> ブロックの中央揃え（margin: auto）</a></li>
+                                    <li><a href="py_app.html#level6-1"><span>6-1</span> クラスの定義</a></li>
+                                    <li><a href="py_app.html#level6-2"><span>6-2</span> インスタンスの作成</a></li>
+                                    <li><a href="py_app.html#level6-3"><span>6-3</span> 属性（データ）の追加</a></li>
+                                    <li><a href="py_app.html#level6-4"><span>6-4</span> コンストラクタ（__init__）</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -276,18 +308,20 @@
                         <!-- Level 7 -->
                         <div class="level-item-wrapper" onclick="toggleLevel(this)">
                             <div class="level-item-header">
-                                <span class="lvl" style="background: #e44d26;">Lv. 7</span>
+                                <span class="lvl" style="background: rgba(236, 72, 153, 0.2); color: #f472b6;">Lv.
+                                    7</span>
                                 <div class="lvl-text">
-                                    <h3>CSS応用：デザイン</h3>
-                                    <p>枠線や影をつけて、プロのようなデザインを作ります。</p>
+                                    <h3>Python実践：辞書とタプル</h3>
+                                    <p>キーと値のペアを管理する辞書と、変更不可能なタプルを学びます。</p>
                                 </div>
                                 <span class="chevron">▼</span>
                             </div>
                             <div class="level-content collapsed">
                                 <ul class="level-curriculum">
-                                    <li><a href="app.html#level7-1"><span>7-1</span> 枠線の装飾（border）</a></li>
-                                    <li><a href="app.html#level7-2"><span>7-2</span> 角を丸くする（radius）</a></li>
-                                    <li><a href="app.html#level7-3"><span>7-3</span> 影をつける（box-shadow）</a></li>
+                                    <li><a href="py_app.html#level7-1"><span>7-1</span> 辞書の基礎</a></li>
+                                    <li><a href="py_app.html#level7-2"><span>7-2</span> 辞書への追加と削除</a></li>
+                                    <li><a href="py_app.html#level7-3"><span>7-3</span> 辞書のループ処理</a></li>
+                                    <li><a href="py_app.html#level7-4"><span>7-4</span> タプルの基礎</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -295,18 +329,19 @@
                         <!-- Level 8 -->
                         <div class="level-item-wrapper" onclick="toggleLevel(this)">
                             <div class="level-item-header">
-                                <span class="lvl" style="background: #e44d26;">Lv. 8</span>
+                                <span class="lvl" style="background: rgba(34, 197, 94, 0.2); color: #4ade80;">Lv.
+                                    8</span>
                                 <div class="lvl-text">
-                                    <h3>CSS応用：フレックスボックス</h3>
-                                    <p>要素を自由自在に配置する現代的なレイアウト手法です。</p>
+                                    <h3>実践：数当てゲーム</h3>
+                                    <p>ランダム生成と条件分岐を組み合わせた、シンプルなゲームを作ります。</p>
                                 </div>
                                 <span class="chevron">▼</span>
                             </div>
                             <div class="level-content collapsed">
                                 <ul class="level-curriculum">
-                                    <li><a href="app.html#level8-1"><span>8-1</span> 横並びにする（flex）</a></li>
-                                    <li><a href="app.html#level8-2"><span>8-2</span> 横方向の配置（justify）</a></li>
-                                    <li><a href="app.html#level8-3"><span>8-3</span> 縦方向の揃え（align）</a></li>
+                                    <li><a href="py_app.html#level8-1"><span>8-1</span> ランダムな数の生成</a></li>
+                                    <li><a href="py_app.html#level8-2"><span>8-2</span> ユーザー入力の受付</a></li>
+                                    <li><a href="py_app.html#level8-3"><span>8-3</span> 数の比較と判定</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -314,17 +349,19 @@
                         <!-- Level 9 -->
                         <div class="level-item-wrapper" onclick="toggleLevel(this)">
                             <div class="level-item-header">
-                                <span class="lvl" style="background: #e44d26;">Lv. 9</span>
+                                <span class="lvl" style="background: rgba(251, 146, 60, 0.2); color: #fb923c;">Lv.
+                                    9</span>
                                 <div class="lvl-text">
-                                    <h3>CSS応用：アニメとスマホ</h3>
-                                    <p>動きのある表現やスマートフォンへの対応を学びます。</p>
+                                    <h3>実践：じゃんけんゲーム</h3>
+                                    <p>リストとランダム選択、複雑な条件判定を使ったゲームを作ります。</p>
                                 </div>
                                 <span class="chevron">▼</span>
                             </div>
                             <div class="level-content collapsed">
                                 <ul class="level-curriculum">
-                                    <li><a href="app.html#level9-1"><span>9-1</span> 滑らかな変化（transition）</a></li>
-                                    <li><a href="app.html#level9-2"><span>9-2</span> スマホ対応（Media Query）</a></li>
+                                    <li><a href="py_app.html#level9-1"><span>9-1</span> 選択肢のリスト作成</a></li>
+                                    <li><a href="py_app.html#level9-2"><span>9-2</span> 勝敗判定ロジック（1）</a></li>
+                                    <li><a href="py_app.html#level9-3"><span>9-3</span> 完全な勝敗判定</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -332,59 +369,24 @@
                         <!-- Level 10 -->
                         <div class="level-item-wrapper" onclick="toggleLevel(this)">
                             <div class="level-item-header">
-                                <span class="lvl" style="background: #a855f7;">Lv. 10</span>
+                                <span class="lvl" style="background: rgba(59, 130, 246, 0.4); color: #ffffff;">Lv.
+                                    10</span>
                                 <div class="lvl-text">
-                                    <h3>実践編：プロフィールサイト</h3>
-                                    <p>学んだ知識を組み合わせて、自己紹介サイトを作成します。</p>
+                                    <h3>実践：RPG戦闘システム</h3>
+                                    <p>クラスとループを駆使した、本格的なRPG戦闘プログラムを完成させます。</p>
                                 </div>
                                 <span class="chevron">▼</span>
                             </div>
                             <div class="level-content collapsed">
                                 <ul class="level-curriculum">
-                                    <li><a href="app.html#level10-1"><span>10-1</span> 土台の作成（レイアウト）</a></li>
-                                    <li><a href="app.html#level10-2"><span>10-2</span> 自己紹介セクション</a></li>
-                                    <li><a href="app.html#level10-3"><span>10-3</span> スキル一覧のデザイン</a></li>
+                                    <li><a href="py_app.html#level10-1"><span>10-1</span> キャラクタークラスの作成</a></li>
+                                    <li><a href="py_app.html#level10-2"><span>10-2</span> 攻撃メソッドの実装</a></li>
+                                    <li><a href="py_app.html#level10-3"><span>10-3</span> 戦闘ループの実装</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <!-- Level 11 -->
-                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
-                            <div class="level-item-header">
-                                <span class="lvl" style="background: #a855f7;">Lv. 11</span>
-                                <div class="lvl-text">
-                                    <h3>実践編：ブログ記事ページ</h3>
-                                    <p>読みやすい記事のデザインとレイアウトを実装します。</p>
-                                </div>
-                                <span class="chevron">▼</span>
-                            </div>
-                            <div class="level-content collapsed">
-                                <ul class="level-curriculum">
-                                    <li><a href="app.html#level11-1"><span>11-1</span> 記事レイアウトの構築</a></li>
-                                    <li><a href="app.html#level11-2"><span>11-2</span> 見出しのデザイン装飾</a></li>
-                                    <li><a href="app.html#level11-3"><span>11-3</span> リッチなボタン作成</a></li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <!-- Level 12 -->
-                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
-                            <div class="level-item-header">
-                                <span class="lvl" style="background: #a855f7;">Lv. 12</span>
-                                <div class="lvl-text">
-                                    <h3>実践編：ランディングページ</h3>
-                                    <p>集大成として、製品やサービスを紹介するページを作ります。</p>
-                                </div>
-                                <span class="chevron">▼</span>
-                            </div>
-                            <div class="level-content collapsed">
-                                <ul class="level-curriculum">
-                                    <li><a href="app.html#level12-1"><span>12-1</span> インパクトのあるヒーローエリア</a></li>
-                                    <li><a href="app.html#level12-2"><span>12-2</span> カード型レイアウトの配置</a></li>
-                                    <li><a href="app.html#level12-3"><span>12-3</span> お問い合わせフォーム</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -395,6 +397,16 @@
                     <p>スキルアップを継続しましょう。</p>
                 </div>
                 <div class="course-grid">
+                    <a href="index.html" class="course-card" style="border-color: rgba(56, 189, 248, 0.2);">
+                        <div class="course-icon"
+                            style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 2px solid rgba(56, 189, 248, 0.2);">
+                            HTML</div>
+                        <div class="course-info">
+                            <h3>HTML Master</h3>
+                            <p>ウェブ制作の基盤となるHTML/CSSをマスター。</p>
+                            <span class="view-btn" style="color: #38bdf8;">コースを見る →</span>
+                        </div>
+                    </a>
                     <a href="js_index.html" class="course-card js">
                         <div class="course-icon">JS</div>
                         <div class="course-info">
@@ -403,40 +415,30 @@
                             <span class="view-btn">コースを見る →</span>
                         </div>
                     </a>
-                    <a href="py_index.html" class="course-card py">
-                        <div class="course-icon">Py</div>
-                        <div class="course-info">
-                            <h3>Python Master</h3>
-                            <p>AIやデータ分析、自動化に必須の言語をマスター。</p>
-                            <span class="view-btn">コースを見る →</span>
-                        </div>
-                    </a>
                 </div>
             </section>
         </main>
 
-        <footer class="home-footer" style="background: rgba(15, 23, 42, 0.4);">
+        <footer class="home-footer">
             <div class="footer-content">
                 <div class="logo">
-                    <span class="logo-icon">⚡</span>
-                    <h1>HTML Master</h1>
+                    <span class="logo-icon">🐍</span>
+                    <h1>Python Master</h1>
                 </div>
-                <p>&copy; 2026 HTML Master. Built for the future of coding education.</p>
+                <p>&copy; 2026 Python Master. Built for the future of coding education.</p>
                 <div class="footer-upcoming">
+                    <div class="upcoming-card">
+                        <a href="index.html"
+                            style="text-decoration: none; color: inherit; display: flex; gap: 0.6rem; align-items: center;">
+                            <span>HTML Master</span>
+                            <span class="upcoming-badge">公開中</span>
+                        </a>
+                    </div>
                     <div class="upcoming-card">
                         <a href="js_index.html"
                             style="text-decoration: none; color: inherit; display: flex; gap: 0.6rem; align-items: center;">
                             <span>JavaScript Master</span>
-                            <span class="upcoming-badge"
-                                style="background: rgba(250, 204, 21, 0.2); color: #facc15; border-color: rgba(250, 204, 21, 0.3);">NEW</span>
-                        </a>
-                    </div>
-                    <div class="upcoming-card">
-                        <a href="py_index.html"
-                            style="text-decoration: none; color: inherit; display: flex; gap: 0.6rem; align-items: center;">
-                            <span>Python Master</span>
-                            <span class="upcoming-badge"
-                                style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">NEW</span>
+                            <span class="upcoming-badge" style="color: #facc15; border-color: #facc15;">NEW</span>
                         </a>
                     </div>
                 </div>
@@ -461,7 +463,7 @@
     <script>
         // Restore scroll position
         window.addEventListener('DOMContentLoaded', () => {
-            const scrollPos = localStorage.getItem('levels_scroll_pos');
+            const scrollPos = localStorage.getItem('py_levels_scroll_pos');
             if (scrollPos) {
                 window.scrollTo({
                     top: parseInt(scrollPos),
@@ -475,13 +477,11 @@
         const scrollBtn = document.getElementById('scrollToTop');
 
         window.addEventListener('scroll', () => {
-            // Existing scroll save logic
             if (scrollTimeout) clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
-                localStorage.setItem('levels_scroll_pos', window.scrollY);
+                localStorage.setItem('py_levels_scroll_pos', window.scrollY);
             }, 100);
 
-            // New scroll to top visibility logic
             if (window.scrollY > 300) {
                 scrollBtn.classList.add('visible');
             } else {
@@ -489,7 +489,6 @@
             }
         });
 
-        // Scroll to top click logic
         scrollBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
@@ -497,20 +496,16 @@
             });
         });
 
-        // Also save immediately when clicking a level link to be sure
         document.querySelectorAll('.level-item-link, .level-curriculum a').forEach(link => {
             link.addEventListener('click', () => {
-                localStorage.setItem('levels_scroll_pos', window.scrollY);
+                localStorage.setItem('py_levels_scroll_pos', window.scrollY);
             });
         });
 
         function toggleLevel(headerElement) {
             const wrapper = headerElement.closest('.level-item-wrapper');
             const content = wrapper.querySelector('.level-content');
-
-            // Toggle classes
             wrapper.classList.toggle('expanded');
-
             if (content.classList.contains('collapsed')) {
                 content.classList.remove('collapsed');
             } else {

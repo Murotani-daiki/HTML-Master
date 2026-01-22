@@ -663,6 +663,11 @@ function loadChallenge(level, step = 0) {
     const levelData = challenges[currentLevel];
     const stepData = levelData.steps[currentStep];
 
+    // Reset scroll positions to top
+    const contentArea = document.querySelector('.instructions-content');
+    if (contentArea) contentArea.scrollTop = 0;
+
+
     levelLabel.textContent = `Level ${currentLevel}`;
     levelTitle.textContent = levelData.title;
     challengeTitle.textContent = stepData.title;

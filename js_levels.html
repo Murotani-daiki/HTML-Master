@@ -161,10 +161,18 @@
 <body>
     <div class="landing-container">
         <header class="levels-page-header">
-            <a href="js_index.html" class="logo">
-                <span class="logo-icon">⚡</span>
-                <h1>JavaScript Master</h1>
-            </a>
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <a href="js_index.html" class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <h1>JavaScript Master</h1>
+                </a>
+                <nav class="home-nav" style="margin-left: 2rem; display: flex; gap: 1.5rem;">
+                    <a href="index.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.9rem;">HTML</a>
+                    <a href="py_index.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.9rem;">Python</a>
+                </nav>
+            </div>
             <a href="js_index.html" class="secondary-btn-home">ホームに戻る</a>
         </header>
 
@@ -298,6 +306,33 @@
                     </div>
                 </div>
             </section>
+            <section class="other-courses"
+                style="padding: 4rem 5%; background: rgba(15, 23, 42, 0.2); border-top: 1px solid var(--border-color);">
+                <div class="section-title">
+                    <h2>他のコースもチェック</h2>
+                    <p>スキルアップを継続しましょう。</p>
+                </div>
+                <div class="course-grid">
+                    <a href="index.html" class="course-card" style="border-color: rgba(56, 189, 248, 0.2);">
+                        <div class="course-icon"
+                            style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 2px solid rgba(56, 189, 248, 0.2);">
+                            HTML</div>
+                        <div class="course-info">
+                            <h3>HTML Master</h3>
+                            <p>ウェブ制作の基盤となるHTML/CSSをマスター。</p>
+                            <span class="view-btn" style="color: #38bdf8;">コースを見る →</span>
+                        </div>
+                    </a>
+                    <a href="py_index.html" class="course-card py">
+                        <div class="course-icon">Py</div>
+                        <div class="course-info">
+                            <h3>Python Master</h3>
+                            <p>AIやデータ分析、自動化に必須の言語をマスター。</p>
+                            <span class="view-btn">コースを見る →</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
         </main>
 
         <footer class="home-footer">
@@ -316,8 +351,12 @@
                         </a>
                     </div>
                     <div class="upcoming-card">
-                        <span>Python Master</span>
-                        <span class="upcoming-badge">近日公開</span>
+                        <a href="py_index.html"
+                            style="text-decoration: none; color: inherit; display: flex; gap: 0.6rem; align-items: center;">
+                            <span>Python Master</span>
+                            <span class="upcoming-badge"
+                                style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">NEW</span>
+                        </a>
                     </div>
                 </div>
                 <div class="social-links">
