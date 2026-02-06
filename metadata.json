@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Wordle",
+  "description": "A classic word guessing game enhanced with AI-powered hints and definitions. Playable on web and mobile.",
+  "requestFramePermissions": []
+}
