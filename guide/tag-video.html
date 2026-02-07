@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><video> タグの役割と使い方 | HTML Master リファレンス</title>
+    <meta name="description" content="HTML5で動画を直接再生できるvideoタグの設定方法、主要な属性、動画形式の注意点を詳しく解説します。">
+    <link rel="icon" href="../favicon.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        .detail-container {
+            max-width: 850px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .detail-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .detail-header {
+            margin-bottom: 3rem;
+        }
+
+        .detail-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .tag-info-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag-badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-weight: 700;
+        }
+
+        .detail-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .detail-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .example-box {
+            background: #000;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .example-box h4 {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .example-code {
+            color: #38bdf8;
+            font-family: 'Fira Code', monospace;
+        }
+
+        @media (max-width: 640px) {
+            .detail-content {
+                padding: 2rem;
+            }
+
+            .detail-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../index.html" class="logo">
+                <h1>HTML Master</h1>
+            </a>
+            <nav class="home-nav"><a href="index.html">一覧に戻る</a><a href="../levels.html">レベル</a></nav>
+        </header>
+        <main class="detail-container">
+            <article class="detail-content">
+                <header class="detail-header">
+                    <div class="tag-info-bar"><span class="tag-badge">&lt;video&gt;</span></div>
+                    <h1>動画タグ（video）</h1>
+                    <p>外部サービスを使わずに、Webサイト上で動画ファイルを直接再生するための要素。</p>
+                </header>
+                <div class="detail-body">
+                    <h2>videoタグとは？</h2>
+                    <p>`&lt;video&gt;`
+                        タグは、サーバー上の動画ファイルを読み込んで表示します。かつては動画再生に特別なプラグインが必要でしたが、HTML5からはこのタグだけで簡単に再生できるようになりました。</p>
+                    <div class="example-box">
+                        <h4>コード例</h4>
+                        <div class="example-code">
+                            &lt;video src="movie.mp4" controls width="400"&gt;<br>
+                            &nbsp;&nbsp;お使いのブラウザは動画の再生に対応していません。<br>
+                            &lt;/video&gt;
+                        </div>
+                    </div>
+                    <h2>主な属性</h2>
+                    <ul>
+                        <li><strong>controls:</strong> 再生ボタンや音量調節などのコントローラーを表示します。</li>
+                        <li><strong>autoplay:</strong> ページを開いた瞬間に自動で再生を開始します（ミュート状態でないと動かないブラウザが多いです）。</li>
+                        <li><strong>loop:</strong> 動画を繰り返し再生します。</li>
+                    </ul>
+                    <h2>まとめ</h2>
+                    <p>動画コンテンツは視覚的に強力ですが、ファイルサイズが大きくなりがちです。適切な属性設定と最適化を心がけて、快適なページ作りを行いましょう！</p>
+                </div>
+            </article>
+        </main>
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 HTML Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imgタグの役割と使い方：画像を正しく表示する | HTML Master リファレンス</title>
+    <meta name="description" content="HTMLの画像タグ（img）の属性、alt属性の重要性、アスペクト比の維持方法などを初心者向けに詳しく解説します。">
+    <link rel="icon" href="../favicon.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        .detail-container {
+            max-width: 850px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .detail-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .detail-header {
+            margin-bottom: 3rem;
+        }
+
+        .detail-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .tag-info-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag-badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-weight: 700;
+        }
+
+        .detail-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .detail-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .example-box {
+            background: #000;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .example-box h4 {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .example-code {
+            color: #38bdf8;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.05);
+            border-left: 4px solid #ef4444;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .warning-box h4 {
+            color: #ef4444;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .detail-content {
+                padding: 2rem;
+            }
+
+            .detail-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../index.html" class="logo">
+                <h1>HTML Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="index.html">一覧に戻る</a>
+                <a href="../levels.html">レベル</a>
+            </nav>
+        </header>
+
+        <main class="detail-container">
+            <article class="detail-content">
+                <header class="detail-header">
+                    <div class="tag-info-bar">
+                        <span class="tag-badge">&lt;img&gt;</span>
+                    </div>
+                    <h1>画像タグ（Image）</h1>
+                    <p>文字だけでは伝えきれない情報を視覚的に表現するための要素。</p>
+                </header>
+
+                <div class="detail-body">
+                    <h2>imgタグとは？</h2>
+                    <p>`&lt;img&gt;` タグは、ページに写真、図解、ロゴなどの画像を表示するために使用されます。他の多くのタグとは異なり、終了タグ（&lt;/img&gt;）を持たない「空要素」です。
+                    </p>
+                    <p>画像はHTMLファイルの中に直接「埋め込まれている」わけではありません。ブラウザが「ここにこの画像を表示して」という指示を読み取り、指定された場所（URLやパス）から画像ファイルを読み込んで表示します。
+                    </p>
+
+                    <div class="example-box">
+                        <h4>コード例</h4>
+                        <div class="example-code">
+                            &lt;img src="images/photo.jpg" alt="青空を飛ぶ鳥の様子" width="600" height="400"&gt;
+                        </div>
+                    </div>
+
+                    <h2>src属性とalt属性</h2>
+                    <p>imgタグには、最低限2つの属性が不可欠です：</p>
+                    <ul>
+                        <li><strong>src:</strong> 画像ファイルの場所を指定します。</li>
+                        <li><strong>alt:</strong> 画像の説明を記述します。画像が読み込めなかった時や、目の不自由な方が読み上げソフトで内容を理解するために非常に重要です。</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <h4>alt属性を忘れずに！</h4>
+                        <p>alt属性を空にするのは避けましょう。検索エンジンは画像の中身を完璧には理解できないため、altテキストを頼りに画像をインデックスします。適切なaltを設定することは、SEO対策としても基本中の基本です。
+                        </p>
+                    </div>
+
+                    <h2>レスポンシブ対応</h2>
+                    <p>スマホとPCで画像のサイズを調整するために、CSSで `max-width: 100%; height: auto;`
+                        を設定するのが一般的です。これにより、画像が親要素の幅を突き抜けず、アスペクト比を維持したまま伸び縮みするようになります。</p>
+
+                    <h2>まとめ</h2>
+                    <p>画像を正しく扱うことは、サイトの見た目だけでなく、使いやすさ（アクセシビリティ）にも直結します。HTML
+                        Masterの演習では、画像を適切な位置に配置し、正しい属性を設定するテクニックを磨くことができます！</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 HTML Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

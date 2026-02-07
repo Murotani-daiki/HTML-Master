@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>divタグの役割と使い方：レイアウトの基本ブロック | HTML Master リファレンス</title>
+    <meta name="description" content="HTMLのdivタグの役割、意味を持たないタグの重要、CSSとの組み合わせ、セマンティックなタグとの使い分けなどを詳しく解説します。">
+    <link rel="icon" href="../favicon.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        .detail-container {
+            max-width: 850px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .detail-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .detail-header {
+            margin-bottom: 3rem;
+        }
+
+        .detail-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .tag-info-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag-badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-weight: 700;
+        }
+
+        .detail-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .detail-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .example-box {
+            background: #000;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .example-box h4 {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .example-code {
+            color: #38bdf8;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .info-panel {
+            background: rgba(139, 92, 246, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            margin: 2rem 0;
+        }
+
+        .info-panel h4 {
+            color: #8b5cf6;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .detail-content {
+                padding: 2rem;
+            }
+
+            .detail-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../index.html" class="logo">
+                <h1>HTML Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="index.html">一覧に戻る</a>
+                <a href="../levels.html">レベル</a>
+            </nav>
+        </header>
+
+        <main class="detail-container">
+            <article class="detail-content">
+                <header class="detail-header">
+                    <div class="tag-info-bar">
+                        <span class="tag-badge">&lt;div&gt;</span>
+                    </div>
+                    <h1>divタグ（Division）</h1>
+                    <p>特定の意味を持たず、要素をグループ化してデザインを整えるための強力な「箱」。</p>
+                </header>
+
+                <div class="detail-body">
+                    <h2>divタグとは？</h2>
+                    <p>`&lt;div&gt;` タグは「Division（区分・分割）」の略で、HTML要素をひとまとめにしてグループ化するために使用されます。</p>
+                    <p>興味深いことに、このタグ自体には特別な意味（見出しである、段落である、など）が一切ありません。ただの「何の色もついていない透明な箱」と考えてください。その代わり、CSSと組み合わせることで、どんな形にも、どんな配置にも変幻自在に操ることができます。
+                    </p>
+
+                    <div class="example-box">
+                        <h4>コード例</h4>
+                        <div class="example-code">
+                            &lt;div class="container"&gt;<br>
+                            &nbsp;&nbsp;&lt;h2&gt;タイトル&lt;/h2&gt;<br>
+                            &nbsp;&nbsp;&lt;p&gt;説明文が入ります。&lt;/p&gt;<br>
+                            &lt;/div&gt;
+                        </div>
+                    </div>
+
+                    <h2>なぜdivを使うのか？</h2>
+                    <p>主に2つの目的で使用されます：</p>
+                    <ul>
+                        <li><strong>レイアウトの制御:</strong> 複数の要素をひとまとめにして、横並びにしたり、中央に寄せたりするために使います。</li>
+                        <li><strong>デザインの適用:</strong> 特定のグループ全体に背景色をつけたり、枠線を引いたりするために、共通の `class` を指定する際に向いています。</li>
+                    </ul>
+
+                    <div class="info-panel">
+                        <h4>セマンティックタグとの使い分け</h4>
+                        <p>モダンなHTML5では、`&lt;header&gt;` や `&lt;footer&gt;`、`&lt;section&gt;`
+                            といった「意味のあるタグ」が推奨されます。divは何でも包める便利なタグですが、使いすぎると「何がどこにあるか分からない」という状態（div地獄）に陥ります。意味を持たない「ただのレイアウト調整」の時だけ使うのがプロの技です。
+                        </p>
+                    </div>
+
+                    <h2>まとめ</h2>
+                    <p>divタグを使いこなせれば、Webサイトのレイアウトは自由自在になります。HTML
+                        Masterの高度なレベルでは、このdivとCSS（FlexboxやGrid）を組み合わせて、プロ顔負けのモダンなデザインを作る練習も用意しています！</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 HTML Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

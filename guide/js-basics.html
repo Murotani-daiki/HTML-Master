@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptの基礎知識：Webを動かす魔法 | JavaScript Master 学習ガイド</title>
+    <meta name="description" content="JavaScriptの基本文法、変数、データ型、DOM操作の基礎など、初心者向けに詳しく解説します。">
+    <link rel="icon" href="../favicon.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #facc15, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #facc15;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: #facc15;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .guide-body ul,
+        .guide-body ol {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            line-height: 1.8;
+        }
+
+        .code-block-guide {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: #facc15;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../js_index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #facc15, #fbbf24); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    JavaScript Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="../js_levels.html">レベル</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">学習ガイド</span>
+                    <h1>JavaScriptの基礎知識</h1>
+                    <p>動的なWebサイトを支える、最もパワフルな言語を学ぶ</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>JavaScriptとは何か？</h2>
+                    <p>JavaScriptは、ウェブサイトにインタラクティブな動きを加えるためのプログラミング言語です。1995年に誕生して以来、ウェブの進化とともに成長し、現在ではブラウザ上だけでなく、サーバー（Node.js）やアプリ開発など、あらゆる場所で使用されています。
+                    </p>
+                    <p>HTMLが「骨格」、CSSが「見た目」なら、JavaScriptは「筋肉」や「神経」に例えられます。ボタンをクリックした時の動作、データの読み込み、アニメーションの制御など、ユーザーの操作に反応してウェブページを変化させるのがJavaScriptの役割です。
+                    </p>
+
+                    <h2>基本文法：変数と定数</h2>
+                    <p>プログラミングの基本は、データを一時的に保存する「変数」を扱うことです。モダンなJavaScriptでは、値を書き換えられる変数には `let`、一度決めたら変えない定数には `const`
+                        を使用します。</p>
+
+                    <div class="code-block-guide">
+                        <pre>const name = "JavaScript Master";
+let score = 100;
+
+score = score + 10; // 値の更新
+console.log(name + "のスコアは" + score);</pre>
+                    </div>
+
+                    <h2>データ型と演算</h2>
+                    <p>JavaScriptが扱うデータにはいくつかの「型」があります：</p>
+                    <ul>
+                        <li><strong>文字列 (String):</strong> "あいうえお" のようなテキスト。</li>
+                        <li><strong>数値 (Number):</strong> 10 や 3.14 などの数字。</li>
+                        <li><strong>真偽値 (Boolean):</strong> true（正しい）か false（間違い）かの2択。</li>
+                        <li><strong>配列 (Array):</strong> 複数のデータをまとめて管理する棚のようなもの。</li>
+                    </ul>
+
+                    <h2>DOM操作：ページを書き換える</h2>
+                    <p>JavaScriptの真髄は「DOM（Document Object
+                        Model）操作」にあります。これは、JavaScriptを使ってHTML要素を自由自在に書き換える仕組みのことです。例えば、ボタンを押した時に文字の色を変えたり、新しいメッセージを表示したりするのは、すべてこのDOM操作によって行われています。
+                    </p>
+
+                    <h2>まとめ</h2>
+                    <p>JavaScriptは非常に奥が深い言語ですが、まずは「コードを書いて、画面が変わる」という楽しさを知ることが大切です。プログラミングの基本ロジックは他の言語とも共通しているため、JavaScriptをマスターすることは、エンジニアとしての確かな一歩になります。
+                    </p>
+                    <p>JavaScript Masterでは、環境構築不要で今すぐコードを試すことができます。さあ、あなたもWebに命を吹き込む魔法を使ってみませんか？</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

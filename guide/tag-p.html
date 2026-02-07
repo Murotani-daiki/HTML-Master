@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pタグの役割と使い方：正しい段落の作り方 | HTML Master リファレンス</title>
+    <meta name="description" content="HTMLの段落タグ（p）の基本から、改行タグ（br）との違い、レイアウト上の注意点までを詳しく解説します。">
+    <link rel="icon" href="../favicon.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        .detail-container {
+            max-width: 850px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .detail-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .detail-header {
+            margin-bottom: 3rem;
+        }
+
+        .detail-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .tag-info-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag-badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-weight: 700;
+        }
+
+        .detail-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .detail-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .example-box {
+            background: #000;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .example-box h4 {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .example-code {
+            color: #38bdf8;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            color: var(--text-secondary);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 640px) {
+            .detail-content {
+                padding: 2rem;
+            }
+
+            .detail-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../index.html" class="logo">
+                <h1>HTML Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="index.html">一覧に戻る</a>
+                <a href="../levels.html">レベル</a>
+            </nav>
+        </header>
+
+        <main class="detail-container">
+            <article class="detail-content">
+                <header class="detail-header">
+                    <div class="tag-info-bar">
+                        <span class="tag-badge">&lt;p&gt;</span>
+                    </div>
+                    <h1>段落タグ（Paragraph）</h1>
+                    <p>ウェブ上の文章を論理的に区切り、読みやすい構造を作るための基本タグ。</p>
+                </header>
+
+                <div class="detail-body">
+                    <h2>pタグとは？</h2>
+                    <p>`&lt;p&gt;` タグは「Paragraph（段落）」の略で、テキストの一まとまりを定義するために使用されます。HTMLの中で最も頻繁に使用されるタグのひとつです。</p>
+                    <p>ブラウザで `&lt;p&gt;`
+                        タグを表示すると、多くの場合、上下に自動的に余白（マージン）が作られます。これにより、文章がぎっしりと詰まって見えるのを防ぎ、ユーザーにとって読みやすいレイアウトを自然に作ることができます。
+                    </p>
+
+                    <div class="example-box">
+                        <h4>コード例</h4>
+                        <div class="example-code">
+                            &lt;p&gt;これは最初の段落です。&lt;/p&gt;<br>
+                            &lt;p&gt;これは二番目の段落です。段落ごとに適切な余白が生まれます。&lt;/p&gt;
+                        </div>
+                    </div>
+
+                    <h2>よくある間違い：brタグとの使い分け</h2>
+                    <p>初心者がよくやってしまう間違いのひとつに、文章の間隔を広げるために `&lt;br&gt;`（改行タグ）を連打してしまうことがあります。これは「意味（セマンティクス）」の観点から推奨されません。
+                    </p>
+                    <p>意味のまとまりが変わるなら `&lt;p&gt;` を使い、文章の中で単に改行したいだけなら `&lt;br&gt;` を使うという使い分けが重要です。</p>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>要素</th>
+                                <th>役割</th>
+                                <th>主な用途</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>&lt;p&gt;</code></td>
+                                <td>段落全体を囲む</td>
+                                <td>文章のまとまり。上下に余白ができる。</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;br&gt;</code></td>
+                                <td>その場で改行する</td>
+                                <td>住所や詩など、意味は続いているが戻したいとき。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>デザインと余白の調整</h2>
+                    <p>`&lt;p&gt;` タグの上下の余白は、ブラウザによってデフォルト値が異なります。プロの開発者は、CSS（Cascading Style
+                        Sheets）を使用して、この余白の大きさをサイト全体のデザインに合わせて精密に調整します。</p>
+                    <p>「見た目」のためにHTMLタグを選ぶのではなく、「役割」のためにHTMLを選び、「見た目」はCSSで整える。これがモダンなウェブ制作の鉄則です。</p>
+
+                    <h2>まとめ</h2>
+                    <p>文章を適切に `&lt;p&gt;` で囲むことは、ボット（検索エンジン）にコンテンツを正しく理解させ、ユーザーにとって心地よい読書体験を提供するために欠かせません。HTML
+                        Masterの課題でも、正しい段落分けを意識してコーディングしてみてください！</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 HTML Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
