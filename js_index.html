@@ -87,6 +87,7 @@
                 <h1>JavaScript Master</h1>
             </a>
             <nav class="home-nav">
+                <a href="guide/js_index.html">JS解説</a>
                 <a href="js_levels.html">レベル</a>
                 <a href="index.html">HTML</a>
                 <a href="py_index.html">Python</a>
@@ -115,7 +116,73 @@
                     </div>
                 </div>
             </section>
-
+            <section id="reference" class="reference-promo"
+                style="background: rgba(250, 204, 21, 0.05); padding: 6rem 5%; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+                <div
+                    style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 4rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 320px;">
+                        <span class="badge"
+                            style="background: rgba(250, 204, 21, 0.1); color: var(--accent-color); margin-bottom: 1.5rem;">辞書・リファレンス</span>
+                        <h2
+                            style="font-size: 2.8rem; font-family: 'Outfit', sans-serif; margin-bottom: 1.5rem; line-height: 1.2;">
+                            <span>コードの意味</span>を、<br>深く、分かりやすく。
+                        </h2>
+                        <p
+                            style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2.5rem; line-height: 1.8;">
+                            「なぜこう動くのか？」を徹底解説。JavaScriptの基本構文からDOM操作まで、演習とセットで読める充実の学習テキストを公開しています。
+                        </p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.8rem; color: var(--text-primary);">
+                                <span
+                                    style="background: var(--accent-color); color: #000; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">✓</span>
+                                構文の徹底解説
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.8rem; color: var(--text-primary);">
+                                <span
+                                    style="background: var(--accent-color); color: #000; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">✓</span>
+                                実践的なサンプル
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.8rem; color: var(--text-primary);">
+                                <span
+                                    style="background: var(--accent-color); color: #000; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">✓</span>
+                                DOMの仕組み
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.8rem; color: var(--text-primary);">
+                                <span
+                                    style="background: var(--accent-color); color: #000; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">✓</span>
+                                初心者向け設計
+                            </div>
+                        </div>
+                        <a href="guide/js_index.html" class="primary-btn-home"
+                            style="display: inline-block;">JS・解説一覧を見る</a>
+                    </div>
+                    <div style="flex: 1; min-width: 320px; display: flex; justify-content: center; position: relative;">
+                        <!-- Visual representation of JS concepts -->
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                            <div
+                                style="background: var(--card-bg); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color); width: 140px; text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">{ }</div>
+                                <div style="font-weight: 700; color: var(--accent-color);">Logic</div>
+                            </div>
+                            <div
+                                style="background: var(--card-bg); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color); width: 140px; text-align: center; margin-top: 2rem;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">&lt;/&gt;</div>
+                                <div style="font-weight: 700; color: var(--accent-color);">DOM</div>
+                            </div>
+                            <div
+                                style="background: var(--card-bg); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color); width: 140px; text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">( )</div>
+                                <div style="font-weight: 700; color: var(--accent-color);">Event</div>
+                            </div>
+                            <div
+                                style="background: var(--card-bg); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color); width: 140px; text-align: center; margin-top: 2rem;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">[ ]</div>
+                                <div style="font-weight: 700; color: var(--accent-color);">Data</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="features" class="features">
                 <div class="section-title">
                     <h2>なぜ JavaScript Master なのか？</h2>
@@ -227,24 +294,7 @@
                 </div>
             </section>
 
-            <section id="guides" class="guides-section" style="padding: 6rem 5%; max-width: 1200px; margin: 0 auto;">
-                <div class="section-title">
-                    <h2>JavaScript 学習ガイド</h2>
-                    <p>プログラミングのロジックを深く理解するための技術解説。</p>
-                </div>
-                <div class="guide-grid"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                    <a href="guide/js-basics.html" class="guide-card"
-                        style="text-decoration: none; background: var(--card-bg); padding: 2.5rem; border-radius: 24px; border: 1px solid var(--border-color); transition: all 0.3s;">
-                        <span class="badge" style="margin-bottom: 1rem;">JS 基礎</span>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">JavaScriptの基礎知識
-                        </h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                            変数、データ型、基本的な演算など、プログラミングを始める上で必須の基礎概念を解説します。</p>
-                        <span style="color: var(--accent-color); font-weight: 700;">詳しく読む →</span>
-                    </a>
-                </div>
-            </section>
+
 
             <section id="faq" class="faq-section">
                 <div class="faq-content">
