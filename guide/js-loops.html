@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ループ処理（for）：繰り返し作業を自動化する | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScriptのループ処理について。for文、while文、配列の繰り返し処理などを初心者向けに詳しく解説します。">
+    <link rel="icon" href="../favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #facc15, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #facc15;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+        }
+
+        .code-block-guide {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: #facc15;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../js_index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #facc15, #fbbf24); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    JavaScript Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="js_index.html">解説一覧</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">効率化</span>
+                    <h1>ループ処理</h1>
+                    <p>コンピュータの得意技：めんどくさい繰り返しをプログラムで解決</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>繰り返しを自動化する</h2>
+                    <p>「100個のデータを表示する」「同じ計算を10回繰り返す」といった作業を人間が手で行うのは大変です。プログラミングの「ループ」を使えば、たった数行のコードで何千回もの繰り返しを瞬時に終わらせることができます。
+                    </p>
+
+                    <h2>for 文の基本</h2>
+                    <p>最も一般的な繰り返し構文です。カッコの中に「始まり、終わり、増え方」を記述します。</p>
+                    <div class="code-block-guide">
+                        <pre>for (let i = 1; i <= 5; i++) {
+    console.log(i + "回目の繰り返しです");
+}</pre>
+                    </div>
+                    <p>このコードは、i が 1 から始まり、5 になるまで、1ずつ増えながら実行されます。</p>
+
+                    <h2>配列とループ</h2>
+                    <p>ループは配列（データのひとまとめ）を処理する時に最も力を発揮します。</p>
+                    <div class="code-block-guide">
+                        <pre>const users = ["Alice", "Bob", "Charlie"];
+for (let i = 0; i < users.length; i++) {
+    console.log("こんにちは、" + users[i] + "さん！");
+}</pre>
+                    </div>
+
+                    <h2>無限ループに注意！</h2>
+                    <p>終わりの条件を書き忘れると、プログラムが永遠に繰り返され、ブラウザがフリーズしてしまいます。必ず「いつ終わるか」を指定するようにしましょう。</p>
+
+                    <h2>まとめ</h2>
+                    <p>ループは、プログラミングによる「効率化」の核心です。配列とループを組み合わせれば、大量の情報を一瞬で処理する高度なサービスを作れるようになります。</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

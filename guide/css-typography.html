@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイポグラフィと単位：読みやすさをコントロールする | HTML Master リファレンス</title>
+    <meta name="description" content="CSSのフォントプロパティと、px, rem, em, % など様々な「単位」の使い分けについて。レスポンシブな文字サイズ設定のコツを詳しく解説します。">
+    <link rel="icon" href="../favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        :root {
+            --accent-color: #38bdf8;
+        }
+
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .unit-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+
+        .unit-card h4 {
+            color: #38bdf8;
+            margin-bottom: 0.5rem;
+        }
+
+        .code-block-guide {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: #38bdf8;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #38bdf8, #818cf8); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    HTML Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="index.html">解説一覧</a>
+                <a href="../index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); color: #38bdf8;">読みやすさ</span>
+                    <h1>タイポグラフィと単位</h1>
+                    <p>心地よい「読み体験」を作るためのフォント設定と、柔軟な単位の使い分け</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>文字をデザインする</h2>
+                    <p>Webサイトの情報の9割はテキストです。タイポグラフィ（文字の配置やデザイン）を整えることは、サイトの質を左右します。</p>
+
+                    <div class="code-block-guide">
+                        <pre>p {
+    font-size: 16px;
+    font-weight: 600;   /* 太さ */
+    line-height: 1.8;   /* 行間 */
+    letter-spacing: 0.05em; /* 字間 */
+    color: #333;
+}</pre>
+                    </div>
+
+                    <h2>Web制作で使う「単位」の使い分け</h2>
+                    <p>CSSには多くの単位がありますが、特によく使われるものを覚えましょう。</p>
+
+                    <div class="units-grid">
+                        <div class="unit-card">
+                            <h4>px (ピクセル)</h4>
+                            <p>絶対的なサイズを指定します。「16px」と書けばどんな環境でも16ピクセルですが、画面の大きさに合わせた調整には向きません。</p>
+                        </div>
+                        <div class="unit-card">
+                            <h4>rem (レム)</h4>
+                            <p>ルート（HTML要素）のフォントサイズを基準にする**相対的な単位**です。レスポンシブ対応しやすいため、現代の主流です。</p>
+                        </div>
+                        <div class="unit-card">
+                            <h4>% (パーセント)</h4>
+                            <p>親要素に対する割合を指定します。ボタンの幅を「100%」にして横いっぱいに広げたい時などに重宝します。</p>
+                        </div>
+                        <div class="unit-card">
+                            <h4>vw / vh</h4>
+                            <p>画面（ビューポート）の幅や高さに対する割合です。ブラウザの全幅いっぱいに要素を広げたい時に使います。</p>
+                        </div>
+                    </div>
+
+                    <h2>行間（line-height）の魔法</h2>
+                    <p>文字がぎゅうぎゅうに詰まっていると、ユーザーは疲れてしまいます。行間を `1.5` 〜 `2.0` 程度に少し広げるだけで、一気に「読みやすい本格的なサイト」になります。</p>
+
+                    <h2>まとめ</h2>
+                    <p>「とりあえず px」ではなく、文字サイズには `rem` 、余白調整には `px` や `rem` 、レイアウトには `%` や `vw`
+                        といった使い分けを意識しましょう。柔軟な単位使いが、レスポンシブなWebサイトを作る鍵となります。</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 HTML Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

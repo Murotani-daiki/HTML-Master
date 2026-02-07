@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件分岐（if/else）：プログラムに判断をさせる | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScriptの条件分岐について。if文、else文、比較演算子を使ったロジックの作り方を初心者向けに詳しく解説します。">
+    <link rel="icon" href="../favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #facc15, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #facc15;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body h3 {
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+            color: #facc15;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+        }
+
+        .code-block-guide {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: #facc15;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .logic-panel {
+            background: rgba(250, 204, 21, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            border: 1px solid rgba(250, 204, 21, 0.1);
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../js_index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #facc15, #fbbf24); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    JavaScript Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="js_index.html">解説一覧</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">ロジック</span>
+                    <h1>条件分岐</h1>
+                    <p>if文を使ってプログラムに「判断」をさせる</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>「もし〜なら」を組み立てる</h2>
+                    <p>私たちの日常生活と同じように、プログラムも「状況に応じて行動を変える」必要があります。例えば、「スコアが80点以上なら合格」、「ボタンが押されたならメッセージを表示」といったロジックを担うのが条件分岐です。
+                    </p>
+
+                    <h2>基本の if 文</h2>
+                    <p>カッコ `()` の中の条件が正しい（true）場合にのみ、続く波カッコ `{}` の中の処理が実行されます。</p>
+                    <div class="code-block-guide">
+                        <pre>const score = 85;
+if (score >= 80) {
+    console.log("合格です！");
+}</pre>
+                    </div>
+
+                    <h2>else で「さもなくば」を記述</h2>
+                    <p>条件が正しくなかった（false）場合の処理を `else` を使って記述できます。</p>
+                    <div class="code-block-guide">
+                        <pre>if (score >= 80) {
+    console.log("合格！");
+} else {
+    console.log("不合格...");
+}</pre>
+                    </div>
+
+                    <h2>複数の条件 (else if)</h2>
+                    <p>「さらに〜なら」と条件を繋げていくことができます。</p>
+                    <div class="code-block-guide">
+                        <pre>if (score >= 80) {
+    console.log("天才！");
+} else if (score >= 60) {
+    console.log("合格！");
+} else {
+    console.log("次は頑張ろう！");
+}</pre>
+                    </div>
+
+                    <div class="logic-panel">
+                        <h3>💡 比較演算子を覚えよう</h3>
+                        <ul>
+                            <li>`===`　等しい（JavaScriptでは`==`より推奨されます）</li>
+                            <li>`!==`　等しくない</li>
+                            <li>`>` / `<`　より大きい / より小さい</li>
+                            <li>`>=` / `<=`　以上 / 以下</li>
+                        </ul>
+                    </div>
+
+                    <h2>まとめ</h2>
+                    <p>条件分岐はプログラミングの「思考力」そのものです。複雑な条件を組み立てられるようになれば、ゲームの判定やユーザー認証など、あらゆる高度な機能を作れるようになります。</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ループ処理（for）：繰り返しを効率化する | Python Master リファレンス</title>
+    <meta name="description" content="Pythonのループ処理について。for文、range関数の使い方、while文、リストの要素を順番に取り出す方法を初心者向けに詳しく解説します。">
+    <link rel="icon" href="../favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        :root {
+            --accent-color: #3b82f6;
+        }
+
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #3b82f6, #eab308);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .code-block-guide {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: #3b82f6;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .range-box {
+            background: rgba(59, 130, 246, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../py_index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #3b82f6, #eab308); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    Python Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="py_index.html">解説一覧</a>
+                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">効率化</span>
+                    <h1>ループ処理</h1>
+                    <p>コンピュータの得意分野：面倒な繰り返し作業を自動化しよう</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>ループ処理とは？</h2>
+                    <p>同じ作業を何度も繰り返すことを「ループ処理」と呼びます。1万個のデータに同じ処理をしたり、画面に100枚の画像を並べたりするのも、ループを使えば瞬時に終わります。</p>
+
+                    <h2>for 文と range 関数</h2>
+                    <p>決まった回数繰り返す場合は、`range()` 関数と組み合わせて使います。</p>
+
+                    <div class="code-block-guide">
+                        <pre>for i in range(5):
+    print(f"{i}回目の繰り返し")</pre>
+                    </div>
+                    <p>※0から始まり、4まで(計5回)繰り返されます。</p>
+
+                    <h2>リストの中身をループする</h2>
+                    <p>Pythonの `for` 文は、リストなどの要素を順番に取り出すのが非常に得意です。</p>
+
+                    <div class="code-block-guide">
+                        <pre>fruits = ["Apple", "Banana", "Cherry"]
+for fruit in fruits:
+    print(f"私は{fruit}が好きです")</pre>
+                    </div>
+
+                    <h2>while 文（条件によるループ）</h2>
+                    <p>「条件が正しい限りずっと繰り返す」のが `while` 文です。</p>
+
+                    <div class="code-block-guide">
+                        <pre>count = 0
+while count < 3:
+    print(count)
+    count += 1</pre>
+                    </div>
+
+                    <div class="range-box">
+                        <h3>💡 range関数の高度な使い方</h3>
+                        <ul>
+                            <li>`range(1, 11)` : 1から10まで</li>
+                            <li>`range(0, 10, 2)` : 0, 2, 4, 6, 8 (2飛ばし)</li>
+                        </ul>
+                    </div>
+
+                    <h2>まとめ</h2>
+                    <p>ループ処理をマスターすれば、人間には不可能な速さで大量の仕事を片付けられるプログラムが書けるようになります。Pythonのシンプルで強力な `for` 文をぜひ使いこなしてください。</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 Python Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

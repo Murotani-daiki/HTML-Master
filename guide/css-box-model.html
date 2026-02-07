@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ボックスモデル：余白と枠線の仕組み | HTML Master リファレンス</title>
+    <meta name="description"
+        content="CSSの最重要概念「ボックスモデル」について。Content, Padding, Border, Marginの4層構造と、レイアウト崩れを防ぐための考え方を初心者向けに詳しく解説します。">
+    <link rel="icon" href="../favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        :root {
+            --accent-color: #38bdf8;
+        }
+
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .box-visual {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed var(--border-color);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .margin-box {
+            background: rgba(234, 179, 8, 0.1);
+            border: 2px dashed #eab308;
+            padding: 1.5rem;
+            text-align: center;
+            width: 80%;
+        }
+
+        .border-box {
+            background: rgba(56, 189, 248, 0.1);
+            border: 2px solid #38bdf8;
+            padding: 1rem;
+        }
+
+        .padding-box {
+            background: rgba(129, 140, 248, 0.1);
+            border: 2px dashed #818cf8;
+            padding: 1rem;
+        }
+
+        .content-box {
+            background: #fff;
+            color: #000;
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+        }
+
+        .guide-body h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #38bdf8, #818cf8); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    HTML Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="index.html">解説一覧</a>
+                <a href="../index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); color: #38bdf8;">最重要</span>
+                    <h1>ボックスモデル</h1>
+                    <p>CSS を理解する最大の鍵：全ての要素は「四角い箱」でできている</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>ボックスの4層構造</h2>
+                    <p>ウェブページの全ての要素は、4つの境界線を持つ長方形として扱われます。これを正確に操れるようになると、思い通りのレイアウトが作れるようになります。</p>
+
+                    <div class="box-visual">
+                        <div class="margin-box">
+                            <span style="font-size: 0.7rem; color: #eab308;">Margin (外側の余白)</span>
+                            <div class="border-box">
+                                <span style="font-size: 0.7rem; color: #38bdf8;">Border (枠線)</span>
+                                <div class="padding-box">
+                                    <span style="font-size: 0.7rem; color: #818cf8;">Padding (内側の余白)</span>
+                                    <div class="content-box">
+                                        Content (中身)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>1. Content (コンテンツ)</h3>
+                    <p>テキストや画像が実際に表示される部分です。`width` や `height` で大きさを指定します。</p>
+
+                    <h3>2. Padding (パディング)</h3>
+                    <p>コンテンツと枠線の間の**内側の余白**です。文字が枠にくっつくのを防ぎ、要素の中にゆとりを持たせます。</p>
+
+                    <h3>3. Border (ボーダー)</h3>
+                    <p>要素を囲む**枠線**です。太さ、線種（実線や点線）、色を指定できます。</p>
+
+                    <h3>4. Margin (マージン)</h3>
+                    <p>枠線の外側にある、他の要素との**間隔**です。要素同士がくっつきすぎるのを防ぎ、ページ全体のバランスを整えます。</p>
+
+                    <h2>注意点：全体の幅はどう決まる？</h2>
+                    <p>デフォルトでは、要素の合計幅は `width + padding + border` になります。マージンは要素の外側に計算されます。</p>
+
+                    <div class="tip-card"
+                        style="background: rgba(56, 189, 248, 0.05); padding: 1.5rem; border-left: 4px solid #38bdf8; border-radius: 0 12px 12px 0;">
+                        <p style="margin-bottom: 0;">`box-sizing: border-box;` という設定を使うと、padding も border も含めて `width`
+                            ぴったりに収まるようになり、レイアウトの計算が非常に楽になります。現代のWeb制作では必須の設定です。</p>
+                    </div>
+
+                    <h2>まとめ</h2>
+                    <p>「内側の余白は Padding、外側の間隔は Margin」と覚えましょう。この4つのプロパティをマスターすることが、プロのような洗練されたデザインへの近道です。</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 HTML Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

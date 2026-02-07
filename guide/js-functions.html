@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>関数（Function）：処理を部品化して再利用する | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScriptの関数について。関数の定義方法、引数、戻り値、アロー関数の使い方を初心者向けに詳しく解説します。">
+    <link rel="icon" href="../favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #facc15, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #facc15;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+        }
+
+        .code-block-guide {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: #facc15;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .concept-card {
+            background: rgba(250, 204, 21, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../js_index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #facc15, #fbbf24); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    JavaScript Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="js_index.html">解説一覧</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">プログラム設計</span>
+                    <h1>関数</h1>
+                    <p>レシピをまとめて名付ける：処理の使い回しで効率アップ</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>処理を部品にする</h2>
+                    <p>何度も使う一連の処理をひとまとめにして名前をつけたものを「関数」と呼びます。例えば、「挨拶を表示して日付を出力する」という処理に関数を作っておけば、1行呼び出すだけでいつでもその処理を再現できます。
+                    </p>
+
+                    <h2>関数の作り方 (定義)</h2>
+                    <p>もっとも一般的な「関数宣言」の書き方です。</p>
+                    <div class="code-block-guide">
+                        <pre>function sayHi() {
+    console.log("こんにちは！");
+    console.log("JS Masterへようこそ！");
+}</pre>
+                    </div>
+
+                    <h2>関数を使う (実行)</h2>
+                    <p>定義しただけでは動きません。名前にカッコ `()` をつけて呼び出します。</p>
+                    <div class="code-block-guide">
+                        <pre>sayHi(); // これで中の処理が実行される</pre>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>💡 引数と戻り値</h3>
+                        <p><strong>引数（ひきすう）:</strong> 関数に渡す「材料」です。</p>
+                        <p><strong>戻り値（もどりち）:</strong> 関数の「結果」を返すものです。</p>
+                        <div class="code-block-guide">
+                            <pre>function add(a, b) {
+    return a + b; // 結果を返す
+}
+const result = add(5, 3); // 8 が返ってくる</pre>
+                        </div>
+                    </div>
+
+                    <h2>アロー関数</h2>
+                    <p>モダンなJavaScriptで非常に好まれる、短く書ける関数の書き方です。</p>
+                    <div class="code-block-guide">
+                        <pre>const sayHi = () => {
+    console.log("Hi!");
+};</pre>
+                    </div>
+
+                    <h2>まとめ</h2>
+                    <p>関数は、プログラムを整理整頓するための道具です。大きなプログラムも、小さな関数の集まりとして作ることで、バグが少なくメンテナンスしやすいコードになります。</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

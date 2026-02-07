@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出力とデバッグ（print）：プログラムの中身を見る | Python Master リファレンス</title>
+    <meta name="description" content="Pythonのprint関数について。基本的な使い方から、f-stringを使った文字列への変数埋め込み、デバッグの重要性を初心者向けに解説します。">
+    <link rel="icon" href="../favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        :root {
+            --accent-color: #3b82f6;
+        }
+
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #3b82f6, #eab308);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .code-block-guide {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: #3b82f6;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .code-label {
+            position: absolute;
+            top: 0;
+            right: 1.5rem;
+            font-size: 0.75rem;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            color: #3b82f6;
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../py_index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #3b82f6, #eab308); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    Python Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="py_index.html">解説一覧</a>
+                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">デバッグ</span>
+                    <h1>出力とデバッグ</h1>
+                    <p>print()：プログラムの実行結果を画面に表示しよう</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>print関数とは？</h2>
+                    <p>プログラムの中で起きていることを私たちの目に見える形にするのが `print()`
+                        関数です。変数の値が正しく計算されているか、プログラムがどこまで実行されたかを確認するための、プログラマーにとって最も身近な武器です。</p>
+
+                    <h2>基本の使い方</h2>
+                    <p>丸カッコの中に表示したいデータ（文字列や数値、変数）を入れます。</p>
+
+                    <div class="code-block-guide">
+                        <span class="code-label">Python</span>
+                        <pre>print("Hello Python")
+print(123)
+x = "Master"
+print(x)</pre>
+                    </div>
+
+                    <h2>f-string（便利な埋め込み）</h2>
+                    <p>Python 3.6から導入された「f文字列」を使うと、文章の中に変数をとても簡単に埋め込むことができます。文字列の前に `f` をつけ、入れたい変数を `{ }` で囲みます。</p>
+
+                    <div class="code-block-guide">
+                        <span class="code-label">Python</span>
+                        <pre>name = "Taro"
+score = 80
+print(f"{name}さんのスコアは{score}点です")</pre>
+                    </div>
+
+                    <h2>カンマで複数の値を表示</h2>
+                    <p>カンマ `,` で区切ることで、複数の情報を同時に出力できます。自動的にスペースが挿入されるので便利です。</p>
+
+                    <div class="code-block-guide">
+                        <span class="code-label">Python</span>
+                        <pre>print("結果は:", 100)</pre>
+                    </div>
+
+                    <h2>まとめ</h2>
+                    <p>「バグかな？」と思ったら、迷わず `print()` を使って中のデータを確認しましょう。プログラムが見える化されることで、理解がぐっと深まります。</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 Python Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

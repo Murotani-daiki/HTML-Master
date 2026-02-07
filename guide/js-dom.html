@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM操作：Webページを動的に変える | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScriptの真髄であるDOM操作について。HTML要素の取得方法、イベントリスナー、スタイルの変更などを初心者向けに分かりやすく解説します。">
+    <link rel="icon" href="../favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #facc15, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #facc15;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body h3 {
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+            color: #facc15;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .code-block-guide {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: #facc15;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .code-label {
+            position: absolute;
+            top: 0;
+            right: 1.5rem;
+            font-size: 0.75rem;
+            background: rgba(250, 204, 21, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            color: #facc15;
+        }
+
+        .point-card {
+            background: rgba(250, 204, 21, 0.05);
+            border-left: 4px solid #facc15;
+            padding: 2rem;
+            border-radius: 0 16px 16px 0;
+            margin: 2rem 0;
+        }
+
+        .point-card h4 {
+            color: #facc15;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../js_index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #facc15, #fbbf24); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    JavaScript Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="js_index.html">解説一覧</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">実践スキル</span>
+                    <h1>DOM操作</h1>
+                    <p>JavaScriptでHTMLを自由自在に操る技術</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>DOM（ドム）とは何か？</h2>
+                    <p>DOMは <strong>Document Object Model</strong>
+                        の略称で、ブラウザがHTMLを読み込んだ時に作る「ページの設計図」のようなものです。JavaScriptはこの設計図を通して、HTML要素を新しく作ったり、既存の要素の文字を変えたり、削除したりすることができます。
+                    </p>
+                    <p>まさに、Webページに「魂」を吹き込み、動的に変化させるためのプラットフォームです。</p>
+
+                    <h2>1. 要素を取得する</h2>
+                    <p>まずは、操作したいHTML要素をJavaScriptの世界に連れてくる必要があります。以下の方法がよく使われます。</p>
+
+                    <h3>getElementById</h3>
+                    <p>HTMLで `id="..."` を設定した要素を、名前で直接指名して取得します。</p>
+                    <div class="code-block-guide">
+                        <span class="code-label">JavaScript</span>
+                        <pre>const myButton = document.getElementById("main-btn");</pre>
+                    </div>
+
+                    <h3>querySelector</h3>
+                    <p>CSSと同じセレクタを使って要素を取得します。非常に汎用性が高く、現代のWeb開発で最も推奨される方法です。</p>
+                    <div class="code-block-guide">
+                        <span class="code-label">JavaScript</span>
+                        <pre>const message = document.querySelector(".info-text");</pre>
+                    </div>
+
+                    <h2>2. 内容を書き換える</h2>
+                    <p>取得した要素に対して、中身を書き換えるプロパティを使います。</p>
+
+                    <h3>textContent</h3>
+                    <p>要素の中にある「テキスト」だけを書き換えます。</p>
+                    <div class="code-block-guide">
+                        <span class="code-label">JavaScript</span>
+                        <pre>message.textContent = "読み込みが完了しました！";</pre>
+                    </div>
+
+                    <h2>3. イベントに反応する</h2>
+                    <p>「ボタンがクリックされたら」「キーボードが押されたら」といったユーザーの動作（イベント）を待機し、処理を実行します。</p>
+
+                    <div class="code-block-guide">
+                        <span class="code-label">JavaScript</span>
+                        <pre>myButton.addEventListener("click", () => {
+    console.log("ボタンが押されました");
+    message.style.color = "yellow";
+});</pre>
+                    </div>
+
+                    <div class="point-card">
+                        <h4>💡 「イベントリスナー」は耳を傾ける人</h4>
+                        <p>`addEventListener` は、特定の操作が行われるのをずっと監視している「門番」のような役割を果たします。</p>
+                    </div>
+
+                    <h2>まとめ</h2>
+                    <p>「要素を取得し、イベントを待ち、内容を書き換える」。これがモダンなWebフロントエンド開発の基本サイクルです。DOM操作をマスターすれば、ユーザーと対話するインタラクティブなアプリケーションを自由に作れるようになります。
+                    </p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

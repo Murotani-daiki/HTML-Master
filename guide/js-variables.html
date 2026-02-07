@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>変数と定数（let, const）：データの入れ物 | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScriptでデータを取り扱うための基本、変数（let）と定数（const）の違い、命名規則、スコープについて初心者向けに詳しく解説します。">
+    <link rel="icon" href="../favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #facc15, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #facc15;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body h3 {
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+            color: #facc15;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .code-block-guide {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: #facc15;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .code-label {
+            position: absolute;
+            top: 0;
+            right: 1.5rem;
+            font-size: 0.75rem;
+            background: rgba(250, 204, 21, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            color: #facc15;
+        }
+
+        .point-card {
+            background: rgba(250, 204, 21, 0.05);
+            border-left: 4px solid #facc15;
+            padding: 2rem;
+            border-radius: 0 16px 16px 0;
+            margin: 2rem 0;
+        }
+
+        .point-card h4 {
+            color: #facc15;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../js_index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #facc15, #fbbf24); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    JavaScript Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="js_index.html">解説一覧</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">基本文法</span>
+                    <h1>変数と定数</h1>
+                    <p>let と const：データを賢く管理するための第一歩</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>データを「保存」する</h2>
+                    <p>プログラミングにおいて、データ（数値や文字など）を一時的に保存しておく場所を「変数」と呼びます。保存したデータには名前をつけることができ、その名前を使って後からデータを呼び出したり、計算に使ったりすることができます。
+                    </p>
+                    <p>Webアプリケーションでは、ユーザーの名前、獲得したスコア、ショッピングカートの中身など、あらゆる情報が変数として扱われます。</p>
+
+                    <div class="point-card">
+                        <h4>💡 変数は「ラベル付きの箱」</h4>
+                        <p>データという中身を箱に入れ、分かりやすいラベル（名前）を貼るイメージで捉えると理解しやすくなります。</p>
+                    </div>
+
+                    <h2>let と const の使い分け</h2>
+                    <p>JavaScriptには主に2つのキーワードがありますが、現在では以下のように使い分けるのが一般的です。</p>
+
+                    <h3>1. const (定数)</h3>
+                    <p>一度代入したら、後から値を変更できない「箱」です。プログラミングでは、値を途中で変える必要がないケースが非常に多いため、<strong>まずは const を使う</strong>のが基本です。
+                    </p>
+                    <div class="code-block-guide">
+                        <span class="code-label">JavaScript</span>
+                        <pre>const taxRate = 0.1;
+// taxRate = 0.08; // エラーになります！</pre>
+                    </div>
+
+                    <h3>2. let (変数)</h3>
+                    <p>値を後から自由に書き換えることができる「箱」です。ループ処理の回数を数えたり、ユーザーの操作によって内容が変わる場合に使用します。</p>
+                    <div class="code-block-guide">
+                        <span class="code-label">JavaScript</span>
+                        <pre>let score = 0;
+score = 100; // あとから書き換えOK</pre>
+                    </div>
+
+                    <h2>命名規則：いい名前をつけよう</h2>
+                    <p>変数名には一定のルールがあります。自由につけることができますが、誰が見ても中身がわかる名前をつけることが大切です。</p>
+                    <ul>
+                        <li><strong>キャメルケース:</strong> `userName` や `userScore` のように、2つ目以降の単語の頭文字を大文字にするのが一般的です。</li>
+                        <li><strong>意味のある名前:</strong> `x` や `y` ではなく、`userEmail` のように中身を説明する名前にしましょう。</li>
+                    </ul>
+
+                    <div class="point-card" style="border-left-color: #ef4444; background: rgba(239, 68, 68, 0.05);">
+                        <h4 style="color: #ef4444;">⚠️ 避けるべき古い書き方: var</h4>
+                        <p>昔のJavaScriptでは `var` が使われていましたが、現在では思わぬバグの原因になりやすいため、使用は推奨されていません。必ず `let` か `const` を使いましょう。
+                        </p>
+                    </div>
+
+                    <h2>まとめ</h2>
+                    <p>「値を変えないものは const、変える必要があるものだけ let」。このルールを守るだけで、あなたの書くプログラムの安全性と読みやすさは格段に向上します。まずは const
+                        を使って、データの流れを意識してみましょう。</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

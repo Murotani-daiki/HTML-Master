@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox レイアウト：自由に要素を並べる | HTML Master リファレンス</title>
+    <meta name="description" content="CSSのモダンなレイアウト手法「Flexbox」について。要素を横並びにする方法、中央揃え、均等配置など、初心者向けに図解を交えて詳しく解説します。">
+    <link rel="icon" href="../favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        :root {
+            --accent-color: #38bdf8;
+        }
+
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .flex-visual {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .flex-item {
+            background: #38bdf8;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .code-block-guide {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: #38bdf8;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-body h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #38bdf8, #818cf8); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    HTML Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="index.html">解説一覧</a>
+                <a href="../index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); color: #38bdf8;">モダンCSS</span>
+                    <h1>Flexbox レイアウト</h1>
+                    <p>直感的に、美しく要素を並べるためのレイアウト・ツールキット</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>Flexbox とは？</h2>
+                    <p>要素を一行の中に横並びにしたり、位置を細かく調整したりするための、現代Web制作で最も使われているレイアウト手法です。わずか数行の指定で、中央揃えや均等配置が魔法のように実現できます。</p>
+
+                    <h2>1. 横並びにする</h2>
+                    <p>並べたい要素の「親（コンテナ）」に対して `display: flex;` を指定するだけで、要素が横に並びます。</p>
+
+                    <div class="code-block-guide">
+                        <pre>.container {
+    display: flex;
+}</pre>
+                    </div>
+
+                    <div class="flex-visual">
+                        <div class="flex-item">1</div>
+                        <div class="flex-item">2</div>
+                        <div class="flex-item">3</div>
+                    </div>
+
+                    <h2>2. 配置のコントロール</h2>
+                    <p>以下の強力なプロパティを使って、位置を自由に変えられます。</p>
+
+                    <h3>justify-content（横向きの配置）</h3>
+                    <ul>
+                        <li>`center`: 中央に寄せる</li>
+                        <li>`space-between`: 両端に寄せて、間を均等に空ける</li>
+                    </ul>
+
+                    <h3>align-items（縦向きの配置）</h3>
+                    <ul>
+                        <li>`center`: 上下の中央に揃える（超便利！）</li>
+                    </ul>
+
+                    <div class="code-block-guide">
+                        <pre>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}</pre>
+                    </div>
+
+                    <h2>3. フレキシブルな幅調整</h2>
+                    <p>`gap` プロパティを使うことで、要素同士の間隔だけを簡単に指定できます。また、`flex: 1;` と書くことで、余ったスペースを要素で分け合うことも可能です。</p>
+
+                    <h2>まとめ</h2>
+                    <p>Flexbox を覚えれば、もうレイアウトで悩むことはありません。まずは `display: flex`, `justify-content`, `align-items`
+                        の3点セットを使いこなせるようになりましょう。Webサイトの構造作りが格段に楽しくなります。</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 HTML Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

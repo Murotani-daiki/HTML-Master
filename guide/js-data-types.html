@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データ型：データの種類を理解する | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScriptで扱うデータの種類（データ型）について。文字列、数値、真偽値、配列、オブジェクトの違いと特徴を初心者向けに詳しく解説します。">
+    <link rel="icon" href="../favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <style>
+        .guide-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .guide-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #facc15, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guide-header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .guide-body h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid #facc15;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .guide-body h3 {
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+            color: #facc15;
+        }
+
+        .guide-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .code-block-guide {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: #facc15;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .type-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+
+        .type-card h4 {
+            color: #facc15;
+            margin-bottom: 0.5rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        @media (max-width: 640px) {
+            .guide-content {
+                padding: 2rem;
+            }
+
+            .guide-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="../js_index.html" class="logo" style="text-decoration: none;">
+                <h1
+                    style="background: linear-gradient(135deg, #facc15, #fbbf24); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    JavaScript Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="js_index.html">解説一覧</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="guide-container">
+            <article class="guide-content">
+                <header class="guide-header">
+                    <span class="badge"
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">基本概念</span>
+                    <h1>データ型</h1>
+                    <p>JavaScriptが扱う情報の「種類」をマスターしよう</p>
+                </header>
+
+                <div class="guide-body">
+                    <h2>データには「型」がある</h2>
+                    <p>プログラミングで扱うデータには、それぞれ決まった種類（型）があります。JavaScriptは、数値として計算するのか、文字として繋げるのかを、このデータ型を見て判断します。</p>
+
+                    <div class="type-grid">
+                        <div class="type-card">
+                            <h4>String (文字列)</h4>
+                            <p>名前や文章など、引用符 `"` や `'` で囲まれたテキストデータです。</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Number (数値)</h4>
+                            <p>整数や小数。計算に使用される数字データです。</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Boolean (真偽値)</h4>
+                            <p>`true`（真）か `false`（偽）の2つの値しか持たない型です。</p>
+                        </div>
+                    </div>
+
+                    <h2>1. 文字列 (String)</h2>
+                    <p>文字列は自由に文字を繋げることができます。また、`backtick` ( ` ) を使うと、文字列の中に変数を埋め込むこともできます。</p>
+                    <div class="code-block-guide">
+                        <pre>const name = "JavaScript";
+console.log(`Hello, ${name}!`); // テンプレートリテラル</pre>
+                    </div>
+
+                    <h2>2. 配列 (Array)</h2>
+                    <p>複数のデータをひとまとめにして管理する「棚」のようなデータ型です。各データには `0` から始まる番号（インデックス）でアクセスします。</p>
+                    <div class="code-block-guide">
+                        <pre>const colors = ["red", "blue", "yellow"];
+console.log(colors[0]); // "red" を表示</pre>
+                    </div>
+
+                    <h2>3. オブジェクト (Object)</h2>
+                    <p>データに名前（キー）をつけて管理する型です。関連する情報をまとめて扱うのに非常に便利です。</p>
+                    <div class="code-block-guide">
+                        <pre>const user = {
+    name: "Taro",
+    level: 10
+};
+console.log(user.name); // "Taro" を表示</pre>
+                    </div>
+
+                    <h2>まとめ</h2>
+                    <p>データ型を正しく理解することは、意図しない計算ミス（例：1 + "1" が "11"
+                        になる）を防ぐために不可欠です。今扱っているのがどの型なのかを意識しながらコードを書いてみましょう。型の確認には `typeof` 演算子が役立ちます。</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
