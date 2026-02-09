@@ -781,7 +781,6 @@
                 order: 1;
                 margin-right: auto;
             }
-            }
 
             .game-content {
                 order: 2;
@@ -2004,7 +2003,12 @@ let currentRankingTab = 'streak';
 function getPlayerId() {
     let id = localStorage.getItem('chimeidle-player-id');
     if (!id) {
-        id = 'p_' + crypto.randomUUID();
+        // Fallback for crypto.randomUUID (only works in secure contexts)
+        if (window.crypto && window.crypto.randomUUID) {
+            id = 'p_' + crypto.randomUUID();
+        } else {
+            id = 'p_' + Date.now() + Math.random().toString(36).substring(2);
+        }
         localStorage.setItem('chimeidle-player-id', id);
     }
     return id;
@@ -2131,14 +2135,15 @@ async function loadRanking(tab) {
             items.push({ id: doc.id, ...doc.data() });
         });
         
-        // 同率の場合のクライアント側ソート
+        // 同率の場合のクライアント側ソート（サブソート：勝率やプレイ回数）
         items.sort((a, b) => {
             const field = getSortField(tab);
-            if (field === 'win_rate') {
-                if (b.win_rate !== a.win_rate) return b.win_rate - a.win_rate;
-                return b.played - a.played;
+            if (b[field] !== a[field]) {
+                return (b[field] || 0) - (a[field] || 0);
             }
-            return (b[field] || 0) - (a[field] || 0);
+            // スコアが同じ場合はプレイ回数や別の指標で比較
+            if (field === 'win_rate') return (b.played || 0) - (a.played || 0);
+            return (b.win_rate || 0) - (a.win_rate || 0);
         });
         
         // Limit to top 20
