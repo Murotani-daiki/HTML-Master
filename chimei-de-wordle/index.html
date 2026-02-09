@@ -814,6 +814,233 @@
         .result-answer.lost {
             color: #e74c3c;
         }
+
+        /* Ranking Modal Styles */
+        .ranking-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .ranking-tab {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #999;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .ranking-tab:hover {
+            color: #666;
+        }
+
+        .ranking-tab.active {
+            color: var(--correct);
+            border-bottom-color: var(--correct);
+        }
+
+        .ranking-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            border-radius: 10px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            transition: background 0.2s;
+            gap: 12px;
+        }
+
+        .ranking-item:hover {
+            background: #f0f1f3;
+        }
+
+        .ranking-item.me {
+            background: #e8f5e9;
+            border: 2px solid var(--correct);
+        }
+
+        .ranking-item.top1 {
+            background: linear-gradient(135deg, #fff9e6, #fff3cc);
+            border: 2px solid #ffd700;
+        }
+
+        .ranking-item.top2 {
+            background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+            border: 2px solid #c0c0c0;
+        }
+
+        .ranking-item.top3 {
+            background: linear-gradient(135deg, #fef0e8, #fde0cc);
+            border: 2px solid #cd7f32;
+        }
+
+        .ranking-rank {
+            font-size: 1.1rem;
+            font-weight: 900;
+            min-width: 32px;
+            text-align: center;
+            color: #666;
+        }
+
+        .ranking-rank.gold { color: #ffd700; }
+        .ranking-rank.silver { color: #c0c0c0; }
+        .ranking-rank.bronze { color: #cd7f32; }
+
+        .ranking-name {
+            flex: 1;
+            font-weight: 700;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .ranking-score {
+            text-align: right;
+            min-width: 60px;
+        }
+
+        .ranking-score .score-main {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: var(--correct);
+        }
+
+        .ranking-score .score-label {
+            font-size: 0.65rem;
+            color: #999;
+        }
+
+        .ranking-detail {
+            font-size: 0.7rem;
+            color: #888;
+            min-width: 70px;
+            text-align: right;
+        }
+
+        .ranking-empty {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .ranking-empty i {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 12px;
+            color: #ddd;
+        }
+
+        /* Nickname input */
+        .nickname-input-group {
+            display: flex;
+            gap: 8px;
+            margin: 16px 0;
+            justify-content: center;
+        }
+
+        .nickname-input-group input {
+            padding: 10px 14px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            width: 180px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .nickname-input-group input:focus {
+            border-color: var(--correct);
+        }
+
+        .nickname-input-group button {
+            padding: 10px 18px;
+            background: var(--correct);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+
+        .nickname-input-group button:hover {
+            background: #5a9a54;
+        }
+
+        .nickname-display {
+            text-align: center;
+            margin: 12px 0;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .nickname-display strong {
+            color: var(--text);
+        }
+
+        .nickname-display .change-name {
+            color: var(--correct);
+            cursor: pointer;
+            margin-left: 8px;
+            font-size: 0.8rem;
+            text-decoration: underline;
+        }
+
+        .ranking-loading {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+
+        .ranking-loading i {
+            font-size: 1.5rem;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .my-ranking-bar {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .my-ranking-bar .ranking-rank {
+            font-size: 1.3rem;
+        }
+
+        .my-ranking-bar .ranking-name {
+            font-size: 0.95rem;
+        }
+
+        .my-ranking-bar .score-main {
+            font-size: 1.3rem;
+        }
     </style>
     
     <!-- JSON-LD Structured Data -->
@@ -850,6 +1077,7 @@
     </h1>
     <div class="subtitle">Japanese Place Name Wordle</div>
     <div class="header-buttons">
+        <button class="header-btn" id="rankingBtn" title="ランキング"><i class="fas fa-trophy"></i></button>
         <button class="header-btn" id="helpBtn" title="遊び方"><i class="fas fa-question-circle"></i></button>
         <button class="header-btn" id="statsBtn" title="統計"><i class="fas fa-chart-bar"></i></button>
     </div>
@@ -1058,6 +1286,41 @@
             </div>
         </div>
         <div id="guessDistribution" style="padding: 0 20px;"></div>
+    </div>
+</div>
+
+<!-- Ranking Modal -->
+<div class="modal-overlay" id="rankingModal">
+    <div class="modal" style="max-width: 500px;">
+        <button class="modal-close" id="rankingClose">&times;</button>
+        <h2>🏆 ランキング</h2>
+        
+        <div id="nicknameSection"></div>
+
+        <div class="ranking-tabs">
+            <button class="ranking-tab active" data-tab="streak" id="tabStreak">🔥 現在の連勝</button>
+            <button class="ranking-tab" data-tab="best" id="tabBest">⭐ 最大連勝</button>
+            <button class="ranking-tab" data-tab="winrate" id="tabWinrate">📊 勝率</button>
+        </div>
+
+        <div id="myRankingBar"></div>
+        <div class="ranking-list" id="rankingList">
+            <div class="ranking-loading"><i class="fas fa-spinner"></i><br>読み込み中...</div>
+        </div>
+    </div>
+</div>
+
+<!-- Nickname Registration Modal -->
+<div class="modal-overlay" id="nicknameModal">
+    <div class="modal" style="max-width: 380px;">
+        <button class="modal-close" id="nicknameClose">&times;</button>
+        <h2>👤 ニックネーム登録</h2>
+        <p style="font-size:0.85rem; color:#666;">ランキングに表示される名前を設定してください。</p>
+        <div class="nickname-input-group">
+            <input type="text" id="nicknameInput" placeholder="ニックネーム" maxlength="12">
+            <button id="nicknameSubmit">登録</button>
+        </div>
+        <p style="font-size:0.75rem; color:#aaa; text-align:center;">※ 1〜12文字で設定できます</p>
     </div>
 </div>
 
@@ -1430,6 +1693,9 @@ function submitGuess() {
             stats.distribution[currentRow + 1]++;
             saveStats(stats);
             
+            // Sync ranking to server
+            syncRankingToServer();
+            
             setTimeout(() => {
                 showConfetti();
                 showResult(true, currentRow + 1);
@@ -1441,6 +1707,9 @@ function submitGuess() {
             stats.played++;
             stats.streak = 0;
             saveStats(stats);
+            
+            // Sync ranking to server
+            syncRankingToServer();
             
             setTimeout(() => {
                 showResult(false, null);
@@ -1710,6 +1979,271 @@ function showStats() {
 }
 
 // ==============================
+// RANKING SYSTEM
+// ==============================
+let currentRankingTab = 'streak';
+
+function getPlayerId() {
+    let id = localStorage.getItem('chimeidle-player-id');
+    if (!id) {
+        id = 'p_' + crypto.randomUUID();
+        localStorage.setItem('chimeidle-player-id', id);
+    }
+    return id;
+}
+
+function getPlayerName() {
+    return localStorage.getItem('chimeidle-player-name') || '';
+}
+
+function setPlayerName(name) {
+    localStorage.setItem('chimeidle-player-name', name);
+}
+
+function renderNicknameSection() {
+    const section = document.getElementById('nicknameSection');
+    const name = getPlayerName();
+    if (name) {
+        section.innerHTML = `
+            <div class="nickname-display">
+                <i class="fas fa-user"></i> <strong>${escapeHTML(name)}</strong>
+                <span class="change-name" id="changeNameBtn">変更</span>
+            </div>
+        `;
+        document.getElementById('changeNameBtn').addEventListener('click', () => {
+            openNicknameModal();
+        });
+    } else {
+        section.innerHTML = `
+            <div style="text-align:center; margin: 12px 0;">
+                <button class="btn btn-primary" id="registerNameBtn" style="font-size:0.85rem; padding:8px 20px;">
+                    <i class="fas fa-user-plus"></i> ニックネームを登録してランキングに参加
+                </button>
+            </div>
+        `;
+        document.getElementById('registerNameBtn').addEventListener('click', () => {
+            openNicknameModal();
+        });
+    }
+}
+
+function escapeHTML(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
+function openNicknameModal() {
+    const modal = document.getElementById('nicknameModal');
+    const input = document.getElementById('nicknameInput');
+    input.value = getPlayerName();
+    modal.classList.add('active');
+    setTimeout(() => input.focus(), 100);
+}
+
+function closeNicknameModal() {
+    document.getElementById('nicknameModal').classList.remove('active');
+}
+
+async function submitNickname() {
+    const input = document.getElementById('nicknameInput');
+    const name = input.value.trim();
+    if (!name || name.length < 1 || name.length > 12) {
+        showToast('1〜12文字で入力してください');
+        return;
+    }
+    setPlayerName(name);
+    closeNicknameModal();
+    showToast('ニックネームを設定しました！');
+    
+    // 現在の統計をサーバーに送信
+    await syncRankingToServer();
+    renderNicknameSection();
+    loadRanking(currentRankingTab);
+}
+
+async function syncRankingToServer() {
+    const name = getPlayerName();
+    if (!name) return;
+    
+    const playerId = getPlayerId();
+    const stats = loadStats();
+    const winRate = stats.played > 0 ? Math.round((stats.won / stats.played) * 100) : 0;
+    
+    const data = {
+        player_name: name,
+        player_id: playerId,
+        current_streak: stats.streak,
+        best_streak: stats.bestStreak,
+        played: stats.played,
+        won: stats.won,
+        win_rate: winRate
+    };
+    
+    try {
+        // 既存レコードを検索
+        const res = await fetch(`tables/rankings?search=${encodeURIComponent(playerId)}&limit=100`);
+        const json = await res.json();
+        
+        const existing = json.data && json.data.find(r => r.player_id === playerId);
+        
+        if (existing) {
+            // 更新
+            await fetch(`tables/rankings/${existing.id}`, {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+        } else {
+            // 新規作成
+            await fetch(`tables/rankings`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+        }
+    } catch (err) {
+        console.error('Ranking sync error:', err);
+    }
+}
+
+async function loadRanking(tab) {
+    currentRankingTab = tab;
+    const listEl = document.getElementById('rankingList');
+    const myBarEl = document.getElementById('myRankingBar');
+    listEl.innerHTML = '<div class="ranking-loading"><i class="fas fa-spinner"></i><br>読み込み中...</div>';
+    myBarEl.innerHTML = '';
+    
+    // Update tab styles
+    document.querySelectorAll('.ranking-tab').forEach(t => t.classList.remove('active'));
+    document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+    
+    try {
+        // Fetch all rankings
+        const res = await fetch('tables/rankings?limit=100&sort=-' + getSortField(tab));
+        const json = await res.json();
+        let items = json.data || [];
+        
+        // Sort client-side to ensure correct order
+        items.sort((a, b) => {
+            const field = getSortField(tab);
+            if (field === 'win_rate') {
+                // 勝率は同率の場合プレイ数で比較
+                if (b.win_rate !== a.win_rate) return b.win_rate - a.win_rate;
+                return b.played - a.played;
+            }
+            return (b[field] || 0) - (a[field] || 0);
+        });
+        
+        // Limit to top 20
+        const top = items.slice(0, 20);
+        
+        if (top.length === 0) {
+            listEl.innerHTML = '<div class="ranking-empty"><i class="fas fa-trophy"></i>まだランキングデータがありません。<br>ゲームをプレイしてランキングに参加しよう！</div>';
+            return;
+        }
+        
+        const playerId = getPlayerId();
+        
+        // My ranking bar
+        const myIdx = items.findIndex(r => r.player_id === playerId);
+        if (myIdx >= 0) {
+            const my = items[myIdx];
+            const rank = myIdx + 1;
+            myBarEl.innerHTML = `
+                <div class="my-ranking-bar">
+                    <div class="ranking-rank">${getRankDisplay(rank)}</div>
+                    <div class="ranking-name"><i class="fas fa-user"></i> ${escapeHTML(my.player_name)}（あなた）</div>
+                    <div class="ranking-score">
+                        <div class="score-main">${getScoreValue(my, tab)}</div>
+                        <div class="score-label">${getScoreLabel(tab)}</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Render list
+        let html = '';
+        top.forEach((item, idx) => {
+            const rank = idx + 1;
+            const isMe = item.player_id === playerId;
+            let cls = 'ranking-item';
+            if (isMe) cls += ' me';
+            if (rank === 1) cls += ' top1';
+            else if (rank === 2) cls += ' top2';
+            else if (rank === 3) cls += ' top3';
+            
+            html += `
+                <div class="${cls}">
+                    <div class="ranking-rank ${rank === 1 ? 'gold' : rank === 2 ? 'silver' : rank === 3 ? 'bronze' : ''}">${getRankDisplay(rank)}</div>
+                    <div class="ranking-name">${escapeHTML(item.player_name)}${isMe ? ' 👈' : ''}</div>
+                    <div class="ranking-score">
+                        <div class="score-main">${getScoreValue(item, tab)}</div>
+                        <div class="score-label">${getScoreLabel(tab)}</div>
+                    </div>
+                    <div class="ranking-detail">${getRankingDetail(item, tab)}</div>
+                </div>
+            `;
+        });
+        
+        listEl.innerHTML = html;
+        
+    } catch (err) {
+        console.error('Load ranking error:', err);
+        listEl.innerHTML = '<div class="ranking-empty"><i class="fas fa-exclamation-triangle"></i>ランキングの読み込みに失敗しました。</div>';
+    }
+}
+
+function getSortField(tab) {
+    switch (tab) {
+        case 'streak': return 'current_streak';
+        case 'best': return 'best_streak';
+        case 'winrate': return 'win_rate';
+        default: return 'current_streak';
+    }
+}
+
+function getScoreValue(item, tab) {
+    switch (tab) {
+        case 'streak': return item.current_streak || 0;
+        case 'best': return item.best_streak || 0;
+        case 'winrate': return (item.win_rate || 0) + '%';
+        default: return item.current_streak || 0;
+    }
+}
+
+function getScoreLabel(tab) {
+    switch (tab) {
+        case 'streak': return '連勝中';
+        case 'best': return '最大連勝';
+        case 'winrate': return '勝率';
+        default: return '連勝中';
+    }
+}
+
+function getRankingDetail(item, tab) {
+    switch (tab) {
+        case 'streak': return `最大 ${item.best_streak || 0} / ${item.played || 0}回`;
+        case 'best': return `現在 ${item.current_streak || 0} / ${item.played || 0}回`;
+        case 'winrate': return `${item.won || 0}勝 / ${item.played || 0}回`;
+        default: return '';
+    }
+}
+
+function getRankDisplay(rank) {
+    if (rank === 1) return '🥇';
+    if (rank === 2) return '🥈';
+    if (rank === 3) return '🥉';
+    return rank;
+}
+
+function showRanking() {
+    renderNicknameSection();
+    loadRanking(currentRankingTab);
+    document.getElementById('rankingModal').classList.add('active');
+}
+
+// ==============================
 // KEYBOARD HANDLER
 // ==============================
 document.addEventListener('keydown', (e) => {
@@ -1734,12 +2268,26 @@ document.addEventListener('keydown', (e) => {
 // ==============================
 document.getElementById('helpBtn').addEventListener('click', showHelp);
 document.getElementById('statsBtn').addEventListener('click', showStats);
+document.getElementById('rankingBtn').addEventListener('click', showRanking);
 document.getElementById('helpClose').addEventListener('click', () => {
     document.getElementById('helpModal').classList.remove('active');
 });
 document.getElementById('statsClose').addEventListener('click', () => {
     document.getElementById('statsModal').classList.remove('active');
 });
+document.getElementById('rankingClose').addEventListener('click', () => {
+    document.getElementById('rankingModal').classList.remove('active');
+});
+document.getElementById('nicknameClose').addEventListener('click', closeNicknameModal);
+document.getElementById('nicknameSubmit').addEventListener('click', submitNickname);
+document.getElementById('nicknameInput').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') submitNickname();
+});
+
+// Ranking tab clicks
+document.getElementById('tabStreak').addEventListener('click', () => loadRanking('streak'));
+document.getElementById('tabBest').addEventListener('click', () => loadRanking('best'));
+document.getElementById('tabWinrate').addEventListener('click', () => loadRanking('winrate'));
 document.getElementById('resultClose').addEventListener('click', closeResult);
 document.getElementById('shareBtn').addEventListener('click', shareResult);
 document.getElementById('shareClose').addEventListener('click', closeShareModal);
@@ -1751,7 +2299,7 @@ document.getElementById('newGameBtn').addEventListener('click', () => {
 });
 
 // Close modals on overlay click
-['resultModal', 'helpModal', 'statsModal'].forEach(id => {
+['resultModal', 'helpModal', 'statsModal', 'rankingModal', 'nicknameModal'].forEach(id => {
     document.getElementById(id).addEventListener('click', (e) => {
         if (e.target === e.currentTarget) {
             e.currentTarget.classList.remove('active');
