@@ -1,0 +1,194 @@
+.lecture-content {
+    max-width: 700px;
+    text-align: left;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    /* Fixed height for scroll */
+}
+
+.lecture-header {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 1), rgba(30, 41, 59, 1));
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.lecture-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    background: rgba(56, 189, 248, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    font-family: 'Fira Code', monospace;
+}
+
+.lecture-header h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.lecture-points {
+    padding: 2rem;
+    background: var(--card-bg);
+    overflow-y: auto;
+    flex: 1;
+    will-change: scroll-position;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* Optimize scrollbar */
+.lecture-points::-webkit-scrollbar {
+    width: 8px;
+}
+
+.lecture-points::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.lecture-points::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.lecture-points::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Rich Content Styles */
+.lecture-text {
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    color: #e2e8f0;
+    font-size: 1.05rem;
+}
+
+.lecture-text p {
+    margin-bottom: 1rem;
+}
+
+.lecture-text strong {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.lecture-example {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.lecture-example::before {
+    content: "EXAMPLE";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #334155;
+    color: #94a3b8;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-bottom-left-radius: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.lecture-example h4 {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lecture-example pre {
+    font-family: 'Fira Code', monospace;
+    color: #a5f3fc;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.lecture-note {
+    background: rgba(16, 185, 129, 0.1);
+    border-left: 4px solid var(--success-color);
+    padding: 1rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 1.5rem;
+}
+
+.lecture-note p {
+    margin: 0;
+    color: #d1fae5;
+    font-size: 0.95rem;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+/* Legacy styles */
+.lecture-point-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.point-icon {
+    font-size: 1.5rem;
+    background: rgba(56, 189, 248, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.point-text {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.lecture-footer {
+    padding: 1.5rem 2rem;
+    background: rgba(15, 23, 42, 0.95);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.lecture-hint {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+    .lecture-content {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+}

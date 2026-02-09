@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.webp" type="image/webp">
+    <title>Python Master | レベル別練習サイト</title>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1501905149062104"
+        crossorigin="anonymous"></script>
+    <!-- Pyodide CDN -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lecture.css">
+    <style>
+        :root {
+            --accent-color: #3b82f6;
+            --secondary-color: #eab308;
+        }
+
+        #current-level-label {
+            color: var(--secondary-color);
+        }
+
+        .dot.active {
+            background: var(--accent-color);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .primary-btn:hover {
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        .lecture-badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .file-tab.active {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            background: rgba(234, 179, 8, 0.05);
+        }
+
+        /* Adjust console for Python text-heavy output */
+        #console-output {
+            font-family: 'Fira Code', monospace;
+            padding: 1rem;
+            color: #e5e7eb;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-main">
+                <a href="py_levels.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> 一覧
+                </a>
+                <div class="current-level-info">
+                    <span id="current-level-label">Level 1</span>
+                    <span id="current-level-title">Python基礎</span>
+                </div>
+            </div>
+
+            <div class="step-progress-container">
+                <div class="step-dots" id="step-dots">
+                    <!-- Dots injected by JS -->
+                </div>
+                <div class="progress-details">
+                    <span id="progress-text">1/3</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Left: Instructions -->
+            <section class="instructions-panel">
+                <div class="panel-header">
+                    <span><i class="fas fa-book-open"></i> ガイド</span>
+                </div>
+                <div class="instructions-content">
+                    <div class="card">
+                        <h2 id="challenge-title">Loading...</h2>
+                        <div id="learning-points" class="learning-points hidden">
+                            <!-- Injected -->
+                        </div>
+                        <p id="challenge-desc">Pyodideを読み込んでいます...</p>
+                        <button id="show-lecture-btn" class="understand-btn hidden">
+                            <i class="fas fa-lightbulb"></i> ヒント・解説を見る
+                        </button>
+                    </div>
+
+                    <div class="requirements-card">
+                        <div class="req-header">
+                            <span class="req-icon">🎯</span>
+                            <h3>クリア条件</h3>
+                        </div>
+                        <ul class="requirements-list" id="requirements-list">
+                            <!-- Injected -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="instructions-footer">
+                    <button id="prev-btn" class="prev-btn hidden">前のステップへ</button>
+                    <button id="check-btn" class="primary-btn" disabled>
+                        <i class="fas fa-play"></i> 実行してチェック
+                    </button>
+                </div>
+            </section>
+
+            <!-- Center: Editor -->
+            <section class="editor-panel">
+                <div class="panel-lock hidden" id="editor-lock">
+                    <i class="fas fa-lock"></i> ガイドを読んでからスタート
+                </div>
+                <div class="panel-header">
+                    <div class="file-tabs">
+                        <button class="file-tab active" id="js-tab">script.py</button>
+                    </div>
+                </div>
+                <div class="code-editor-wrapper">
+                    <div class="line-numbers">1</div>
+                    <div class="editor-scroll-container">
+                        <pre id="code-prefix" class="code-prefix"></pre>
+                        <textarea id="code-editor" spellcheck="false" placeholder="# ここにコードを書く"></textarea>
+                        <pre id="code-suffix" class="code-suffix"></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right: Preview/Console -->
+            <section class="preview-panel">
+                <div class="panel-lock hidden" id="preview-lock"></div>
+                <div class="panel-header">
+                    <span><i class="fas fa-desktop"></i> 出力結果</span>
+                    <button id="refresh-preview"><i class="fas fa-sync-alt"></i></button>
+                </div>
+
+                <!-- Preview Frame (Often hidden for pure Python, but kept for future plotting) -->
+                <div class="preview-window" style="display: none; height: 0;">
+                    <iframe id="preview-frame"></iframe>
+                </div>
+
+                <!-- Console Output -->
+                <div id="console-output" style="background: #1e1e1e; height: 100%; border-top: 1px solid #333;">
+                    <div style="color: #666; font-style: italic;"># 出力がここに表示されます...</div>
+                </div>
+            </section>
+        </main>
+
+        <div id="lecture-modal" class="modal hidden">
+            <div class="modal-content lecture-content">
+                <div class="lecture-header">
+                    <span class="lecture-badge">LESSON</span>
+                    <h2 id="lecture-title">見出しを作ってみよう</h2>
+                </div>
+                <div id="lecture-points" class="lecture-points">
+                    <!-- Points injected here -->
+                </div>
+                <div class="lecture-footer">
+                    <p class="lecture-hint">この内容を理解してから次へ進みましょう</p>
+                    <button id="start-lecture-btn" class="primary-btn">わかった！挑戦する</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="success-icon">🎉</div>
+                <h2 id="modal-title">素晴らしい！</h2>
+                <p id="modal-desc">このチャレンジをクリアしました。次のステップに進みましょう！</p>
+                <button id="next-btn" class="primary-btn">次のレベルへ</button>
+            </div>
+        </div>
+
+        <footer
+            style="display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 2rem 5%; border-top: 1px solid var(--border-color); background: rgba(15, 23, 42, 0.9);">
+            <div class="footer-links" style="display: flex; gap: 2rem;">
+                <a href="privacy.html"
+                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                <a href="terms.html"
+                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                <a href="contact.html"
+                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+            </div>
+            <p>&copy; 2026 Python Master - Advanced Agentic Coding Project</p>
+        </footer>
+    </div>
+    <script src="py_script.js"></script>
+</body>
+
+</html>

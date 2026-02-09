@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML Masterの全カリキュラム一覧。基礎から応用、LP制作まで、段階的に学べるステップアップコースを用意しています。">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1501905149062104"
+        crossorigin="anonymous"></script>
+
+    <!-- OGP -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="HTML Master | カリキュラム一覧">
+    <meta property="og:description" content="基礎から応用、LP制作まで。全12レベルのステップアップコース。">
+    <meta property="og:image" content="favicon.webp">
+    <meta property="og:url" content="levels.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@EduKodomo98564">
+    <meta name="twitter:title" content="HTML Master | カリキュラム一覧">
+    <meta name="twitter:description" content="基礎から応用、LP制作まで。全12レベルのステップアップコース。">
+    <meta name="twitter:image" content="favicon.webp">
+
+    <link rel="icon" href="favicon.webp" type="image/webp">
+    <title>HTML Master | カリキュラム一覧</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .levels-page-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Reuse badge style for consistency if needed */
+        .level-item-wrapper {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .level-item-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .level-item-header:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .level-content {
+            padding: 0 2rem 1.5rem 2rem;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+            max-height: 1000px;
+            /* arbitrary large value */
+            opacity: 1;
+        }
+
+        .level-content.collapsed {
+            max-height: 0;
+            padding-bottom: 0;
+            opacity: 0;
+        }
+
+        .chevron {
+            margin-left: auto;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+
+        .level-item-wrapper.expanded .chevron {
+            transform: rotate(180deg);
+        }
+
+        .level-item-wrapper.expanded {
+            border-color: var(--accent-color);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        @media (max-width: 480px) {
+            .levels-page-header {
+                padding: 0.8rem 5%;
+            }
+
+            .levels-page-header .secondary-btn-home {
+                padding: 0.4rem 0.8rem !important;
+                font-size: 0.75rem !important;
+                width: auto !important;
+            }
+
+            .levels-page-header .logo h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="levels-page-header">
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <a href="index.html" class="logo">
+                    <h1>HTML Master</h1>
+                </a>
+                <nav class="home-nav" style="margin-left: 2rem; display: flex; gap: 1.5rem;">
+                    <a href="guide/index.html"
+                        style="color: var(--accent-color); text-decoration: none; font-weight: 700; font-size: 0.9rem;">HTML解説</a>
+                    <a href="js_index.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.9rem;">JavaScript</a>
+                    <a href="py_index.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.9rem;">Python</a>
+                </nav>
+            </div>
+            <a href="index.html" class="secondary-btn-home">ホームに戻る</a>
+        </header>
+
+        <main>
+            <section class="levels-preview" style="background: transparent; padding-top: 4rem;">
+                <div class="levels-content">
+                    <h2>全カリキュラム一覧</h2>
+                    <p
+                        style="text-align: center; margin-bottom: 4rem; color: #94a3b8; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        基礎から応用、そして実践まで。<br>一歩ずつ着実にスキルを積み上げられる、全12レベルのステップアップコースです。
+                    </p>
+
+                    <div class="level-list">
+                        <!-- Level 1 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl">Lv. 1</span>
+                                <div class="lvl-text">
+                                    <h3>HTML基礎：基本タグ</h3>
+                                    <p>ウェブの骨格を作る最も重要なタグを習得します。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level1-1"><span>1-1</span> 見出し（h1）の作成</a></li>
+                                    <li><a href="app.html#level1-2"><span>1-2</span> 段落（p）での文章構造</a></li>
+                                    <li><a href="app.html#level1-3"><span>1-3</span> 改行（br）の挿入</a></li>
+                                    <li><a href="app.html#level1-4"><span>1-4</span> 範囲（span）のグループ化</a></li>
+                                    <li><a href="app.html#level1-5"><span>1-5</span> 水平線（hr）での区切り</a></li>
+                                    <li><a href="app.html#level1-6"><span>1-6</span> 強調（strong）による装飾</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level 2 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl">Lv. 2</span>
+                                <div class="lvl-text">
+                                    <h3>HTML基礎：リンクとリスト</h3>
+                                    <p>情報の整理とページ間の繋がりを学びます。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level2-1"><span>2-1</span> 箇条書き（ul, li）の活用</a></li>
+                                    <li><a href="app.html#level2-2"><span>2-2</span> リンク（a）の設置方法</a></li>
+                                    <li><a href="app.html#level2-3"><span>2-3</span> 画像（img）の埋め込み</a></li>
+                                    <li><a href="app.html#level2-4"><span>2-4</span> 順序リスト（ol）の作成</a></li>
+                                    <li><a href="app.html#level2-5"><span>2-5</span> 表（table）の基礎</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level 3 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl">Lv. 3</span>
+                                <div class="lvl-text">
+                                    <h3>HTML応用：フォーム</h3>
+                                    <p>ユーザーと対話するインタラクティブな要素を作成します。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level3-1"><span>3-1</span> テキスト入力（input）の基礎</a></li>
+                                    <li><a href="app.html#level3-2"><span>3-2</span> 送信ボタン（button）の配置</a></li>
+                                    <li><a href="app.html#level3-3"><span>3-3</span> 選択（select）メニューの実装</a></li>
+                                    <li><a href="app.html#level3-4"><span>3-4</span> 同意チェックボックスの作成</a></li>
+                                    <li><a href="app.html#level3-5"><span>3-5</span> 俺か俺以外か（ラジオボタン）</a></li>
+                                    <li><a href="app.html#level3-6"><span>3-6</span> 自由な感想入力（textarea）</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level 4 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl">Lv. 4</span>
+                                <div class="lvl-text">
+                                    <h3>HTML応用：レイアウト</h3>
+                                    <p>ページの骨組みを作るための構造化タグを学びます。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level4-1"><span>4-1</span> ヘッダー（header）の作成</a></li>
+                                    <li><a href="app.html#level4-2"><span>4-2</span> メインエリア（main）の定義</a></li>
+                                    <li><a href="app.html#level4-3"><span>4-3</span> フッター（footer）の配置</a></li>
+                                    <li><a href="app.html#level4-4"><span>4-4</span> 区画（section）による整理</a></li>
+                                    <li><a href="app.html#level4-5"><span>4-5</span> グループ化（div）の活用</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level 5 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">Lv.
+                                    5</span>
+                                <div class="lvl-text">
+                                    <h3>CSS基礎：色と文字</h3>
+                                    <p>スタイルを適用して見た目を美しく変えてみましょう。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level5-1"><span>5-1</span> 文字の色を変える（color）</a></li>
+                                    <li><a href="app.html#level5-2"><span>5-2</span> 背景色をつける（background）</a></li>
+                                    <li><a href="app.html#level5-3"><span>5-3</span> 文字の大きさと太さ（font）</a></li>
+                                    <li><a href="app.html#level5-4"><span>5-4</span> フォントの種類（font-family）</a></li>
+                                    <li><a href="app.html#level5-5"><span>5-5</span> 行間の調整（line-height）</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level 6 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">Lv.
+                                    6</span>
+                                <div class="lvl-text">
+                                    <h3>CSS基礎：配置と空白</h3>
+                                    <p>要素の配置や余白を調整してレイアウトを整えます。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level6-1"><span>6-1</span> 文字位置の調整（text-align）</a></li>
+                                    <li><a href="app.html#level6-2"><span>6-2</span> 内側の余白（padding）</a></li>
+                                    <li><a href="app.html#level6-3"><span>6-3</span> 外側の余白（margin）</a></li>
+                                    <li><a href="app.html#level6-4"><span>6-4</span> 要素の幅と高さ（width/height）</a></li>
+                                    <li><a href="app.html#level6-5"><span>6-5</span> ブロックの中央揃え（margin: auto）</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level 7 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">Lv.
+                                    7</span>
+                                <div class="lvl-text">
+                                    <h3>CSS応用：デザイン</h3>
+                                    <p>枠線や影をつけて、プロのようなデザインを作ります。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level7-1"><span>7-1</span> 枠線の装飾（border）</a></li>
+                                    <li><a href="app.html#level7-2"><span>7-2</span> 角を丸くする（radius）</a></li>
+                                    <li><a href="app.html#level7-3"><span>7-3</span> 影をつける（box-shadow）</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level 8 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">Lv.
+                                    8</span>
+                                <div class="lvl-text">
+                                    <h3>CSS応用：フレックスボックス</h3>
+                                    <p>要素を自由自在に配置する現代的なレイアウト手法です。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level8-1"><span>8-1</span> 横並びにする（flex）</a></li>
+                                    <li><a href="app.html#level8-2"><span>8-2</span> 横方向の配置（justify）</a></li>
+                                    <li><a href="app.html#level8-3"><span>8-3</span> 縦方向の揃え（align）</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level 9 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">Lv.
+                                    9</span>
+                                <div class="lvl-text">
+                                    <h3>CSS応用：アニメとスマホ</h3>
+                                    <p>動きのある表現やスマートフォンへの対応を学びます。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level9-1"><span>9-1</span> 滑らかな変化（transition）</a></li>
+                                    <li><a href="app.html#level9-2"><span>9-2</span> スマホ対応（Media Query）</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level 10 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl" style="background: rgba(244, 63, 94, 0.15); color: #f43f5e;">Lv.
+                                    10</span>
+                                <div class="lvl-text">
+                                    <h3>実践編：プロフィールサイト</h3>
+                                    <p>学んだ知識を組み合わせて、自己紹介サイトを作成します。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level10-1"><span>10-1</span> 土台の作成（レイアウト）</a></li>
+                                    <li><a href="app.html#level10-2"><span>10-2</span> 自己紹介セクション</a></li>
+                                    <li><a href="app.html#level10-3"><span>10-3</span> スキル一覧のデザイン</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level 11 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl" style="background: rgba(244, 63, 94, 0.15); color: #f43f5e;">Lv.
+                                    11</span>
+                                <div class="lvl-text">
+                                    <h3>実践編：ブログ記事ページ</h3>
+                                    <p>読みやすい記事のデザインとレイアウトを実装します。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level11-1"><span>11-1</span> 記事レイアウトの構築</a></li>
+                                    <li><a href="app.html#level11-2"><span>11-2</span> 見出しのデザイン装飾</a></li>
+                                    <li><a href="app.html#level11-3"><span>11-3</span> リッチなボタン作成</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level 12 -->
+                        <div class="level-item-wrapper" onclick="toggleLevel(this)">
+                            <div class="level-item-header">
+                                <span class="lvl" style="background: rgba(244, 63, 94, 0.15); color: #f43f5e;">Lv.
+                                    12</span>
+                                <div class="lvl-text">
+                                    <h3>実践編：ランディングページ</h3>
+                                    <p>集大成として、製品やサービスを紹介するページを作ります。</p>
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="level-content collapsed">
+                                <ul class="level-curriculum">
+                                    <li><a href="app.html#level12-1"><span>12-1</span> インパクトのあるヒーローエリア</a></li>
+                                    <li><a href="app.html#level12-2"><span>12-2</span> カード型レイアウトの配置</a></li>
+                                    <li><a href="app.html#level12-3"><span>12-3</span> お問い合わせフォーム</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="other-courses"
+                style="padding: 4rem 5%; background: rgba(15, 23, 42, 0.2); border-top: 1px solid var(--border-color);">
+                <div class="section-title">
+                    <h2>他のコースもチェック</h2>
+                    <p>スキルアップを継続しましょう。</p>
+                </div>
+                <div class="course-grid">
+                    <a href="js_index.html" class="course-card js">
+                        <div class="course-icon">JS</div>
+                        <div class="course-info">
+                            <h3>JavaScript Master</h3>
+                            <p>動的なウェブサイト制作の基礎から応用まで。</p>
+                            <span class="view-btn">コースを見る →</span>
+                        </div>
+                    </a>
+                    <a href="py_index.html" class="course-card py">
+                        <div class="course-icon">Py</div>
+                        <div class="course-info">
+                            <h3>Python Master</h3>
+                            <p>AIやデータ分析、自動化に必須の言語をマスター。</p>
+                            <span class="view-btn">コースを見る →</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="home-footer" style="background: rgba(15, 23, 42, 0.4);">
+            <div class="footer-content">
+                <div class="logo">
+                    <h1>HTML Master</h1>
+                </div>
+                <p>&copy; 2026 HTML Master. Built for the future of coding education.</p>
+                <div class="footer-upcoming">
+                    <div class="upcoming-card">
+                        <a href="js_index.html"
+                            style="text-decoration: none; color: inherit; display: flex; gap: 0.6rem; align-items: center;">
+                            <span>JavaScript Master</span>
+                            <span class="upcoming-badge"
+                                style="background: rgba(250, 204, 21, 0.2); color: #facc15; border-color: rgba(250, 204, 21, 0.3);">NEW</span>
+                        </a>
+                    </div>
+                    <div class="upcoming-card">
+                        <a href="py_index.html"
+                            style="text-decoration: none; color: inherit; display: flex; gap: 0.6rem; align-items: center;">
+                            <span>Python Master</span>
+                            <span class="upcoming-badge"
+                                style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">NEW</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links"
+                    style="display: flex; gap: 2rem; margin-bottom: 1rem; justify-content: center;">
+                    <a href="privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://x.com/EduKodomo98564" target="_blank" rel="noopener noreferrer" class="social-link"
+                        title="X (Twitter) をフォロー">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                        <span>Follow on X</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <button class="scroll-to-top" id="scrollToTop" aria-label="ページトップへ戻る">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6" />
+            </svg>
+        </button>
+    </div>
+    <script>
+        // Restore scroll position
+        window.addEventListener('DOMContentLoaded', () => {
+            const scrollPos = localStorage.getItem('levels_scroll_pos');
+            if (scrollPos) {
+                window.scrollTo({
+                    top: parseInt(scrollPos),
+                    behavior: 'instant'
+                });
+            }
+        });
+
+        // Save scroll position on scroll (throttled)
+        let scrollTimeout;
+        const scrollBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            // Existing scroll save logic
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                localStorage.setItem('levels_scroll_pos', window.scrollY);
+            }, 100);
+
+            // New scroll to top visibility logic
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top click logic
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Also save immediately when clicking a level link to be sure
+        document.querySelectorAll('.level-item-link, .level-curriculum a').forEach(link => {
+            link.addEventListener('click', () => {
+                localStorage.setItem('levels_scroll_pos', window.scrollY);
+            });
+        });
+
+        function toggleLevel(headerElement) {
+            const wrapper = headerElement.closest('.level-item-wrapper');
+            const content = wrapper.querySelector('.level-content');
+
+            // Toggle classes
+            wrapper.classList.toggle('expanded');
+
+            if (content.classList.contains('collapsed')) {
+                content.classList.remove('collapsed');
+            } else {
+                content.classList.add('collapsed');
+            }
+        }
+    </script>
+</body>
+
+</html>

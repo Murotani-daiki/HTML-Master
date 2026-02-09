@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | HTML Master</title>
+    <link rel="icon" href="favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .contact-content {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .contact-content h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-content p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .social-link-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .social-link-large:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .social-link-large svg {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 480px) {
+            .contact-content {
+                padding: 1.5rem;
+            }
+
+            .contact-content h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <header class="home-header">
+            <a href="index.html" class="logo">
+                <h1>HTML Master</h1>
+            </a>
+            <nav class="home-nav">
+                <a href="levels.html">レベル</a>
+                <a href="index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+            </nav>
+        </header>
+
+        <main class="contact-container">
+            <div class="contact-content">
+                <h1>お問い合わせ</h1>
+                <p>HTML Masterに関するご質問、不具合の報告、お仕事のご依頼などは、公式X（旧Twitter）のダイレクトメッセージまでお気軽にお問い合わせください。</p>
+
+                <a href="https://x.com/EduKodomo98564" target="_blank" rel="noopener noreferrer"
+                    class="social-link-large">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                    <span>公式X（@EduKodomo98564）へ</span>
+                </a>
+
+                <p style="margin-top: 3rem; font-size: 0.9rem;">
+                    ※原則として、すべてのお問い合わせに目を通しておりますが、内容によってはお返事を差し上げられない場合がございます。あらかじめご了承ください。</p>
+            </div>
+        </main>
+
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="logo">
+                    <h1>HTML Master</h1>
+                </div>
+                <p>&copy; 2026 HTML Master. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
