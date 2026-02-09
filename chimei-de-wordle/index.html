@@ -929,6 +929,22 @@
     </div>
 </div>
 
+<!-- Share Options Modal -->
+<div class="modal-overlay" id="shareModal">
+    <div class="modal" style="width: 300px;">
+        <button class="modal-close" id="shareClose">&times;</button>
+        <h2 style="text-align: center;">結果をシェア</h2>
+        <div class="modal-buttons" style="flex-direction: column; gap: 10px; margin-top: 20px;">
+            <button class="btn btn-primary" id="twitterShareBtn" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <i class="fab fa-twitter"></i> Twitterで共有
+            </button>
+            <button class="btn btn-share" id="copyShareBtn" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <i class="fas fa-copy"></i> 結果をコピー
+            </button>
+        </div>
+    </div>
+</div>
+
 <!-- How to play Modal -->
 <div class="modal-overlay" id="helpModal">
     <div class="modal">
@@ -1547,7 +1563,7 @@ function closeResult() {
 // ==============================
 // SHARE
 // ==============================
-function shareResult() {
+function getShareText() {
     const won = guesses[guesses.length - 1] === answer.romaji.toUpperCase();
     const attemptStr = won ? guesses.length : 'X';
     
@@ -1560,9 +1576,16 @@ function shareResult() {
         text += result.map(r => emojiMap[r]).join('') + '\n';
     });
     
+    return text;
+}
+
+function copyResultToClipboard() {
+    const text = getShareText();
+    
     if (navigator.clipboard) {
         navigator.clipboard.writeText(text).then(() => {
             showToast("結果をコピーしました！");
+            closeShareModal();
         });
     } else {
         // Fallback
@@ -1573,7 +1596,31 @@ function shareResult() {
         document.execCommand('copy');
         document.body.removeChild(ta);
         showToast("結果をコピーしました！");
+        closeShareModal();
     }
+}
+
+function shareOnTwitter() {
+    const text = getShareText();
+    const gameUrl = window.location.href;
+    const tweetText = `${text}\n${gameUrl}`;
+    
+    // Twitter Web Intent
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+    window.open(twitterUrl, 'twitter-share', 'width=600,height=400');
+    closeShareModal();
+}
+
+function openShareModal() {
+    document.getElementById('shareModal').classList.add('active');
+}
+
+function closeShareModal() {
+    document.getElementById('shareModal').classList.remove('active');
+}
+
+function shareResult() {
+    openShareModal();
 }
 
 // ==============================
@@ -1685,6 +1732,9 @@ document.getElementById('statsClose').addEventListener('click', () => {
 });
 document.getElementById('resultClose').addEventListener('click', closeResult);
 document.getElementById('shareBtn').addEventListener('click', shareResult);
+document.getElementById('shareClose').addEventListener('click', closeShareModal);
+document.getElementById('twitterShareBtn').addEventListener('click', shareOnTwitter);
+document.getElementById('copyShareBtn').addEventListener('click', copyResultToClipboard);
 document.getElementById('newGameBtn').addEventListener('click', () => {
     closeResult();
     initGame();
