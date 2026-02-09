@@ -65,7 +65,7 @@ const ANSWER_POOL = [
 "excel","exert","exile","exist","expat","expel","extra","exude","exult",
 "fable","facet","fagot","faint","fairy","faith","false","fancy","farce","fatal",
 "fatty","fault","fauna","feast","feign","feint","fella","felon","femur","fence",
-"feral","ferry","fetch","fetid","fetus","fever","fiber","fibre","field","fiend",
+"feral","ferry","festa","fetch","fetid","fetus","fever","fiber","fibre","field","fiend",
 "fiery","fifth","fifty","fight","filch","filth","final","finch","first","fishy",
 "fixed","fizzy","fjord","flair","flake","flaky","flame","flank","flare","flash",
 "flask","flesh","flick","flier","fling","flint","float","flock","flood","floor",
