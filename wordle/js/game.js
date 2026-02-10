@@ -36,26 +36,34 @@ class WordleGame {
 
     // ---- Word Selection ----
     selectWord() {
-        // Daily mode: same word for everyone each day
         const today = new Date();
-        const dateStr = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
+        this.currentDateStr = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}`;
+
         const savedGame = localStorage.getItem('wordle_daily');
-        
         if (savedGame) {
             const parsed = JSON.parse(savedGame);
-            if (parsed.date === dateStr && !parsed.forceNew) {
+            // Restore if it's the same day (both daily mode and random mode)
+            if (parsed.date === this.currentDateStr) {
                 this.targetWord = parsed.word.toUpperCase();
                 this.restoreGame(parsed);
+                // Keep the forceNew flag if we are in a random game session
+                this.isNewGameSession = parsed.forceNew || false;
                 return;
             }
         }
 
-        // Pick word based on day index
+        // New day or first visit: Set up daily word
+        this.isNewGameSession = false;
+
+        // Calculate days since epoch for consistent daily word
+        const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
         const epoch = new Date(2024, 0, 1);
-        const dayIndex = Math.floor((today - epoch) / (1000 * 60 * 60 * 24));
-        const wordIndex = dayIndex % UNIQUE_TARGETS.length;
+        const dayIndex = Math.floor((startOfToday - epoch) / (1000 * 60 * 60 * 24));
+
+        // Seeded selection to make it feel more random than sequential
+        const wordIndex = (dayIndex * 137) % UNIQUE_TARGETS.length;
         this.targetWord = UNIQUE_TARGETS[wordIndex].toUpperCase();
-        
+
         this.saveGameState();
     }
 
@@ -80,17 +88,9 @@ class WordleGame {
             btn.removeAttribute('data-state');
         });
 
-        // Force new game flag
-        const today = new Date();
-        const dateStr = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
-        localStorage.setItem('wordle_daily', JSON.stringify({
-            date: dateStr,
-            word: this.targetWord,
-            guesses: [],
-            evaluations: [],
-            gameOver: false,
-            forceNew: true
-        }));
+        // Set session as "New Game" (random word)
+        this.isNewGameSession = true;
+        this.saveGameState();
 
         this.closeAllModals();
     }
@@ -130,15 +130,13 @@ class WordleGame {
     }
 
     saveGameState() {
-        const today = new Date();
-        const dateStr = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
         localStorage.setItem('wordle_daily', JSON.stringify({
-            date: dateStr,
+            date: this.currentDateStr,
             word: this.targetWord,
             guesses: this.guesses,
             evaluations: this.evaluations,
             gameOver: this.gameOver,
-            forceNew: false
+            forceNew: this.isNewGameSession
         }));
     }
 
@@ -169,7 +167,7 @@ class WordleGame {
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey || e.metaKey || e.altKey) return;
             if (document.querySelector('.modal:not(.hidden)') && e.key !== 'Escape') return;
-            
+
             if (e.key === 'Escape') {
                 this.closeAllModals();
                 return;
@@ -238,6 +236,7 @@ class WordleGame {
         // Game over buttons
         document.getElementById('newGameBtn').addEventListener('click', () => this.newGame());
         document.getElementById('shareBtn').addEventListener('click', () => this.shareResult());
+        document.getElementById('twitterShareBtn').addEventListener('click', () => this.shareToTwitter());
     }
 
     addLetter(letter) {
@@ -473,7 +472,7 @@ class WordleGame {
         }
 
         answerWord.textContent = this.targetWord;
-        
+
         // Google search link for the answer word's meaning
         const searchQuery = encodeURIComponent(`${this.targetWord.toLowerCase()} meaning`);
         googleLink.href = `https://www.google.com/search?q=${searchQuery}`;
@@ -513,7 +512,7 @@ class WordleGame {
 
     updateStatsDisplay() {
         document.getElementById('stat-played').textContent = this.stats.played;
-        document.getElementById('stat-win-pct').textContent = 
+        document.getElementById('stat-win-pct').textContent =
             this.stats.played > 0 ? Math.round((this.stats.wins / this.stats.played) * 100) : 0;
         document.getElementById('stat-streak').textContent = this.stats.currentStreak;
         document.getElementById('stat-max-streak').textContent = this.stats.maxStreak;
@@ -528,9 +527,9 @@ class WordleGame {
             const pct = Math.max((count / maxCount) * 100, 8);
             const row = document.createElement('div');
             row.classList.add('dist-row');
-            
-            const isCurrentGuess = this.gameOver && 
-                this.guesses.length === i && 
+
+            const isCurrentGuess = this.gameOver &&
+                this.guesses.length === i &&
                 this.guesses[this.guesses.length - 1] === this.targetWord;
 
             row.innerHTML = `
@@ -546,7 +545,7 @@ class WordleGame {
     }
 
     // ---- Share ----
-    shareResult() {
+    generateShareText() {
         const emojiMap = {
             'correct': this.highContrast ? '🟧' : '🟩',
             'present': this.highContrast ? '🟦' : '🟨',
@@ -559,20 +558,36 @@ class WordleGame {
             text += eval_.map(e => emojiMap[e]).join('') + '\n';
         });
 
+        // 日付とURLを追加
+        const displayDate = this.currentDateStr.replace(/-/g, '/');
+        text += `\n${displayDate}\nhttps://html-master.com/wordle/\n#Wordle`;
+
+        return text.trim();
+    }
+
+    shareResult() {
+        const text = this.generateShareText();
+
         if (navigator.clipboard) {
-            navigator.clipboard.writeText(text.trim()).then(() => {
+            navigator.clipboard.writeText(text).then(() => {
                 this.showToast('結果をコピーしました！');
             });
         } else {
             // Fallback
             const textarea = document.createElement('textarea');
-            textarea.value = text.trim();
+            textarea.value = text;
             document.body.appendChild(textarea);
             textarea.select();
             document.execCommand('copy');
             textarea.remove();
             this.showToast('結果をコピーしました！');
         }
+    }
+
+    shareToTwitter() {
+        const text = this.generateShareText();
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+        window.open(twitterUrl, '_blank');
     }
 
     // ---- Settings ----
