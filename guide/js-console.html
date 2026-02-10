@@ -4,35 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>コンソール出力（console.log）：デバッグの基本 | JavaScript Master リファレンス</title>
-    <meta name="description" content="JavaScript開発で最も重要なツール、コンソール出力について。console.logの使い方から、変数の確認、デバッグのコツまで初心者向けに解説します。">
-    <link rel="canonical" href="https://html-master.com/guide/js-console.html">
+    <title>コンソール出力！Eonsole.log�E�：デバッグの基本 | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScript開発で最も重要なチE�Eル、コンソール出力につぁE��。console.logの使ぁE��から、変数の確認、デバッグのコチE��で初忁E��E��けに解説します、E>
+    <link rel="canonical" href="https://www.html-master.com/guide/js-console.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://html-master.com/guide/js-console.html">
-    <meta property="og:title" content="コンソール出力（console.log）：デバッグの基本 | JavaScript Master リファレンス">
+    <meta property="og:url" content="https://www.html-master.com/guide/js-console.html">
+    <meta property="og:title" content="コンソール出力！Eonsole.log�E�：デバッグの基本 | JavaScript Master リファレンス">
     <meta property="og:description"
-        content="JavaScript開発で最も重要なツール、コンソール出力について。console.logの使い方から、変数の確認、デバッグのコツまで初心者向けに解説します。">
-    <meta property="og:image" content="https://html-master.com/favicon.webp">
+        content="JavaScript開発で最も重要なチE�Eル、コンソール出力につぁE��。console.logの使ぁE��から、変数の確認、デバッグのコチE��で初忁E��E��けに解説します、E>
+    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
     <meta property="og:site_name" content="HTML Master">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://html-master.com/guide/js-console.html">
-    <meta name="twitter:title" content="コンソール出力（console.log）：デバッグの基本 | JavaScript Master リファレンス">
+    <meta name="twitter:url" content="https://www.html-master.com/guide/js-console.html">
+    <meta name="twitter:title" content="コンソール出力！Eonsole.log�E�：デバッグの基本 | JavaScript Master リファレンス">
     <meta name="twitter:description"
-        content="JavaScript開発で最も重要なツール、コンソール出力について。console.logの使い方から、変数の確認、デバッグのコツまで初心者向けに解説します。">
-    <meta name="twitter:image" content="https://html-master.com/favicon.webp">
+        content="JavaScript開発で最も重要なチE�Eル、コンソール出力につぁE��。console.logの使ぁE��から、変数の確認、デバッグのコチE��で初忁E��E��けに解説します、E>
+    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "コンソール出力（console.log）：デバッグの基本 | JavaScript Master リファレンス",
-        "description": "JavaScript開発で最も重要なツール、コンソール出力について。console.logの使い方から、変数の確認、デバッグのコツまで初心者向けに解説します。",
-        "image": "https://html-master.com/favicon.webp",
+        "headline": "コンソール出力！Eonsole.log�E�：デバッグの基本 | JavaScript Master リファレンス",
+        "description": "JavaScript開発で最も重要なチE�Eル、コンソール出力につぁE��。console.logの使ぁE��から、変数の確認、デバッグのコチE��で初忁E��E��けに解説します、E,
+        "image": "https://www.html-master.com/favicon.webp",
         "author": {
             "@type": "Organization",
             "name": "HTML Master"
@@ -42,12 +42,12 @@
             "name": "HTML Master",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://html-master.com/favicon.webp"
+                "url": "https://www.html-master.com/favicon.webp"
             }
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://html-master.com/guide/js-console.html"
+            "@id": "https://www.html-master.com/guide/js-console.html"
         }
     }
     </script>
@@ -169,7 +169,7 @@
             </a>
             <nav class="home-nav">
                 <a href="js_index.html">解説一覧</a>
-                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
             </nav>
         </header>
 
@@ -177,98 +177,98 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">デバッグ</span>
-                    <h1>コンソール出力</h1>
-                    <p>console.log()：プログラムの中身をのぞき見る魔法</p>
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">チE��チE��</span>
+                    <h1>コンソール出劁E/h1>
+                    <p>console.log()�E��Eログラムの中身を�Eぞき見る魔況E/p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>なぜコンソールに出力するのか？：開発者の「目」となるツール</h2>
-                    <p>プログラムは、画面には見えない裏側（メモリやCPUの中）で膨大な数の計算や条件判断、データのやり取りを行っています。ソースコードが期待通りに動かないとき、変数の中身が今この瞬間にどうなっているかを確認できなければ、原因の特定は不可能です。
+                    <h2>なぜコンソールに出力する�Eか？：開発老E�E「目」となるツール</h2>
+                    <p>プログラムは、画面には見えなぁE���E�E�メモリやCPUの中�E�で膨大な数の計算や条件判断、データのめE��取りを行ってぁE��す。ソースコードが期征E��りに動かなぁE��き、変数の中身が今この瞬間にどぁE��ってぁE��かを確認できなければ、原因の特定�E不可能です、E
                     </p>
-                    <p>開発者は「コンソール（Console）」と呼ばれる特殊な表示領域を使って、プログラムの内部状態をリアルタイムで監視します。JavaScript Masterの演習環境はもちろん、Google
-                        Chromeなどのブラウザに標準搭載されている「デベロッパーツール」のコンソールは、Web開発において欠かすことのできない最も重要なツールです。</p>
+                    <p>開発老E�E「コンソール�E�Eonsole�E�」と呼ばれる特殊な表示領域を使って、�Eログラムの冁E��状態をリアルタイムで監視します、EavaScript Masterの演習環墁E�Eもちろん、Google
+                        Chromeなどのブラウザに標準搭載されてぁE��「デベロチE��ーチE�Eル」�Eコンソールは、Web開発において欠かすことのできなぁE��も重要なチE�Eルです、E/p>
 
                     <h2>基本の出力：console.log()</h2>
-                    <p>最も頻繁に使われるのが `console.log()` です。丸カッコの中に記述した情報が、そのままコンソールに表示されます。</p>
+                    <p>最も頻繁に使われる�EぁE`console.log()` です。丸カチE��の中に記述した惁E��が、そのままコンソールに表示されます、E/p>
 
                     <div class="code-block-guide">
                         <span class="code-label">JavaScript</span>
-                        <pre>console.log("Hello, World!"); // 文字列を表示
-console.log(123 + 456);       // 計算結果（579）を表示
+                        <pre>console.log("Hello, World!"); // 斁E���Eを表示
+console.log(123 + 456);       // 計算結果�E�E79�E�を表示
 const name = "Taro";
 console.log(name);            // 変数の中身を表示</pre>
                     </div>
 
-                    <h2>情報の重要度に応じた使い分け</h2>
-                    <p>プロフェッショナルな現場では、単に情報を出すだけでなく、その「意味」に応じてメソッドを使い分けます。これにより、膨大なログの中から必要な情報をすぐに見つけ出せるようになります。</p>
+                    <h2>惁E��の重要度に応じた使ぁE�EぁE/h2>
+                    <p>プロフェチE��ョナルな現場では、単に惁E��を�Eすだけでなく、その「意味」に応じてメソチE��を使ぁE�Eけます。これにより、�E大なログの中から忁E��な惁E��をすぐに見つけ�Eせるようになります、E/p>
 
                     <ul>
                         <li><strong style="color: #ef4444;">console.error()</strong>:
-                            エラー情報の出力。コンソール上で赤く表示され、重大な問題であることを示します。</li>
+                            エラー惁E��の出力。コンソール上で赤く表示され、E��大な問題であることを示します、E/li>
                         <li><strong style="color: #f59e0b;">console.warn()</strong>:
-                            警告情報の出力。黄色く表示され、エラーではないものの注意が必要な挙動を知らせます。</li>
+                            警告情報の出力。黁E��く表示され、エラーではなぁE��のの注意が忁E��な挙動を知らせます、E/li>
                         <li><strong style="color: #3b82f6;">console.info()</strong>:
-                            情報の出力。青いアイコンが表示されるブラウザもあり、一般的な通知に使われます。</li>
+                            惁E��の出力。青ぁE��イコンが表示されるブラウザもあり、一般皁E��通知に使われます、E/li>
                     </ul>
 
-                    <h2>データの可視化を極める：console.table()</h2>
-                    <p>配列やオブジェクトなどの複雑なデータを扱うとき、`console.log()` では中身を一つずつクリックして開く手間がかかります。そんな時に魔法のような力を発揮するのが
-                        `console.table()` です。</p>
+                    <h2>チE�Eタの可視化を極める�E�console.table()</h2>
+                    <p>配�EめE��ブジェクトなどの褁E��なチE�Eタを扱ぁE��き、`console.log()` では中身を一つずつクリチE��して開く手間がかかります。そんな時に魔法�Eような力を発揮するのぁE
+                        `console.table()` です、E/p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript：データの表形式表示</span>
+                        <span class="code-label">JavaScript�E�データの表形式表示</span>
                         <pre>const users = [
     { id: 1, name: "田中", age: 25 },
     { id: 2, name: "佐藤", age: 32 }
 ];
-console.table(users); // これだけで美しい表として表示されます！</pre>
+console.table(users); // これだけで美しぁE��として表示されます！E/pre>
                     </div>
 
-                    <h2>応用テクニック：コンソールをデザインする</h2>
-                    <p>意外と知られていないのが、コンソールの出力内容に **CSSスタイルを適用** できる機能です。特定のログを目立たせたい時に非常に有効です。</p>
+                    <h2>応用チE��ニック�E�コンソールをデザインする</h2>
+                    <p>意外と知られてぁE��ぁE�Eが、コンソールの出力�E容に **CSSスタイルを適用** できる機�Eです。特定�Eログを目立たせたぁE��に非常に有効です、E/p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript：スタイリッシュな出力</span>
+                        <span class="code-label">JavaScript�E�スタイリチE��ュな出劁E/span>
                         <pre>console.log(
-    "%c 重大ニュース %c システムを起動しました",
+    "%c 重大ニュース %c シスチE��を起動しました",
     "background: #ef4444; color: white; padding: 2px 5px; border-radius: 3px;",
     "color: #facc15;"
 );</pre>
                     </div>
-                    <p>最初の引数に `%c` を入れると、それ以降のテキストに対して2つ目以降の引数で指定したCSSが適用されます。</p>
+                    <p>最初�E引数に `%c` を�Eれると、それ以降�EチE��ストに対して2つ目以降�E引数で持E��したCSSが適用されます、E/p>
 
-                    <h2>パフォーマンスの計測：console.time()</h2>
-                    <p>「この処理にどれくらいの時間がかかっているか？」を正確に知りたいときは、タイマー機能を使います。</p>
+                    <h2>パフォーマンスの計測�E�console.time()</h2>
+                    <p>「この処琁E��どれくらいの時間がかかってぁE��か？」を正確に知りたぁE��き�E、タイマ�E機�Eを使ぁE��す、E/p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript：時間計測</span>
-                        <pre>console.time("処理時間");
-// 何か重い処理をここに書く
-console.timeEnd("処理時間"); // "処理時間: 1.234ms" と表示されます</pre>
+                        <span class="code-label">JavaScript�E�時間計測</span>
+                        <pre>console.time("処琁E��閁E);
+// 何か重い処琁E��ここに書ぁE
+console.timeEnd("処琁E��閁E); // "処琁E��閁E 1.234ms" と表示されまぁE/pre>
                     </div>
 
                     <div class="point-card">
-                        <h4>💡 実践アドバイス：本番環境でのログ</h4>
+                        <h4>💡 実践アドバイス�E�本番環墁E��のログ</h4>
                         <p>開発中に便利な `console.log()`
-                            ですが、完成したWebサイト（本番環境）に大量に残しておくと、動作がわずかに重くなったり、内部のデータ構造が第三者に漏洩したりするリスクがあります。公開前には不要なログを削除するか、ビルドツールを使って自動的に除去するのが一般的です。
+                            ですが、完�EしたWebサイト（本番環墁E��に大量に残しておくと、動作がわずかに重くなったり、�E部のチE�Eタ構造が第三老E��漏洩したりするリスクがあります。�E開前には不要なログを削除するか、ビルドツールを使って自動的に除去するのが一般皁E��す、E
                         </p>
                     </div>
 
-                    <h2>よくある質問 (Q&A)</h2>
+                    <h2>よくある質啁E(Q&A)</h2>
 
                     <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: logの中身が [object Object]
-                            と表示されて見えません。</h4>
-                        <p>A: 文字列とオブジェクトを `+` で連結するとそうなります。`console.log("中身は" + obj)` ではなく、`console.log("中身は", obj)`
-                            のようにカンマで区切って渡しましょう。</p>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: logの中身ぁE[object Object]
+                            と表示されて見えません、E/h4>
+                        <p>A: 斁E���Eとオブジェクトを `+` で連結するとそうなります。`console.log("中身は" + obj)` ではなく、`console.log("中身は", obj)`
+                            のようにカンマで区刁E��て渡しましょぁE��E/p>
                     </div>
 
                     <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: logを出しても何も表示されないのですが？</h4>
-                        <p>A: ブラウザのコンソール設定で、「Filter」や「Levels」が「Default levels」以外（Errorsのみ表示など）になっていないか確認してください。
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: logを�Eしても何も表示されなぁE�Eですが�E�E/h4>
+                        <p>A: ブラウザのコンソール設定で、「Filter」や「Levels」が「Default levels」以外！Errorsのみ表示など�E�になってぁE��ぁE��確認してください、E
                         </p>
                     </div>
 
-                    <h2>まとめ</h2>
-                    <p>コンソール出力は、プログラマーにとっての「強力な懐中電灯」です。暗闇の中で何が起きているかを確認するように、コードの至る所で使い分け、JavaScriptの挙動を自分の目で確かめる習慣をつけましょう。出力情報の整理整頓ができるようになれば、あなたはもう初心者卒業です。
+                    <h2>まとめE/h2>
+                    <p>コンソール出力�E、�Eログラマ�Eにとっての「強力な懐中電灯」です。暗闁E�E中で何が起きてぁE��かを確認するよぁE��、コード�E至る所で使ぁE�Eけ、JavaScriptの挙動を�E刁E�E目で確かめる習�EをつけましょぁE���E力情報の整琁E��頓ができるようになれ�E、あなた�Eもう初忁E��E��業です、E
                     </p>
                 </div>
             </article>
@@ -280,9 +280,9 @@ console.timeEnd("処理時間"); // "処理時間: 1.234ms" と表示されま�
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
                 </div>
                 <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
             </div>

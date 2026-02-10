@@ -4,33 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>関数（def）：処理を部品化して再利用する | Python Master リファレンス</title>
-    <meta name="description" content="Pythonの関数定義について。defキーワード、引数、戻り値、関数の再利用性とメリットを初心者向けに分かりやすく解説します。">
-    <link rel="canonical" href="https://html-master.com/guide/py-functions.html">
+    <title>関数�E�Eef�E�：�E琁E��部品化して再利用する | Python Master リファレンス</title>
+    <meta name="description" content="Pythonの関数定義につぁE��。defキーワード、引数、戻り値、E��数の再利用性とメリチE��を�E忁E��E��けに刁E��りやすく解説します、E>
+    <link rel="canonical" href="https://www.html-master.com/guide/py-functions.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://html-master.com/guide/py-functions.html">
-    <meta property="og:title" content="関数（def）：処理を部品化して再利用する | Python Master リファレンス">
-    <meta property="og:description" content="Pythonの関数定義について。defキーワード、引数、戻り値、関数の再利用性とメリットを初心者向けに分かりやすく解説します。">
-    <meta property="og:image" content="https://html-master.com/favicon.webp">
+    <meta property="og:url" content="https://www.html-master.com/guide/py-functions.html">
+    <meta property="og:title" content="関数�E�Eef�E�：�E琁E��部品化して再利用する | Python Master リファレンス">
+    <meta property="og:description" content="Pythonの関数定義につぁE��。defキーワード、引数、戻り値、E��数の再利用性とメリチE��を�E忁E��E��けに刁E��りやすく解説します、E>
+    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
     <meta property="og:site_name" content="HTML Master">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://html-master.com/guide/py-functions.html">
-    <meta name="twitter:title" content="関数（def）：処理を部品化して再利用する | Python Master リファレンス">
-    <meta name="twitter:description" content="Pythonの関数定義について。defキーワード、引数、戻り値、関数の再利用性とメリットを初心者向けに分かりやすく解説します。">
-    <meta name="twitter:image" content="https://html-master.com/favicon.webp">
+    <meta name="twitter:url" content="https://www.html-master.com/guide/py-functions.html">
+    <meta name="twitter:title" content="関数�E�Eef�E�：�E琁E��部品化して再利用する | Python Master リファレンス">
+    <meta name="twitter:description" content="Pythonの関数定義につぁE��。defキーワード、引数、戻り値、E��数の再利用性とメリチE��を�E忁E��E��けに刁E��りやすく解説します、E>
+    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "関数（def）：処理を部品化して再利用する | Python Master リファレンス",
-        "description": "Pythonの関数定義について。defキーワード、引数、戻り値、関数の再利用性とメリットを初心者向けに分かりやすく解説します。",
-        "image": "https://html-master.com/favicon.webp",
+        "headline": "関数�E�Eef�E�：�E琁E��部品化して再利用する | Python Master リファレンス",
+        "description": "Pythonの関数定義につぁE��。defキーワード、引数、戻り値、E��数の再利用性とメリチE��を�E忁E��E��けに刁E��りやすく解説します、E,
+        "image": "https://www.html-master.com/favicon.webp",
         "author": {
             "@type": "Organization",
             "name": "HTML Master"
@@ -40,12 +40,12 @@
             "name": "HTML Master",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://html-master.com/favicon.webp"
+                "url": "https://www.html-master.com/favicon.webp"
             }
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://html-master.com/guide/py-functions.html"
+            "@id": "https://www.html-master.com/guide/py-functions.html"
         }
     }
     </script>
@@ -148,7 +148,7 @@
             </a>
             <nav class="home-nav">
                 <a href="py_index.html">解説一覧</a>
-                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
             </nav>
         </header>
 
@@ -156,102 +156,102 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">設計</span>
+                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">設訁E/span>
                     <h1>関数</h1>
-                    <p>レシピをまとめて名付ける：処理の部品化でコードをスッキリさせよう</p>
+                    <p>レシピをまとめて名付ける：�E琁E�E部品化でコードをスチE��リさせよう</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>関数とは？：処理をパッケージ化する「魔法のレシピ」</h2>
-                    <p>プログラミングにおいて、何度も使う一連の処理をひとまとめにして名前をつけたものを「関数（Function）」と呼びます。
+                    <h2>関数とは�E�：�E琁E��パッケージ化する「魔法�Eレシピ、E/h2>
+                    <p>プログラミングにおいて、何度も使ぁE��連の処琁E��ひとまとめにして名前をつけたも�Eを「関数�E�Eunction�E�」と呼びます、E
                     </p>
-                    <p>料理に例えるなら、関数は「特定の料理を作るためのレシピ」のようなものです。一度レシピを書いておけば、材料（データ）を渡すだけで、何度でも同じ味（結果）を再現できます。大規模な開発では、プログラムを一から長く書くのではなく、小さくて便利な「関数の部品」を組み合わせて巨大なシステムを構築していきます。
+                    <p>料理に例えるなら、E��数は「特定�E料理を作るためのレシピ」�Eようなも�Eです。一度レシピを書ぁE��おけば、材料（データ�E�を渡すだけで、何度でも同じ味�E�結果�E�を再現できます。大規模な開発では、�Eログラムを一から長く書く�Eではなく、小さくて便利な「関数の部品」を絁E��合わせて巨大なシスチE��を構築してぁE��ます、E
                     </p>
 
-                    <h2>1. 関数の作り方：def キーワード</h2>
-                    <p>Pythonでは `def`（Defineの略）キーワードを使って関数を定義します。関数名には、変数と同じく **スネークケース (snake_case)** を使うのが一般的です。</p>
+                    <h2>1. 関数の作り方�E�def キーワーチE/h2>
+                    <p>Pythonでは `def`�E�Eefineの略�E�キーワードを使って関数を定義します。関数名には、変数と同じぁE**スネ�Eクケース (snake_case)** を使ぁE�Eが一般皁E��す、E/p>
 
                     <div class="code-block-guide">
-                        <span class="code-label">Python：関数の定義</span>
+                        <span class="code-label">Python�E�関数の定義</span>
                         <pre>def celebrate():
-    print("おめでとうございます！")
-    print("関数の実行に成功しました。")
+    print("おめでとぁE��ざいます！E)
+    print("関数の実行に成功しました、E)
 
-# 呼び出し（実行）
+# 呼び出し（実行！E
 celebrate()</pre>
                     </div>
-                    <p>コロン `:` の後のインデントされた範囲が、その関数の一部として扱われます。インデントが終わった場所が、関数の終わりの合図です。</p>
+                    <p>コロン `:` の後�EインチE��トされた篁E��が、その関数の一部として扱われます。インチE��トが終わった場所が、E��数の終わり�E合図です、E/p>
 
-                    <h2>2. 引数：関数にデータを渡す</h2>
-                    <p>関数は外からのデータ（引数）を受け取ることで、より柔軟に動くようになります。</p>
+                    <h2>2. 引数�E�関数にチE�Eタを渡ぁE/h2>
+                    <p>関数は外から�EチE�Eタ�E�引数�E�を受け取ることで、より柔軟に動くようになります、E/p>
 
-                    <h3>デフォルト引数</h3>
-                    <p>あらかじめ値を決めておくことで、引数が渡されなかった時の動作を指定できます。</p>
+                    <h3>チE��ォルト引数</h3>
+                    <p>あらかじめ値を決めておくことで、引数が渡されなかった時の動作を持E��できます、E/p>
                     <div class="code-block-guide">
-                        <span class="code-label">Python：引数の活用</span>
+                        <span class="code-label">Python�E�引数の活用</span>
                         <pre>def greet(name, message="こんにちは"):
-    print(f"{name}さん、{message}！")
+    print(f"{name}さん、{message}�E�E)
 
-greet("田中")          # 田中さん、こんにちは！
-greet("佐藤", "お疲れ様") # 佐藤さん、お疲れ様！</pre>
+greet("田中")          # 田中さん、こんにちは�E�E
+greet("佐藤", "お疲れ槁E) # 佐藤さん、お疲れ様！E/pre>
                     </div>
 
-                    <h2>3. 戻り値：処理結果を外に返す</h2>
-                    <p>関数の中で計算した結果を、呼び出し元に返したい時に `return` を使います。戻り値がない関数は、Python内部ではこっそり `None` という値を返しています。</p>
+                    <h2>3. 戻り値�E��E琁E��果を外に返す</h2>
+                    <p>関数の中で計算した結果を、呼び出し�Eに返したい時に `return` を使ぁE��す。戻り値がなぁE��数は、Python冁E��ではこっそり `None` とぁE��値を返してぁE��す、E/p>
 
                     <div class="code-block-guide">
-                        <span class="code-label">Python：戻り値</span>
+                        <span class="code-label">Python�E�戻り値</span>
                         <pre>def add_numbers(a, b):
     return a + b
 
-total = add_numbers(10, 5) # totalに15が代入される</pre>
+total = add_numbers(10, 5) # totalに15が代入されめE/pre>
                     </div>
 
-                    <h3>複数の値を返す</h3>
-                    <p>Pythonの関数は、カンマで区切るだけで複数の結果を一度に返すことができます（実体はタプルという形式です）。</p>
+                    <h3>褁E��の値を返す</h3>
+                    <p>Pythonの関数は、カンマで区刁E��だけで褁E��の結果を一度に返すことができます（実体�EタプルとぁE��形式です）、E/p>
                     <div class="code-block-guide">
-                        <span class="code-label">Python：複数戻り値</span>
+                        <span class="code-label">Python�E�褁E��戻り値</span>
                         <pre>def get_min_max(numbers):
     return min(numbers), max(numbers)
 
 low, high = get_min_max([1, 5, 10, 2])
-# low=1, high=10 となる</pre>
+# low=1, high=10 となめE/pre>
                     </div>
 
-                    <h2>4. スコープ：変数の「有効範囲」を知る</h2>
-                    <p>関数の中で作った変数は、その関数の外側から使うことはできません。これを **ローカルスコープ**
-                        と呼びます。逆に、プログラムのトップレベルで作った変数はどこからでも見えますが（グローバルスコープ）、関数の中から書き換えるには `global` 宣言が必要になります。</p>
+                    <h2>4. スコープ：変数の「有効篁E��」を知めE/h2>
+                    <p>関数の中で作った変数は、その関数の外�Eから使ぁE��とはできません。これを **ローカルスコーチE*
+                        と呼びます。送E��、�Eログラムのトップレベルで作った変数はどこからでも見えますが�E�グローバルスコープ）、E��数の中から書き換えるには `global` 宣言が忁E��になります、E/p>
 
                     <div class="def-card">
-                        <h3>🚀 プロの習慣：Docstring（ドキュメンテーション）</h3>
-                        <p>関数のすぐ下に `""" 文字列 """` を書くことで、その関数が「何をするものか」を説明できます。これを **Docstring**
-                            と呼び、大規模なコードを読む際の大きな助けになります。</p>
+                        <h3>🚀 プロの習�E�E�Docstring�E�ドキュメンチE�Eション�E�E/h3>
+                        <p>関数のすぐ下に `""" 斁E���E """` を書くことで、その関数が「何をするも�Eか」を説明できます。これを **Docstring**
+                            と呼び、大規模なコードを読む際�E大きな助けになります、E/p>
                         <div class="code-block-guide">
                             <pre>def square(x):
-    """渡された数値を2乗して返します。"""
+    """渡された数値めE乗して返します、E""
     return x * x</pre>
                         </div>
                     </div>
 
-                    <h2>よくある質問 (Q&A)</h2>
+                    <h2>よくある質啁E(Q&A)</h2>
 
                     <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 関数の中で関数を呼び出すことはできますか？</h4>
-                        <p>A: もちろん可能です！ 大きな問題を小さな機能（関数）に分解し、それらを組み合わせて解決するのがプログラミングの王道です。</p>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 関数の中で関数を呼び出すことはできますか�E�E/h4>
+                        <p>A: もちろん可能です！E大きな問題を小さな機�E�E�関数�E�に刁E��し、それらを絁E��合わせて解決するのが�Eログラミングの王道です、E/p>
                     </div>
 
                     <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: lambda（ラムダ）式とは何ですか？</h4>
-                        <p>A: 名前をつけない短い関数のことで「無名関数」とも呼ばれます。一行ですむような単純な処理を引数として渡したい時によく使われます。</p>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: lambda�E�ラムダ�E�式とは何ですか�E�E/h4>
+                        <p>A: 名前をつけなぁE��ぁE��数のことで「無名関数」とも呼ばれます。一行です�Eような単純な処琁E��引数として渡したぁE��によく使われます、E/p>
                     </div>
 
                     <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 同じ名前の関数を2つ作るとどうなりますか？</h4>
-                        <p>A: 後から書いた方の関数で上書きされてしまいます。Pythonには「オーバーロード（引数によって同名の関数を使い分ける機能）」はないので注意しましょう。</p>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 同じ名前の関数めEつ作るとどぁE��りますか�E�E/h4>
+                        <p>A: 後から書ぁE��方の関数で上書きされてしまぁE��す。Pythonには「オーバ�Eロード（引数によって同名の関数を使ぁE�Eける機�E�E�」�EなぁE�Eで注意しましょぁE��E/p>
                     </div>
 
-                    <h2>まとめ</h2>
-                    <p>関数は、あなたのコードを「ただの命令」から「再利用可能な知恵のパーツ」へと変えてくれます。一つひとつの関数をシンプルに、分かりやすい名前で保つことが、美しいプログラムを書くための最大の秘訣です。
+                    <h2>まとめE/h2>
+                    <p>関数は、あなた�Eコードを「ただの命令」から「�E利用可能な知恵のパ�EチE��へと変えてくれます。一つひとつの関数をシンプルに、�EかりめE��ぁE��前で保つことが、美しぁE�Eログラムを書くため�E最大の秘訣です、E
                     </p>
                 </div>
             </article>
@@ -263,9 +263,9 @@ low, high = get_min_max([1, 5, 10, 2])
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
                 </div>
                 <p>&copy; 2026 Python Master. All rights reserved.</p>
             </div>

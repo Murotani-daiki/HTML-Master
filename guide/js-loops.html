@@ -4,33 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ループ処理（for）：繰り返し作業を自動化する | JavaScript Master リファレンス</title>
-    <meta name="description" content="JavaScriptのループ処理について。for文、while文、配列の繰り返し処理などを初心者向けに詳しく解説します。">
-    <link rel="canonical" href="https://html-master.com/guide/js-loops.html">
+    <title>ループ�E琁E��Eor�E�：繰り返し作業を�E動化する | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScriptのループ�E琁E��つぁE��。for斁E��while斁E��E�E列�E繰り返し処琁E��どを�E忁E��E��けに詳しく解説します、E>
+    <link rel="canonical" href="https://www.html-master.com/guide/js-loops.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://html-master.com/guide/js-loops.html">
-    <meta property="og:title" content="ループ処理（for）：繰り返し作業を自動化する | JavaScript Master リファレンス">
-    <meta property="og:description" content="JavaScriptのループ処理について。for文、while文、配列の繰り返し処理などを初心者向けに詳しく解説します。">
-    <meta property="og:image" content="https://html-master.com/favicon.webp">
+    <meta property="og:url" content="https://www.html-master.com/guide/js-loops.html">
+    <meta property="og:title" content="ループ�E琁E��Eor�E�：繰り返し作業を�E動化する | JavaScript Master リファレンス">
+    <meta property="og:description" content="JavaScriptのループ�E琁E��つぁE��。for斁E��while斁E��E�E列�E繰り返し処琁E��どを�E忁E��E��けに詳しく解説します、E>
+    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
     <meta property="og:site_name" content="HTML Master">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://html-master.com/guide/js-loops.html">
-    <meta name="twitter:title" content="ループ処理（for）：繰り返し作業を自動化する | JavaScript Master リファレンス">
-    <meta name="twitter:description" content="JavaScriptのループ処理について。for文、while文、配列の繰り返し処理などを初心者向けに詳しく解説します。">
-    <meta name="twitter:image" content="https://html-master.com/favicon.webp">
+    <meta name="twitter:url" content="https://www.html-master.com/guide/js-loops.html">
+    <meta name="twitter:title" content="ループ�E琁E��Eor�E�：繰り返し作業を�E動化する | JavaScript Master リファレンス">
+    <meta name="twitter:description" content="JavaScriptのループ�E琁E��つぁE��。for斁E��while斁E��E�E列�E繰り返し処琁E��どを�E忁E��E��けに詳しく解説します、E>
+    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "ループ処理（for）：繰り返し作業を自動化する | JavaScript Master リファレンス",
-        "description": "JavaScriptのループ処理について。for文、while文、配列の繰り返し処理などを初心者向けに詳しく解説します。",
-        "image": "https://html-master.com/favicon.webp",
+        "headline": "ループ�E琁E��Eor�E�：繰り返し作業を�E動化する | JavaScript Master リファレンス",
+        "description": "JavaScriptのループ�E琁E��つぁE��。for斁E��while斁E��E�E列�E繰り返し処琁E��どを�E忁E��E��けに詳しく解説します、E,
+        "image": "https://www.html-master.com/favicon.webp",
         "author": {
             "@type": "Organization",
             "name": "HTML Master"
@@ -40,12 +40,12 @@
             "name": "HTML Master",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://html-master.com/favicon.webp"
+                "url": "https://www.html-master.com/favicon.webp"
             }
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://html-master.com/guide/js-loops.html"
+            "@id": "https://www.html-master.com/guide/js-loops.html"
         }
     }
     </script>
@@ -134,7 +134,7 @@
             </a>
             <nav class="home-nav">
                 <a href="js_index.html">解説一覧</a>
-                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
             </nav>
         </header>
 
@@ -142,19 +142,19 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">効率化</span>
-                    <h1>ループ処理</h1>
-                    <p>コンピュータの得意技：めんどくさい繰り返しをプログラムで解決</p>
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">効玁E��</span>
+                    <h1>ループ�E琁E/h1>
+                    <p>コンピュータの得意技�E�めんどくさぁE��り返しを�Eログラムで解決</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>繰り返しを自動化する：コンピュータの真骨頂</h2>
-                    <p>プログラミングを学ぶ上で、最も感動を覚える瞬間の一つが「ループ処理（繰り返し）」をマスターした時でしょう。「10,000個のデータに名前をつける」「同じ計算を100万回繰り返す」といった、人間が行えば一生かかるような作業を、コンピュータはたった数行のコードで、しかも一瞬で、ミスなく完了させます。
+                    <h2>繰り返しを�E動化する�E�コンピュータの真骨頁E/h2>
+                    <p>プログラミングを学ぶ上で、最も感動を覚える瞬間�E一つが「ループ�E琁E��繰り返し�E�」をマスターした時でしょぁE��、E0,000個�EチE�Eタに名前をつける」「同じ計算を100丁E��繰り返す」とぁE��た、人間が行えば一生かかるような作業を、コンピュータはたった数行�Eコードで、しかも一瞬で、ミスなく完亁E��せます、E
                     </p>
-                    <p>ループ処理は単なる効率化ツールではなく、現代のブラウザ上で動く複雑なアニメーションや、膨大な検索結果の表示、リアルタイムでのデータ更新などを支える、プログラミングの核心的な技術です。</p>
+                    <p>ループ�E琁E�E単なる効玁E��チE�Eルではなく、現代のブラウザ上で動く褁E��なアニメーションめE���E大な検索結果の表示、リアルタイムでのチE�Eタ更新などを支える、�Eログラミングの核忁E��な技術です、E/p>
 
-                    <h2>1. 伝統的な for 文：制御の基本</h2>
-                    <p>最も一般的で自由度の高い構文です。カッコの中に「初期化式」「条件式」「更新式」の3つの要素を記述します。</p>
+                    <h2>1. 伝統皁E�� for 斁E��制御の基本</h2>
+                    <p>最も一般皁E��自由度の高い構文です。カチE��の中に「�E期化式」「条件式」「更新式」�E3つの要素を記述します、E/p>
                     <div class="code-block-guide">
                         <span class="code-label">JavaScript</span>
                         <pre>for (let i = 1; i <= 5; i++) {
@@ -162,15 +162,15 @@
 }</pre>
                     </div>
                     <ul>
-                        <li><strong>初期化式 (let i = 1):</strong> ループの開始時に一度だけ実行されます。カウンターとなる変数を準備します。</li>
-                        <li><strong>条件式 (i <= 5):</strong> 各繰り返しの前に判定されます。これが true の間だけループが続きます。</li>
-                        <li><strong>更新式 (i++):</strong> 各繰り返しの最後に実行されます。カウンターの数値を増やします。</li>
+                        <li><strong>初期化弁E(let i = 1):</strong> ループ�E開始時に一度だけ実行されます。カウンターとなる変数を準備します、E/li>
+                        <li><strong>条件弁E(i <= 5):</strong> 吁E��り返しの前に判定されます。これが true の間だけループが続きます、E/li>
+                        <li><strong>更新弁E(i++):</strong> 吁E��り返しの最後に実行されます。カウンターの数値を増やします、E/li>
                     </ul>
 
-                    <h2>2. 配列とループ：データの海を渡る</h2>
-                    <p>実務で最も多いのが、配列の中身を一つずつ順番に処理するケースです。`.length` プロパティを使うことで、データの個数が変わっても自動的に対応できる柔軟なコードになります。</p>
+                    <h2>2. 配�Eとループ：データの海を渡めE/h2>
+                    <p>実務で最も多いのが、E�E列�E中身を一つずつ頁E��に処琁E��るケースです。`.length` プロパティを使ぁE��とで、データの個数が変わっても�E動的に対応できる柔軟なコードになります、E/p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript：配列の走査</span>
+                        <span class="code-label">JavaScript�E��E列�E走査</span>
                         <pre>const users = ["Alice", "Bob", "Charlie", "David"];
 
 for (let i = 0; i < users.length; i++) {
@@ -178,71 +178,71 @@ for (let i = 0; i < users.length; i++) {
 }</pre>
                     </div>
 
-                    <h3>現代的な書き方：for...of</h3>
-                    <p>ES6以降では、カウンターを使わずに直接中身を取り出せる **`for...of`** 文がよく使われます。読みやすく、ミスが少ないため推奨される書き方です。</p>
+                    <h3>現代皁E��書き方�E�for...of</h3>
+                    <p>ES6以降では、カウンターを使わずに直接中身を取り�Eせる **`for...of`** 斁E��よく使われます。読みめE��く、ミスが少なぁE��め推奨される書き方です、E/p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript：for...of</span>
+                        <span class="code-label">JavaScript�E�for...of</span>
                         <pre>for (const user of users) {
     console.log(`${user}さんがログインしました`);
 }</pre>
                     </div>
 
-                    <h2>3. ループの制御：break と continue</h2>
-                    <p>一定の条件に達したときに、途中でループを抜けたり、特定の回だけ処理を飛ばしたりすることができます。
+                    <h2>3. ループ�E制御�E�break と continue</h2>
+                    <p>一定�E条件に達したときに、E��中でループを抜けたり、特定�E回だけ�E琁E��飛�Eしたりすることができます、E
                     </p>
                     <ul>
-                        <li><strong>break:</strong> ループを完全に終了させ、外に抜けます。「お目当てのデータが見つかったら終了」という場合に便利です。</li>
-                        <li><strong>continue:</strong> 現在の回をそこで切り上げ、次の回（更新式）へスキップします。「特定のデータだけ除外して処理を続けたい」という場合に使います。
+                        <li><strong>break:</strong> ループを完�Eに終亁E��せ、外に抜けます。「お目当てのチE�Eタが見つかったら終亁E��とぁE��場合に便利です、E/li>
+                        <li><strong>continue:</strong> 現在の回をそこで刁E��上げ、次の回（更新式）へスキチE�Eします。「特定�EチE�Eタだけ除外して処琁E��続けたい」とぁE��場合に使ぁE��す、E
                         </li>
                     </ul>
 
                     <div class="point-card" style="border-left-color: #ef4444; background: rgba(239, 68, 68, 0.05);">
-                        <h4 style="color: #ef4444;">⚠️ 無限ループの恐怖</h4>
+                        <h4 style="color: #ef4444;">⚠�E�E無限ループ�E恐态E/h4>
                         <p>条件式が常に true
-                            になってしまうと、終わりのない「無限ループ」に陥ります。ブラウザのタブが応答しなくなり、最悪の場合はPC全体の動作に影響します。ループを書くときは、必ず「いつか必ず終わるか」を自問自答してください。
+                            になってしまぁE��、終わり�EなぁE��無限ループ」に陥ります。ブラウザのタブが応答しなくなり、最悪の場合�EPC全体�E動作に影響します。ループを書くとき�E、忁E��「いつか忁E��終わるか」を自問�E答してください、E
                         </p>
                     </div>
 
-                    <h2>4. while 文：条件が整うまで続ける</h2>
-                    <p>回数が決まっていない、例えば「ユーザーが正しいパスワードを入力するまで」「ボタンが押されるまで」といった、特定の条件を満たすまで繰り返したい時には `while` 文が適しています。</p>
+                    <h2>4. while 斁E��条件が整ぁE��で続けめE/h2>
+                    <p>回数が決まってぁE��ぁE��例えば「ユーザーが正しいパスワードを入力するまで」「�Eタンが押されるまで」とぁE��た、特定�E条件を満たすまで繰り返したい時には `while` 斁E��適してぁE��す、E/p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript：while</span>
+                        <span class="code-label">JavaScript�E�while</span>
                         <pre>let power = 1;
 while (power < 1000) {
-    power *= 2; // 2の累乗を計算
+    power *= 2; // 2の累乗を計箁E
     console.log(`現在のパワー: ${power}`);
 }</pre>
                     </div>
 
-                    <h2>5. パフォーマンスとネスト（入れ子）</h2>
-                    <p>ループの中にさらにループを書く「多重ループ（ネスト）」は強力ですが、注意が必要です。例えば「1,000件のループの中に1,000件のループ」を書くと、合計で100万回の処理が走ることになります。データ量が増えたときに急激に動作が重くなる原因となるため、不必要な多重ループは避ける工夫が求められます。
+                    <h2>5. パフォーマンスとネスト（�Eれ子！E/h2>
+                    <p>ループ�E中にさらにループを書く「多重ループ（ネスト）」�E強力ですが、注意が忁E��です。例えば、E,000件のループ�E中に1,000件のループ」を書くと、合計で100丁E��の処琁E��走ることになります。データ量が増えたときに急激に動作が重くなる原因となるため、不忁E��な多重ループ�E避ける工夫が求められます、E
                     </p>
 
-                    <h2>よくある質問 (Q&A)</h2>
+                    <h2>よくある質啁E(Q&A)</h2>
 
                     <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: for文のカウンター変数は i でなければいけませんか？
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: for斁E�Eカウンター変数は i でなければぁE��ませんか！E
                         </h4>
-                        <p>A: 自由に変えられますが、慣習として index の頭文字である `i` 、二重ループなら `j`, `k` が使われます。ただし、コードの読みやすさを重視して `userIndex`
-                            のように具体的な名前をつけるのも良い手法です。</p>
+                        <p>A: 自由に変えられますが、�E習として index の頭斁E��である `i` 、二重ループなめE`j`, `k` が使われます。ただし、コード�E読みめE��さを重視して `userIndex`
+                            のように具体的な名前をつけるのも良ぁE��法です、E/p>
                     </div>
 
                     <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 配列の forEach メソッドとの違いは何ですか？
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 配�Eの forEach メソチE��との違いは何ですか�E�E
                         </h4>
-                        <p>A: `forEach` は配列専用のメソッドで、より宣言的に書けます。ただし、`forEach` 内では `break` や `continue`
-                            が使えません。途中で処理を抜けたい場合は `for` や `for...of` を使いましょう。</p>
+                        <p>A: `forEach` は配�E専用のメソチE��で、より宣言皁E��書けます。ただし、`forEach` 冁E��は `break` めE`continue`
+                            が使えません。途中で処琁E��抜けたい場合�E `for` めE`for...of` を使ぁE��しょぁE��E/p>
                     </div>
 
                     <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: オブジェクトの中身をループするには？</h4>
-                        <p>A: **`for...in`** 文を使うか、`Object.keys()` などで一度配列に変換してから処理します。`for...in` はプロパティ名を一つずつ取り出してくれます。
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: オブジェクト�E中身をループするには�E�E/h4>
+                        <p>A: **`for...in`** 斁E��使ぁE��、`Object.keys()` などで一度配�Eに変換してから処琁E��ます。`for...in` はプロパティ名を一つずつ取り出してくれます、E
                         </p>
                     </div>
 
-                    <h2>まとめ</h2>
-                    <p>ループ処理は、プログラミングによる「効率化」の核心です。配列とループを組み合わせれば、大量の情報を一瞬で処理する高度なサービスを作れるようになります。まずは基本的な `for`
-                        文から始め、徐々に `for...of` や `while` などを使い分けられるようになりましょう。コンピュータがあなたの代わりに黙々と作業をしてくれる快感を、ぜひ体験してください。</p>
+                    <h2>まとめE/h2>
+                    <p>ループ�E琁E�E、�Eログラミングによる「効玁E��」�E核忁E��す。�E列とループを絁E��合わせれば、大量�E惁E��を一瞬で処琁E��る高度なサービスを作れるよぁE��なります。まず�E基本皁E�� `for`
+                        斁E��ら始め、徐、E�� `for...of` めE`while` などを使ぁE�EけられるようになりましょぁE��コンピュータがあなた�E代わりに黙、E��作業をしてくれる快感を、ぜひ体験してください、E/p>
                 </div>
             </article>
         </main>
@@ -253,9 +253,9 @@ while (power < 1000) {
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
                 </div>
                 <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
             </div>
