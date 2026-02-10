@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Lab | 究極のモーショングラフィックス実験室</title>
+    <meta name="description"
+        content="CSSアニメーションとトランジションを直感的かつリアルタイムに学べる実験室。スライダー操作で即座にプレビューし、最適なCSSコードを取得。初心者からプロまで使えるモーションデザインツール。">
+    <meta name="keywords" content="CSS アニメーション, CSS トランジション, モーションデザイン, ウェブデザインツール, フロントエンド開発, CSS 実験室">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/css-lab/">
+    <meta property="og:title" content="CSS Animation Lab | 究極のモーショングラフィックス実験室">
+    <meta property="og:description" content="CSSアニメーションとトランジションを直感的かつリアルタイムに学べる。スライダー操作で即座にプレビューし、最適なコードを生成。">
+    <meta property="og:image" content="https://example.com/css-lab/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com/css-lab/">
+    <meta property="twitter:title" content="CSS Animation Lab | 究極のモーショングラフィックス実験室">
+    <meta property="twitter:description" content="CSSアニメーションとトランジションを直感的にマスター。最高のUIモーションをこの場所から。">
+    <meta property="twitter:image" content="https://example.com/css-lab/og-image.jpg">
+
+    <link rel="canonical" href="https://example.com/css-lab/">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CSS Animation Lab",
+      "description": "Interactive CSS animation and transition generator with real-time preview and code export.",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      },
+      "featureList": [
+        "Real-time CSS preview",
+        "Interactive sliders for transform and duration",
+        "CSS code generation",
+        "Animation presets"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="home-header">
+        <a href="../index.html" class="logo">
+            <h1>HTML Master</h1>
+        </a>
+        <nav class="home-nav">
+            <a href="../levels.html">レベル</a>
+            <a href="../guide/index.html">解説テキスト</a>
+            <a href="index.html">CSS Lab</a>
+            <a href="../js_index.html">JavaScript</a>
+            <a href="../py_index.html">Python</a>
+            <a href="../levels.html" class="nav-btn">今すぐ始める</a>
+        </nav>
+    </header>
+
+    <div class="lab-intro">
+        <h1>CSS Animation Lab</h1>
+        <p>直感的なスライダー操作で、最高のモーションデザインを。即時プレビュー、即時コード取得。</p>
+    </div>
+
+    <main>
+        <section class="preview-section">
+            <div class="preview-container">
+                <div class="target-container">
+                    <div id="target-element">Target</div>
+                </div>
+            </div>
+
+            <div class="code-panel">
+                <button class="copy-btn" id="copy-btn">Copy CSS</button>
+                <pre id="code-output">
+#target-element {
+  transition: all 0.3s ease;
+}
+                </pre>
+            </div>
+        </section>
+
+        <section class="controls-panel">
+            <!-- Transform -->
+            <div class="control-group">
+                <h2>Transform & Appearance</h2>
+                <div class="control-item">
+                    <div class="label-row">
+                        <span>Rotate</span>
+                        <span class="value-display" id="rotate-val">0deg</span>
+                    </div>
+                    <input type="range" id="rotate" min="0" max="360" value="0">
+                </div>
+                <div class="control-item">
+                    <div class="label-row">
+                        <span>Scale</span>
+                        <span class="value-display" id="scale-val">1.0</span>
+                    </div>
+                    <input type="range" id="scale" min="0.1" max="2" step="0.1" value="1">
+                </div>
+                <div class="control-item">
+                    <div class="label-row">
+                        <span>Border Radius</span>
+                        <span class="value-display" id="radius-val">12px</span>
+                    </div>
+                    <input type="range" id="radius" min="0" max="50" value="12">
+                </div>
+            </div>
+
+            <!-- Transition -->
+            <div class="control-group">
+                <h2>Transition Details</h2>
+                <div class="control-item">
+                    <div class="label-row">
+                        <span>Duration (s)</span>
+                        <span class="value-display" id="duration-val">0.3s</span>
+                    </div>
+                    <input type="range" id="duration" min="0.1" max="2" step="0.1" value="0.3">
+                </div>
+                <div class="control-item">
+                    <div class="label-row">
+                        <span>Timing Function</span>
+                    </div>
+                    <select id="easing">
+                        <option value="ease">Ease (Default)</option>
+                        <option value="linear">Linear</option>
+                        <option value="ease-in">Ease In</option>
+                        <option value="ease-out">Ease Out</option>
+                        <option value="ease-in-out">Ease In Out</option>
+                        <option value="cubic-bezier(0.68, -0.55, 0.265, 1.55)">Back (Bezier)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Animation Presets -->
+            <div class="control-group">
+                <h2>Animation Presets</h2>
+                <div class="control-item">
+                    <div class="label-row">
+                        <span>Preset</span>
+                    </div>
+                    <select id="preset">
+                        <option value="none">None</option>
+                        <option value="bounce 2s infinite">Bounce</option>
+                        <option value="pulse 1.5s infinite">Pulse</option>
+                        <option value="spin 3s linear infinite">Spin</option>
+                        <option value="shake 0.5s infinite">Shake</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-secondary" id="reset-btn">Reset</button>
+                <button class="btn btn-primary" id="play-btn">Play Interaction</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="home-footer">
+        <div class="footer-content">
+            <div class="logo">
+                <h1>HTML Master</h1>
+            </div>
+            <p>&copy; 2026 HTML Master. Built for the future of coding education.</p>
+            <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                <a href="../sitemap.html"
+                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">サイトマップ</a>
+                <a href="../privacy.html"
+                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                <a href="../terms.html"
+                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                <a href="../contact.html"
+                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
+            </div>
+            <div class="social-links">
+                <a href="https://x.com/EduKodomo98564" target="_blank" rel="noopener noreferrer" class="social-link"
+                    title="X (Twitter) をフォロー">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                    <span>Follow on X</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
