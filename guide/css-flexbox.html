@@ -4,53 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox レイアウト：�E由に要素を並べめE| HTML Master リファレンス</title>
-    <meta name="description" content="CSSのモダンなレイアウト手法「Flexbox」につぁE��。要素を横並びにする方法、中央揁E��、均等�E置など、�E忁E��E��けに図解を交えて詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/css-flexbox.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/css-flexbox.html">
-    <meta property="og:title" content="Flexbox レイアウト：�E由に要素を並べめE| HTML Master リファレンス">
-    <meta property="og:description"
-        content="CSSのモダンなレイアウト手法「Flexbox」につぁE��。要素を横並びにする方法、中央揁E��、均等�E置など、�E忁E��E��けに図解を交えて詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/css-flexbox.html">
-    <meta name="twitter:title" content="Flexbox レイアウト：�E由に要素を並べめE| HTML Master リファレンス">
-    <meta name="twitter:description"
-        content="CSSのモダンなレイアウト手法「Flexbox」につぁE��。要素を横並びにする方法、中央揁E��、均等�E置など、�E忁E��E��けに図解を交えて詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "Flexbox レイアウト：�E由に要素を並べめE| HTML Master リファレンス",
-        "description": "CSSのモダンなレイアウト手法「Flexbox」につぁE��。要素を横並びにする方法、中央揁E��、均等�E置など、�E忁E��E��けに図解を交えて詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/css-flexbox.html"
-        }
-    }
-    </script>
+    <title>Flexbox レイアウト：自由に要素を並べる | HTML Master リファレンス</title>
+    <meta name="description" content="CSSのモダンなレイアウト手法「Flexbox」について。要素を横並びにする方法、中央揃え、均等配置など、初心者向けに図解を交えて詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -169,7 +124,7 @@
             </a>
             <nav class="home-nav">
                 <a href="index.html">解説一覧</a>
-                <a href="../index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -178,16 +133,22 @@
                 <header class="guide-header">
                     <span class="badge"
                         style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); color: #38bdf8;">モダンCSS</span>
-                    <h1>Flexbox レイアウチE/h1>
-                    <p>直感的に、美しく要素を並べるため�Eレイアウト�EチE�EルキチE��</p>
+                    <h1>Flexbox レイアウト</h1>
+                    <p>直感的に、美しく要素を並べるためのレイアウト・ツールキット</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>Flexbox とは�E�：レイアウト�E常識を変えた最強のチE�Eル</h2>
-                    <p>CSSの歴史の中で、レイアウト手法を劁E��に進化させたのぁE**Flexbox (Flexible Box Layout)** です。かつては `float` めE`table`
-                        を駁E��して無琁E��り並べてぁE��褁E��な計算が、Flexbox の登場によって、わずか数行�E持E��で美しく、直感的に実現できるようになりました、E
-                    </p>
-                    <p>要素を一列（横また�E縦�E�に並べ、その中の隙間めE�E置を�E動的に調整してくれるこの仕絁E��は、現代のレスポンシブWebチE��インにおいて欠かすことのできなぁE��忁E��スキル」です、E/p>
+                    <h2>Flexbox とは？</h2>
+                    <p>要素を一行の中に横並びにしたり、位置を細かく調整したりするための、現代Web制作で最も使われているレイアウト手法です。わずか数行の指定で、中央揃えや均等配置が魔法のように実現できます。</p>
+
+                    <h2>1. 横並びにする</h2>
+                    <p>並べたい要素の「親（コンテナ）」に対して `display: flex;` を指定するだけで、要素が横に並びます。</p>
+
+                    <div class="code-block-guide">
+                        <pre>.container {
+    display: flex;
+}</pre>
+                    </div>
 
                     <div class="flex-visual">
                         <div class="flex-item">1</div>
@@ -195,86 +156,35 @@
                         <div class="flex-item">3</div>
                     </div>
 
-                    <h2>1. コンチE���E�親要素�E��E基本設宁E/h2>
-                    <p>Flexbox を使ぁE��は、並べたい要素を囲んでぁE��「親要素�E�コンチE���E�」に `display: flex;`
-                        を指定します。これだけで、子要素たちが「フレチE��ス・アイチE��」となり、柔軟に並び始めます、E/p>
+                    <h2>2. 配置のコントロール</h2>
+                    <p>以下の強力なプロパティを使って、位置を自由に変えられます。</p>
+
+                    <h3>justify-content（横向きの配置）</h3>
+                    <ul>
+                        <li>`center`: 中央に寄せる</li>
+                        <li>`space-between`: 両端に寄せて、間を均等に空ける</li>
+                    </ul>
+
+                    <h3>align-items（縦向きの配置）</h3>
+                    <ul>
+                        <li>`center`: 上下の中央に揃える（超便利！）</li>
+                    </ul>
 
                     <div class="code-block-guide">
-                        <span class="code-label">CSS�E�基本の並べ方</span>
                         <pre>.container {
-    display: flex;              /* フレチE��スコンチE��匁E*/
-    flex-direction: row;        /* 並べる向き！Eow=横, column=縦�E�E*/
-    flex-wrap: wrap;            /* 折り返しの有無 */
-    gap: 20px;                  /* 要素同士の隙間 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
 }</pre>
                     </div>
 
-                    <h2>2. 配置の魔術：中央揁E��と坁E���E置</h2>
-                    <p>Flexbox の真骨頂�E、要素の配置を�E由自在にコントロールできる点にあります。以下�E2つのプロパティさえ覚えれ�E、ほとんどのケースに対応できます、E/p>
+                    <h2>3. フレキシブルな幅調整</h2>
+                    <p>`gap` プロパティを使うことで、要素同士の間隔だけを簡単に指定できます。また、`flex: 1;` と書くことで、余ったスペースを要素で分け合うことも可能です。</p>
 
-                    <h3>justify-content�E�主軸方向�E配置�E�E/h3>
-                    <p>横並びの場合�E「左右」�E配置を決めます、E/p>
-                    <ul>
-                        <li><strong>center:</strong> 中央にまとめます、E/li>
-                        <li><strong>space-between:</strong>
-                            両端にぴったり寁E��て、要素間に坁E��な余白を作ります（メニューバ�Eなどで多用します）、E/li>
-                        <li><strong>space-evenly:</strong>
-                            要素の前後も含めて、�Eての隙間を完�Eに等しくします、E/li>
-                    </ul>
-
-                    <h3>align-items�E�交差軸方向�E配置�E�E/h3>
-                    <p>横並びの場合�E「上下（垂直方向）」�E配置を決めます、E
-                        <br>これまでは困難だっぁE**「上下中央揁E��、E* も、`align-items: center;` 一行で解決します、E
-                    </p>
-
-                    <h2>3. アイチE���E�子要素�E��Eでのこだわり設宁E/h2>
-                    <p>親だけでなく、並んでぁE��個、E�E要素に対しても命令を�Eせます、E/p>
-                    <div class="item-props"
-                        style="background: rgba(56, 189, 248, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color);">
-                        <ul>
-                            <li><strong>flex-grow:</strong> 余ったスペ�Eスをどれくらい「�Eけ合ぁE��か。特定�E要素だけ長くしたい時に、E/li>
-                            <li><strong>order:</strong>
-                                HTMLの記述頁E��変えずに、見た目の頁E��だけを入れ替えます。モバイル版だけ頁E��を変えたい時に便利です、E/li>
-                            <li><strong>align-self:</strong> 特定�E一つの要素だけ、親の設定を無視して上下位置を変えたい時に使ぁE��す、E/li>
-                        </ul>
-                    </div>
-
-                    <div class="tip-card"
-                        style="background: rgba(56, 189, 248, 0.05); padding: 1.5rem; border-left: 4px solid #38bdf8; border-radius: 0 12px 12px 0;">
-                        <h4>💡 実践チE��ニック�E�レスポンシブな刁E��替ぁE/h4>
-                        <p>PCでは `flex-direction: row;`
-                            で横並び、スマ�EではメチE��アクエリを使って `column;`
-                            に刁E��替える。これだけで、E��法�Eようなモバイルフレンドリーなレイアウトが完�Eします。褁E��な幁E��算�Eもう忁E��ありません、E/p>
-                    </div>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 垂直方向�E中央揁E��が効きません、E/h4>
-                        <p>A:
-                            親要素に **「高さ�E�Eheight`�E�、E*
-                            が設定されてぁE��か確認してください。親要素が中身と同じ高さしかなぁE��合、動くスペ�EスがなぁE��め中央に寁E��ません、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: margin: auto と絁E��合わせて使えますか�E�E
-                        </h4>
-                        <p>A: はぁE��実�E Flexbox
-                            コンチE��の中のアイチE��に `margin: auto;`
-                            を指定すると、余白を�E方位に最大化しようとするため、上下左右の完璧な中央配置が実現できます（これも非常に強力な裏技です）、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: CSS Grid とは何が違うんですか�E�E/h4>
-                        <p>A: ざっくり言ぁE��、E*Flexbox は「一方向（一列）、E*
-                            の並び、E*Grid は「二次允E��縦と横のマス目�E�、E*
-                            のレイアウトに向いてぁE��す、E行�EチE��インなめEFlexbox、�Eージ全体�E骨絁E��なめEGrid、と使ぁE�Eけるのが�Eストです、E/p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>Flexbox
-                        は、WebチE��インにおける「パズル」を最高に楽しく、簡単にしてくれる道具です。�Eロパティが多くて初めは戸惑うかもしれませんが、実際に要素を並べて、位置が変わる瞬間を体感すれば、すぐにあなた�E最強の味方になってくれる�Eずです！E
-                    </p>
+                    <h2>まとめ</h2>
+                    <p>Flexbox を覚えれば、もうレイアウトで悩むことはありません。まずは `display: flex`, `justify-content`, `align-items`
+                        の3点セットを使いこなせるようになりましょう。Webサイトの構造作りが格段に楽しくなります。</p>
                 </div>
             </article>
         </main>
@@ -285,9 +195,9 @@
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 HTML Master. All rights reserved.</p>
             </div>

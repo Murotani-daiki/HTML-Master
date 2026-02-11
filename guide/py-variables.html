@@ -4,51 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>変数と代入�E�データの保孁E| Python Master リファレンス</title>
-    <meta name="description" content="Pythonの変数宣言とチE�Eタ型につぁE��。動皁E��付けの特徴、命名規則�E�Enake_case�E�、基本皁E��チE�Eタ型�E種類を初忁E��E��けに解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/py-variables.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/py-variables.html">
-    <meta property="og:title" content="変数と代入�E�データの保孁E| Python Master リファレンス">
-    <meta property="og:description" content="Pythonの変数宣言とチE�Eタ型につぁE��。動皁E��付けの特徴、命名規則�E�Enake_case�E�、基本皁E��チE�Eタ型�E種類を初忁E��E��けに解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/py-variables.html">
-    <meta name="twitter:title" content="変数と代入�E�データの保孁E| Python Master リファレンス">
-    <meta name="twitter:description" content="Pythonの変数宣言とチE�Eタ型につぁE��。動皁E��付けの特徴、命名規則�E�Enake_case�E�、基本皁E��チE�Eタ型�E種類を初忁E��E��けに解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "変数と代入�E�データの保孁E| Python Master リファレンス",
-        "description": "Pythonの変数宣言とチE�Eタ型につぁE��。動皁E��付けの特徴、命名規則�E�Enake_case�E�、基本皁E��チE�Eタ型�E種類を初忁E��E��けに解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/py-variables.html"
-        }
-    }
-    </script>
+    <title>変数と代入：データの保存 | Python Master リファレンス</title>
+    <meta name="description" content="Pythonの変数宣言とデータ型について。動的型付けの特徴、命名規則（snake_case）、基本的なデータ型の種類を初心者向けに解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -160,7 +117,7 @@
             </a>
             <nav class="home-nav">
                 <a href="py_index.html">解説一覧</a>
-                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -168,101 +125,46 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">基本斁E��E/span>
+                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">基本文法</span>
                     <h1>変数と代入</h1>
-                    <p>チE�Eタに名前�E�ラベル�E�をつけて、�E利用できるようにしよぁE/p>
+                    <p>データに名前（ラベル）をつけて、再利用できるようにしよう</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>変数とは�E�：データに名前をつける「ラベル、E/h2>
-                    <p>プログラミングにおけめE**変数**
-                        とは、数値めE��字�EなどのチE�Eタに名前をつけて保存しておく仕絁E��のことです。よく「箱」に例えられますが、Pythonにおいては「データとぁE��実体に名前ラベルを貼り付ける」とぁE��イメージの方が正確です、E
-                    </p>
-                    <p>変数を使ぁE��とで、同じデータを何度も�E力する手間が省けるだけでなく、�Eログラムの意図が読み手に伝わりやすくなり、メンチE��ンス�E�修正�E�も格段に容易になります、E/p>
+                    <h2>変数とは？</h2>
+                    <p>プログラムの中で、数値や文字列などのデータに名前をつけて保存しておく仕組みを「変数」と呼びます。変数を使うことで、一度書いたデータを何度も使いまわしたり、後から一括で変更したりできます。</p>
 
-                    <h2>1. 基本の書き方と代入</h2>
-                    <p>Pythonでは、変数名、イコール `=` 、値をこの頁E��記述します。これを「代入�E�Essignment�E�」と呼びます、E/p>
+                    <h2>基本の書き方</h2>
+                    <p>Pythonでは、名前を書いて `=` を使い、値を入れます。これを「代入」と呼びます。</p>
 
                     <div class="code-block-guide">
-                        <span class="code-label">Python�E�基本</span>
-                        <pre>name = "Python Master"
-version = 3.12
-is_published = True</pre>
+                        <span class="code-label">Python</span>
+                        <pre>name = "Python"
+age = 35
+is_easy = True</pre>
                     </div>
-                    <p>JavaScriptのように `const` めE`let` とぁE��た宣言キーワード�E忁E��ありません。名前を書ぁE��瞬間に変数が作られます、E
-                    </p>
 
-                    <h2>2. Pythonの大きな特徴�E�動皁E��付け</h2>
-                    <p>Pythonは **動的型付け (Dynamic Typing)**
-                        言語です。これ�E、変数が作�Eされる時に「この変数は整数用」「これ�E斁E���E用」とあらかじめ決める忁E��がなぁE��とを意味します。中に入れるチE�Eタによって、Pythonが実行時に最適な「型」を自動的に判断してくれます、E
-                    </p>
-
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E�柔軟な型変更</span>
-                        <pre>x = 100    # 最初�E整数の垁E(int)
-x = "Hello" # 後から文字�E (str) を�EれてもエラーにならなぁE/pre>
-                    </div>
-                    <p>こ�E柔軟性は素早ぁE��発を可能にしますが、意図しなぁE��が混じってしまぁE��グの原因にもなるため、注意深ぁE��琁E��忁E��です、E/p>
-
-                    <h2>3. 命名規則�E�スネ�Eクケースの徹庁E/h2>
-                    <p>Pythonには公式�EスタイルガイチE**PEP 8** があり、変数の付け方にも�E確なルール�E��E習）があります、E/p>
+                    <h2>Pythonの命名規則</h2>
+                    <p>Pythonでは、単語をアンダースコアで繋ぐ `snake_case`（スネークケース）という書き方が推奨されています。</p>
 
                     <div class="tip-card">
-                        <h4>✁E推奨�E�snake_case (スネ�Eクケース)</h4>
-                        <p>単語を小文字で書き、アンダースコア `_` で繋ぎます、E
-                            侁E `user_name`, `total_price`, `max_level`</p>
-                        <h4>❁E非推奨�E�camelCase / PascalCase</h4>
-                        <p>Pythonの世界では、クラス名以外で大斁E��を混ぜる書き方はあまり一般皁E��はありません、E
-                            侁E `userName` (避けるべぁE</p>
+                        <h4>✅ 推奨される書き方</h4>
+                        <p>`user_name`, `item_price`, `max_score` のように、小文字とアンダースコアを使います。</p>
+                        <h4>❌ 避けるべき書き方</h4>
+                        <p>`userName` (camelCase) は、Pythonの世界では一般的ではありません。</p>
                     </div>
 
-                    <h2>4. 高度なチE��ニック�E�同時代入と定数</h2>
-                    <p>Pythonには、コードを簡潔にするためのユニ�Eクな代入方法がぁE��つかあります、E/p>
+                    <h2>動的型付け</h2>
+                    <p>Pythonの大きな特徴のひとつは、変数の「型」をあらかじめ宣言する必要がないことです。中に入れるデータによって、Pythonが自動的に判断してくれます。</p>
 
-                    <h3>褁E��代入�E�アンパック�E�E/h3>
-                    <p>一行で褁E��の変数に値を割り当てることができます、E/p>
                     <div class="code-block-guide">
-                        <span class="code-label">Python�E�アンパック</span>
-                        <pre>x, y, z = 10, 20, 30
-# xは10, yは20, zは30になめE/pre>
+                        <span class="code-label">Python</span>
+                        <pre>x = 100    # 最初は数値
+x = "Hello" # 後から文字列を入れてもOK</pre>
                     </div>
 
-                    <h3>Pythonにおける「定数、E/h3>
-                    <p>実�E、Pythonには言語レベルで「絶対に値を変更できなぁE��数」�E存在しません。しかし、�Eログラマ同士の紁E��事として **「すべて大斁E��で書かれた変数は定数として扱ぁE��後から書き換えなぁE��E*
-                        とぁE��ルールがあります、E/p>
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E�定数の慣翁E/span>
-                        <pre>API_KEY = "secret_key_123" # 大斁E���E書き換えなぁE��E��</pre>
-                    </div>
-
-                    <h2>5. モダンPythonの新常識：型ヒンチE/h2>
-                    <p>近年では、大規模なプログラムでもバグを防ぎやすくするために、変数に「期征E��る型」を添える **型ヒンチE(Type Hints)** が庁E��使われてぁE��す、E/p>
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E�型ヒント活用</span>
-                        <pre>score: int = 100
-user_name: str = "Alice"</pre>
-                    </div>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 日本語�E変数名�E使えますか�E�E/h4>
-                        <p>A: 技術的には使えますが�E�侁E `名前 = "田中"`�E�、現場では **100% 英語（アルファベット！E*
-                            が使われます。�Eログラミングの世界標準に合わせるためにも、英語での命名を強くお勧めします、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 予紁E��（キーワード）とは何ですか�E�E/h4>
-                        <p>A: `if`, `for`, `def` など、Pythonが特別な意味として使ってぁE��単語�Eことです。これらは変数名として使ぁE��とはできません、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 変数を削除することはできますか�E�E/h4>
-                        <p>A: `del variable_name` を使ぁE��削除できます。ただ、E��常の開発で意図皁E��削除が忁E��になる場面は非常に稀です、E/p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>変数は、コンピュータに持E��を�Eすため�E「言葉」�E一部です。適刁E��名前をつけ、E��刁E��型を意識することで、あなた�Eコード�E魔法�Eような読みめE��さと安定感を手に入れます。最初�Eスネ�Eクケースに慣れるところから始めてみましょぁE��E
+                    <h2>まとめ</h2>
+                    <p>変数は、プログラムを読みやすく、管理しやすくするための「名前ラベル」です。適切な名前をつけることで、自分や他の人が後からコードを読んだときに、そのデータが何のためのものかすぐに理解できるようになります。
                     </p>
                 </div>
             </article>
@@ -274,9 +176,9 @@ user_name: str = "Alice"</pre>
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 Python Master. All rights reserved.</p>
             </div>

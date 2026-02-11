@@ -4,52 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ループ�E琁E��Eor�E�：繰り返しを効玁E��する | Python Master リファレンス</title>
-    <meta name="description" content="Pythonのループ�E琁E��つぁE��。for斁E��range関数の使ぁE��、while斁E��リスト�E要素を頁E��に取り出す方法を初忁E��E��けに詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/py-loops.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/py-loops.html">
-    <meta property="og:title" content="ループ�E琁E��Eor�E�：繰り返しを効玁E��する | Python Master リファレンス">
-    <meta property="og:description" content="Pythonのループ�E琁E��つぁE��。for斁E��range関数の使ぁE��、while斁E��リスト�E要素を頁E��に取り出す方法を初忁E��E��けに詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/py-loops.html">
-    <meta name="twitter:title" content="ループ�E琁E��Eor�E�：繰り返しを効玁E��する | Python Master リファレンス">
-    <meta name="twitter:description"
-        content="Pythonのループ�E琁E��つぁE��。for斁E��range関数の使ぁE��、while斁E��リスト�E要素を頁E��に取り出す方法を初忁E��E��けに詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "ループ�E琁E��Eor�E�：繰り返しを効玁E��する | Python Master リファレンス",
-        "description": "Pythonのループ�E琁E��つぁE��。for斁E��range関数の使ぁE��、while斁E��リスト�E要素を頁E��に取り出す方法を初忁E��E��けに詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/py-loops.html"
-        }
-    }
-    </script>
+    <title>ループ処理（for）：繰り返しを効率化する | Python Master リファレンス</title>
+    <meta name="description" content="Pythonのループ処理について。for文、range関数の使い方、while文、リストの要素を順番に取り出す方法を初心者向けに詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,7 +104,7 @@
             </a>
             <nav class="home-nav">
                 <a href="py_index.html">解説一覧</a>
-                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -156,114 +112,53 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">効玁E��</span>
-                    <h1>ループ�E琁E/h1>
-                    <p>コンピュータの得意刁E���E�面倒な繰り返し作業を�E動化しよぁE/p>
+                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">効率化</span>
+                    <h1>ループ処理</h1>
+                    <p>コンピュータの得意分野：面倒な繰り返し作業を自動化しよう</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>ループ�E琁E��は�E�：面倒な繰り返しを�E動化する</h2>
-                    <p>プログラミングを学ぶ上で、最も大きな恩恵を感じる瞬間�E一つが「ループ�E琁E��繰り返し�E�」をマスターした時でしょぁE��、E丁E���EチE�Eタに名前をつける」「同じ計算を100丁E��繰り返す」とぁE��た、人間が行えば一生かかるような作業を、コンピュータはたった数行�Eコードで、しかも一瞬で完亁E��せます、E
-                    </p>
-                    <p>Pythonのループ�E琁E�E非常に直感的で読みめE��く設計されてぁE��す。データ処琁E��Webスクレイピング、AIの学習�Eロセスなど、現代のあらめE��チE��ノロジーの基盤となる技術です、E/p>
+                    <h2>ループ処理とは？</h2>
+                    <p>同じ作業を何度も繰り返すことを「ループ処理」と呼びます。1万個のデータに同じ処理をしたり、画面に100枚の画像を並べたりするのも、ループを使えば瞬時に終わります。</p>
 
-                    <h2>1. for 斁E��イチE��ブル�E�反復可能�E�な要素を回ぁE/h2>
-                    <p>Pythonの `for` 斁E�E、リストや斁E���Eなどの「要素の雁E��り」から、中身を一つずつ頁E��に取り出して処琁E��行うのが得意です、E/p>
+                    <h2>for 文と range 関数</h2>
+                    <p>決まった回数繰り返す場合は、`range()` 関数と組み合わせて使います。</p>
 
                     <div class="code-block-guide">
-                        <span class="code-label">Python�E�リスト�EルーチE/span>
+                        <pre>for i in range(5):
+    print(f"{i}回目の繰り返し")</pre>
+                    </div>
+                    <p>※0から始まり、4まで(計5回)繰り返されます。</p>
+
+                    <h2>リストの中身をループする</h2>
+                    <p>Pythonの `for` 文は、リストなどの要素を順番に取り出すのが非常に得意です。</p>
+
+                    <div class="code-block-guide">
                         <pre>fruits = ["Apple", "Banana", "Cherry"]
-
 for fruit in fruits:
-    print(f"フルーチE�E名前: {fruit}")</pre>
-                    </div>
-                    <p>ここで登場する `fruit`
-                        は、リスト�E中身が代入される一時的な変数です。この変数を�E由に使ぁE��とで、各要素に対して一括で処琁E��かけることができます、E
-                    </p>
-
-                    <h2>2. range() 関数�E�回数を指定して繰り返す</h2>
-                    <p>、E0回繰り返したい」、Eから100まで足し合わせたい」とぁE��た、数値を�Eースにした繰り返しには `range()` 関数を使ぁE��す、E/p>
-
-                    <h3>range() の柔軟な引数パス</h3>
-                    <ul>
-                        <li><strong>range(stop):</strong> 0から(stop-1)まで繰り返す、E/li>
-                        <li><strong>range(start, stop):</strong> startから(stop-1)まで、E/li>
-                        <li><strong>range(start, stop, step):</strong> stepの間隔で数値を刻む、E/li>
-                    </ul>
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E�rangeの活用</span>
-                        <pre># 0, 2, 4, 6, 8 と表示されめE
-for i in range(0, 10, 2):
-    print(i)</pre>
+    print(f"私は{fruit}が好きです")</pre>
                     </div>
 
-                    <h2>3. ループ�E制御�E�break と continue</h2>
-                    <p>ループ�E途中で送E��出したり、特定�E回だけ�E琁E��飛�Eしたりすることも可能です、E/p>
-                    <ul>
-                        <li><strong>break:</strong> ループを完�Eに終亁E��、外に出ます、E</li>
-                        <li><strong>continue:</strong> 今行ってぁE��回だけを中断し、次の回へ進みます、E/li>
-                    </ul>
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E�ループ�E脱出</span>
-                        <pre>for i in range(1, 10):
-    if i == 5:
-        break # 5になったら強制終亁E
-    print(i)</pre>
-                    </div>
+                    <h2>while 文（条件によるループ）</h2>
+                    <p>「条件が正しい限りずっと繰り返す」のが `while` 文です。</p>
 
-                    <h2>4. Python特有�E機�E�E�ループ後�E else</h2>
-                    <p>Pythonのユニ�Eクな機�Eとして、ループ�E後に `else` を書くことができます。これ�E、E*「一度めEbreak せずにループを最後まで完走した時�Eみ、E* 実行されます、E/p>
                     <div class="code-block-guide">
-                        <span class="code-label">Python�E�for-else斁E/span>
-                        <pre>for user in user_list:
-    if user == "Target":
-        print("見つけました�E�E)
-        break
-else:
-    print("最後まで見つかりませんでした、E)</pre>
-                    </div>
-
-                    <h2>5. while 斁E��条件が満たされるまで繰り返す</h2>
-                    <p>繰り返す回数が決まってぁE��ぁE��、例えば「正しいパスワードが入力されるまで」「ユーザーが終亁E�Eタンを押すまで」とぁE��た場合には `while` が適してぁE��す、E/p>
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E�whileルーチE/span>
-                        <pre>energy = 3
-while energy > 0:
-    print(f"行動中... 残りパワー: {energy}")
-    energy -= 1
-print("エネルギー刁E��でぁE)</pre>
+                        <pre>count = 0
+while count < 3:
+    print(count)
+    count += 1</pre>
                     </div>
 
                     <div class="range-box">
-                        <h3>🚀 パフォーマンスの知恵�E�range関数は「軽ぁE��E/h3>
-                        <p>Python 3の `range()`
-                            は、どれほど大きな篁E��を指定しても大量�Eメモリを消費しません。なぜなら、E00丁E���Eリストを作るのではなく、ループ�Eた�Eに「次の数値」をそ�E場で作ってぁE��からです。非常に効玁E��です�E�E�E
-                        </p>
+                        <h3>💡 range関数の高度な使い方</h3>
+                        <ul>
+                            <li>`range(1, 11)` : 1から10まで</li>
+                            <li>`range(0, 10, 2)` : 0, 2, 4, 6, 8 (2飛ばし)</li>
+                        </ul>
                     </div>
 
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 無限ループになってしまぁE��した�E�E/h4>
-                        <p>A: 落ち着ぁE�� `Ctrl + C` を押してください。�Eログラムを強制終亁E��きます。`while` 斁E��書く時は、忁E��「いつか�E終わる条件」になってぁE��か確認しましょぁE��E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: インチE��クス番号も一緒に取得したい時�E�E�E/h4>
-                        <p>A: `enumerate()`
-                            関数を使ぁE�Eがスマ�Eトです。`for i, fruit in enumerate(fruits):` と書くことで、番号 `i` と中身 `fruit` を同時に取り出せます、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 送E��E��回したい時�E�E�E/h4>
-                        <p>A: `reversed()` 関数を使ぁE�Eが簡単です、E`for item in reversed(items):`
-                            とするだけで、リスト�E後ろから頁E��取り出すことができます、E/p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>ループ�E琁E��マスターすれば、人間には不可能な速さで大量�E仕事を牁E��けられる�Eログラムが書けるようになります。Pythonのシンプルで強力な `for`
-                        斁E��使ぁE��なし、日常の定型業務をどんどん�E動化してぁE��ましょぁE��E
-                    </p>
+                    <h2>まとめ</h2>
+                    <p>ループ処理をマスターすれば、人間には不可能な速さで大量の仕事を片付けられるプログラムが書けるようになります。Pythonのシンプルで強力な `for` 文をぜひ使いこなしてください。</p>
                 </div>
             </article>
         </main>
@@ -274,9 +169,9 @@ print("エネルギー刁E��でぁE)</pre>
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 Python Master. All rights reserved.</p>
             </div>

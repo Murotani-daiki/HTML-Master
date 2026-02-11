@@ -4,53 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>条件刁E��！Ef�E�：インチE��トで判断を�Eける | Python Master リファレンス</title>
-    <meta name="description" content="Pythonの条件刁E��につぁE��。if, elif, else構文と、Python特有�EインチE��トによるブロチE��構造、比輁E��算子�E使ぁE��を�E忁E��E��けに解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/py-conditions.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/py-conditions.html">
-    <meta property="og:title" content="条件刁E��！Ef�E�：インチE��トで判断を�Eける | Python Master リファレンス">
-    <meta property="og:description"
-        content="Pythonの条件刁E��につぁE��。if, elif, else構文と、Python特有�EインチE��トによるブロチE��構造、比輁E��算子�E使ぁE��を�E忁E��E��けに解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/py-conditions.html">
-    <meta name="twitter:title" content="条件刁E��！Ef�E�：インチE��トで判断を�Eける | Python Master リファレンス">
-    <meta name="twitter:description"
-        content="Pythonの条件刁E��につぁE��。if, elif, else構文と、Python特有�EインチE��トによるブロチE��構造、比輁E��算子�E使ぁE��を�E忁E��E��けに解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "条件刁E��！Ef�E�：インチE��トで判断を�Eける | Python Master リファレンス",
-        "description": "Pythonの条件刁E��につぁE��。if, elif, else構文と、Python特有�EインチE��トによるブロチE��構造、比輁E��算子�E使ぁE��を�E忁E��E��けに解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/py-conditions.html"
-        }
-    }
-    </script>
+    <title>条件分岐（if）：インデントで判断を分ける | Python Master リファレンス</title>
+    <meta name="description" content="Pythonの条件分岐について。if, elif, else構文と、Python特有のインデントによるブロック構造、比較演算子の使い方を初心者向けに解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,7 +105,7 @@
             </a>
             <nav class="home-nav">
                 <a href="py_index.html">解説一覧</a>
-                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -158,116 +113,54 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">ロジチE��</span>
-                    <h1>条件刁E��E/h1>
-                    <p>プログラムに「判断」をさせ、�E琁E�E流れを�Eり替えよぁE/p>
+                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">ロジック</span>
+                    <h1>条件分岐</h1>
+                    <p>プログラムに「判断」をさせ、処理の流れを切り替えよう</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>条件刁E��とは�E�：�Eログラムに「思老E��を持たせる</h2>
-                    <p>私たちの日常生活は判断の連続です。「信号が赤なら止まる」「雨が降ってぁE��なら傘を持つ」とぁE��た論理皁E��判断を、�Eログラムの世界で実現するのぁE**条件刁E��E(Conditional
-                        Branching)** です、E
-                    </p>
-                    <p>適刁E��条件刁E��を書けるようになると、�Eログラムは単なる命令の羁E�Eから、状況を自ら判断して最適に動く「知皁E��シスチE��」へと進化します。ユーザーの入力チェチE��、ログイン判定、褁E��な計算アルゴリズムなど、あらゆる動皁E�E琁E�E核忁E��なる技術です、E
-                    </p>
+                    <h2>条件分岐とは？</h2>
+                    <p>「もし〜ならこうする、そうでなければこうする」というロジックを担うのが条件分岐です。ゲームの判定やユーザーの入力チェックなど、あらゆる場面で使用されます。</p>
 
-                    <h2>1. Pythonの象徴�E�インチE��トによるブロチE��構造</h2>
-                    <p>Pythonが他�E言語！EavaScriptやC++など�E�と決定的に違うのが、波カチE�� `{ }` を使わずに「字下げ�E�インチE��ト）」でコード�E篁E��を決める点です、E/p>
+                    <h2>基本の if 構文</h2>
+                    <p>条件式の後に `:`（コロン）を書き、次の行からは字下げ（インデント）をします。</p>
 
                     <div class="code-block-guide">
-                        <span class="code-label">Python�E�基本の if</span>
-                        <pre>age = 18
-if age >= 18:
-    print("あなた�E成人でぁE)
-    print("選挙権がありまぁE) # インチE��トが同じなら同じブロチE��</pre>
-                    </div>
-                    <p>条件式�E末尾には忁E��コロン `:`
-                        をつけます。その後に続くインチE��トされた行が、条件が�E立した時�E�真�E�True�E�に実行される篁E��です。このルールのおかげで、Pythonのコード�E誰が書ぁE��も同じよぁE��整って見えるとぁE��メリチE��があります、E
-                    </p>
-
-                    <h2>2. else と elif�E�褁E��な刁E��E/h2>
-                    <p>「そぁE��なければ�E�Else�E�」や「別の条件として�E�Elif�E�」を絁E��合わせることで、多方向への刁E��が可能になります、E/p>
-
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E�多方向�E岁E/span>
-                        <pre>score = 75
-
-if score >= 90:
-    print("ランク A")
-elif score >= 70:
-    print("ランク B")
-elif score >= 50:
-    print("ランク C")
-else:
-    print("残念、不合格でぁE)</pre>
-                    </div>
-
-                    <h2>3. 論理演算：褁E��の条件をまとめる</h2>
-                    <p>Pythonの論理演算子�E、記号ではなぁE`and` めE`or` などの「単語」を使ぁE��す。これにより、コードがまるで英斁E��読んでぁE��か�Eように直感的になります、E/p>
-                    <ul>
-                        <li><strong>and:</strong> AめEも�E立するとき（かつ�E�E/li>
-                        <li><strong>or:</strong> AかBのどちらかが�E立するとき（また�E�E�E/li>
-                        <li><strong>not:</strong> 条件を反転させる（〜ではなぁE��E/li>
-                    </ul>
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E�論理演算と篁E��</span>
-                        <pre># Pythonならではの書き方�E�E
-if 10 <= score <= 100:
-    print("有効なスコア篁E��冁E��ぁE)
-
-if is_user and not is_banned:
-    print("ログインを許可しまぁE)</pre>
-                    </div>
-
-                    <h2>4. Pythonの新機�E�E�match-case (Python 3.10+)</h2>
-                    <p>最新のPythonでは、多数の選択肢をよりスマ�Eトに捌く **`match-case`** が導�Eされました。他言語�E switch
-                        斁E��相当しますが、より高度な「パターンマッチング」が可能です、E/p>
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E�match-case斁E/span>
-                        <pre>status = 404
-match status:
-    case 200:
-        print("成功")
-    case 404:
-        print("ペ�Eジが見つかりません")
-    case _:
-        print("不�Eなエラー") # _: は「その他すべて、E/pre>
+                        <span class="code-label">Python</span>
+                        <pre>score = 85
+if score >= 80:
+    print("合格です！")</pre>
                     </div>
 
                     <div class="indent-tip">
-                        <h4>🚀 真偽判定�E落とし穴�E�何が Falsy か！E/h4>
-                        <p>Pythonでは、単なる数値めE��ストも条件式に入れられます。以下�Eも�Eは「偽�E�Ealse相当）」とみなされます、E
-                            <br>・数値の `0`
-                            <br>・空のリスチE`[]` めE��書 `{}`
-                            <br>・空の斁E���E `""`
-                            <br>・`None`�E�何もなぁE��とを表す値�E�E
-                            <br>これ以外�E基本皁E��「真」として扱われます、E
-                        </p>
+                        <h4>⚠️ インデントが命！</h4>
+                        <p>Pythonでは「どこからどこまでが if 文の範囲か」を、波カッコ `{ }`
+                            ではなく、**字下げの量**で判断します。通常、半角スペース4つ分を使います。これがズレるとエラーになるので注意しましょう。</p>
                     </div>
 
-                    <h2>よくある質啁E(Q&A)</h2>
+                    <h2>else と elif</h2>
+                    <p>「さもなくば」を表す `else` や、さらに条件を重ねる `elif`（else if の略）を組み合わせることができます。</p>
 
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: インチE��ト�Eスペ�Eスとタブ、どちらが良ぁE��すか�E�E/h4>
-                        <p>A: Pythonの公式ルール�E�EEP 8�E�では **「半角スペ�Eス4つ、E*
-                            が強く推奨されてぁE��す。混ぜるとエラーの原因になる�Eで、エチE��タの設定でタブをスペ�Eスに変換するようにしておきましょぁE��E/p>
+                    <div class="code-block-guide">
+                        <span class="code-label">Python</span>
+                        <pre>score = 75
+if score >= 80:
+    print("素晴らしい！")
+elif score >= 60:
+    print("合格！")
+else:
+    print("不合格...")</pre>
                     </div>
 
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 1行で if 斁E��書くことはできますか�E�E/h4>
-                        <p>A: はぁE��条件演算子（三頁E��算子）が使えます、E`print("合格") if score >= 80 else print("不合格")`
-                            のように記述できますが、褁E��な場合�E可読性のために通常の if 斁E��使ぁE��しょぁE��E/p>
-                    </div>
+                    <h2>比較演算子</h2>
+                    <ul>
+                        <li>`==` 等しい / `!=` 等しくない</li>
+                        <li>`>` より大きい / `<` より小さい</li>
+                        <li>`>=` 以上 / `<=` 以下</li>
+                    </ul>
 
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: pass 斁E��は何ですか�E�E/h4>
-                        <p>A: 「何もしなぁE��ことを表す命令です。if 斁E��書ぁE��けれど中身が決まってぁE��ぁE��き、エラーを避けるためにとりあえず `pass` と書ぁE��おきます、E/p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>条件刁E���Eプログラムに「知性」を与える第一歩です。インチE��トを正しく使ぁE��なし、`and` めE`or`
-                        でスマ�Eトに条件を記述できるようになれ�E、あなた�Eもう初忁E��E��業です。美しぁE��ンチE��ト�E、美しぁE�Eログラムの第一歩�E�E
-                    </p>
+                    <h2>まとめ</h2>
+                    <p>条件分岐はプログラムに「知性」を与える第一歩です。インデントを正しく使いこなして、複雑なロジックを美しく組み立てましょう。</p>
                 </div>
             </article>
         </main>
@@ -278,9 +171,9 @@ match status:
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 Python Master. All rights reserved.</p>
             </div>

@@ -4,51 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>条件刁E��！Ef/else�E�：�Eログラムに判断をさせる | JavaScript Master リファレンス</title>
-    <meta name="description" content="JavaScriptの条件刁E��につぁE��。if斁E��else斁E��比輁E��算子を使ったロジチE��の作り方を�E忁E��E��けに詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/js-conditions.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/js-conditions.html">
-    <meta property="og:title" content="条件刁E��！Ef/else�E�：�Eログラムに判断をさせる | JavaScript Master リファレンス">
-    <meta property="og:description" content="JavaScriptの条件刁E��につぁE��。if斁E��else斁E��比輁E��算子を使ったロジチE��の作り方を�E忁E��E��けに詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/js-conditions.html">
-    <meta name="twitter:title" content="条件刁E��！Ef/else�E�：�Eログラムに判断をさせる | JavaScript Master リファレンス">
-    <meta name="twitter:description" content="JavaScriptの条件刁E��につぁE��。if斁E��else斁E��比輁E��算子を使ったロジチE��の作り方を�E忁E��E��けに詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "条件刁E��！Ef/else�E�：�Eログラムに判断をさせる | JavaScript Master リファレンス",
-        "description": "JavaScriptの条件刁E��につぁE��。if斁E��else斁E��比輁E��算子を使ったロジチE��の作り方を�E忁E��E��けに詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/js-conditions.html"
-        }
-    }
-    </script>
+    <title>条件分岐（if/else）：プログラムに判断をさせる | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScriptの条件分岐について。if文、else文、比較演算子を使ったロジックの作り方を初心者向けに詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,7 +105,7 @@
             </a>
             <nav class="home-nav">
                 <a href="js_index.html">解説一覧</a>
-                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -156,108 +113,59 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">ロジチE��</span>
-                    <h1>条件刁E��E/h1>
-                    <p>if斁E��使ってプログラムに「判断」をさせめE/p>
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">ロジック</span>
+                    <h1>条件分岐</h1>
+                    <p>if文を使ってプログラムに「判断」をさせる</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>「もし〜なら」を絁E��立てる：思老E��る�Eログラム</h2>
-                    <p>私たちの日常生活は選択�E連続です。「信号が赤なら止まる」「雨が降ってぁE��なら傘を持つ」とぁE��た判断を、�Eログラムの世界で実現するのぁE**条件刁E��E* です、E
-                    </p>
-                    <p>適刁E��条件刁E��を記述できるようになると、�Eログラムは単なる命令の羁E�Eから、状況を自ら判断して最適に動く「知皁E��シスチE��」へと進化します。Webアプリケーションにおけるログイン判定、ゲームの当たり判定、�E力フォームのバリチE�Eションなど、あらゆる動皁E��処琁E�E基盤となります、E
+                    <h2>「もし〜なら」を組み立てる</h2>
+                    <p>私たちの日常生活と同じように、プログラムも「状況に応じて行動を変える」必要があります。例えば、「スコアが80点以上なら合格」、「ボタンが押されたならメッセージを表示」といったロジックを担うのが条件分岐です。
                     </p>
 
-                    <h2>基本の if 斁E��スコーチE/h2>
-                    <p>最も基本皁E��構文です。カチE�� `()` 冁E�E条件式が評価され、その結果ぁE**true�E�真�E�E* であれば、続く波カチE�� `{ }` 冁E�Eコード（ブロチE���E�が実行されます、E/p>
+                    <h2>基本の if 文</h2>
+                    <p>カッコ `()` の中の条件が正しい（true）場合にのみ、続く波カッコ `{}` の中の処理が実行されます。</p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript</span>
                         <pre>const score = 85;
 if (score >= 80) {
-    console.log("合格です！E); // scoreぁE0以上なので実行される
+    console.log("合格です！");
 }</pre>
                     </div>
 
-                    <h2>else と else if�E�褁E��な刁E���E構篁E/h2>
-                    <p>条件が満たされなかった場合�E「さもなく�E (else)」や、別の条件をさらに追加する「さもなく�E、もぁE(else if)」を絁E��合わせることで、多段階�E判断ロジチE��を作ることができます、E
-                    </p>
+                    <h2>else で「さもなくば」を記述</h2>
+                    <p>条件が正しくなかった（false）場合の処理を `else` を使って記述できます。</p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�多段階�E岁E/span>
-                        <pre>if (score >= 90) {
-    console.log("素晴らしぁE��SランクでぁE);
-} else if (score >= 70) {
-    console.log("合格�E�よく頑張りました");
+                        <pre>if (score >= 80) {
+    console.log("合格！");
 } else {
-    console.log("不合格... 次回に期征E��てぁE��ぁE);
+    console.log("不合格...");
+}</pre>
+                    </div>
+
+                    <h2>複数の条件 (else if)</h2>
+                    <p>「さらに〜なら」と条件を繋げていくことができます。</p>
+                    <div class="code-block-guide">
+                        <pre>if (score >= 80) {
+    console.log("天才！");
+} else if (score >= 60) {
+    console.log("合格！");
+} else {
+    console.log("次は頑張ろう！");
 }</pre>
                     </div>
 
                     <div class="logic-panel">
-                        <h3>✁E比輁E��算子�E黁E��律！E== を使おう</h3>
-                        <p>JavaScriptには `==`�E�等価�E�と `===`�E�厳寁E��価�E�がありますが、原剁E��して **常に `===` を使ぁE��ぁE* です、E/p>
+                        <h3>💡 比較演算子を覚えよう</h3>
                         <ul>
-                            <li>`1 == "1"` は **true** になります（勝手に型を変換してしまぁE��す）、E/li>
-                            <li>`1 === "1"` は **false** になります（型まで正しくチェチE��します）、E/li>
+                            <li>`===`　等しい（JavaScriptでは`==`より推奨されます）</li>
+                            <li>`!==`　等しくない</li>
+                            <li>`>` / `<`　より大きい / より小さい</li>
+                            <li>`>=` / `<=`　以上 / 以下</li>
                         </ul>
-                        <p>意図しなぁE��動（バグ�E��E多くは `==` による暗黙�E型変換から発生します。厳寁E��チェチE��を忁E��けましょぁE��E/p>
                     </div>
 
-                    <h2>論理演算子：褁E��の条件を束ねめE/h2>
-                    <p>「AかつB�E�END�E�」や「Aまた�EB�E�ER�E�」とぁE��た褁E��な条件は、論理演算子を使って表現します、E/p>
-                    <ul>
-                        <li><strong>&& (AND):</strong> すべての条件ぁEtrue の時だけ�E体が true になります、E/li>
-                        <li><strong>|| (OR):</strong> ぁE��れか一つの条件ぁEtrue なら�E体が true になります、E/li>
-                        <li><strong>! (NOT):</strong> 条件を反転させます！Erueならfalse、falseならtrue�E�、E/li>
-                    </ul>
-
-                    <h3>ショートサーキチE��評価�E�短絡評価�E��E知恵</h3>
-                    <p>JavaScriptの論理演算子�E、結果が確定した時点で評価を打ち刁E��ます。例えば `A || B` でAぁEtrue なら、Bが何であれ全体�E true
-                        なので、Bの処琁E�E実行されません。これを利用して、エラーを防ぐ高度な書き方がされることもあります、E/p>
-
-                    <h2>真偽値の正体：Truthy と Falsy</h2>
-                    <p>JavaScriptでは、Boolean型！Erue/false�E�そのも�Eでなくても、if斁E�E条件式に入れると自動的に true ぁEfalse か判断される仕絁E��があります、E/p>
-                    <p>以下�E値は **Falsy�E�偽とみなされる値�E�E* と呼ばれ、それ以外�Eすべて **Truthy�E�真とみなされる値�E�E* です、E/p>
-                    <ul>
-                        <li>`false`</li>
-                        <li>`0`�E�数値のゼロ�E�E/li>
-                        <li>`""`�E�空の斁E���E�E�E/li>
-                        <li>`null`</li>
-                        <li>`undefined`</li>
-                        <li>`NaN`�E�計算不�Eな数値�E�E/li>
-                    </ul>
-
-                    <h2>三頁E��算子：簡潔な刁E��E/h2>
-                    <p>単純な二老E��一であれば、`if/else` を使わず一行で書くことができます、E/p>
-                    <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�三頁E��算孁E/span>
-                        <pre>const status = score >= 80 ? "合格" : "不合格";
-console.log(status);</pre>
-                    </div>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: if斁E��多すぎてコードが読みづらくなりました、E/h4>
-                        <p>A: 刁E��が多すぎる場合�E `switch` 斁E�E検討、あるいは「ガード句�E�条件を満たさなぁE��合に早めに return
-                            して処琁E��抜ける手法）」を活用すると、ネスト（階層�E�が流E��なり読みめE��くなります、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: empty array `[]` は true ですか
-                            false ですか�E�E/h4>
-                        <p>A: **true** (Truthy) です！E配�EめE��ブジェクト�E、中身が空であっても「存在してぁE��」とみなされます。中身があるかチェチE��したぁE��合�E `array.length >
-                            0` のように記述が忁E��です、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: `&&` と `||` はどっちが優先されますか�E�E/h4>
-                        <p>A: `&&` の方が優先頁E��が高いです。褁E��な式を書く場合�E `( )` で囲って意図を�E確にしましょぁE��E
-                        </p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>条件刁E���Eプログラミングの「思老E��」そのも�Eです。単なる文法�E丸暗記ではなく、「どのような状況を想定し、どのように判断させるか�E�アルゴリズム�E�」を設計する楽しさを味わいましょぁE��正確な比輁E��論理皁E��絁E��立てができれば、あなた�E作るアプリケーションはより盤石なも�Eになります、E
-                    </p>
+                    <h2>まとめ</h2>
+                    <p>条件分岐はプログラミングの「思考力」そのものです。複雑な条件を組み立てられるようになれば、ゲームの判定やユーザー認証など、あらゆる高度な機能を作れるようになります。</p>
                 </div>
             </article>
         </main>
@@ -268,9 +176,9 @@ console.log(status);</pre>
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
             </div>

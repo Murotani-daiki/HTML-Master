@@ -5,52 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <header> タグの役割と使ぁE�� | HTML Master リファレンス
+        <header> タグの役割と使い方 | HTML Master リファレンス
     </title>
-    <meta name="description" content="ウェブ�Eージの導�E部を定義するheaderタグの役割、ナビゲーションとの関係、褁E��使用する場合�E注意点を詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/tag-header.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/tag-header.html">
-    <meta property="og:title" content="<header> タグの役割と使ぁE�� | HTML Master リファレンス">
-    <meta property="og:description" content="ウェブ�Eージの導�E部を定義するheaderタグの役割、ナビゲーションとの関係、褁E��使用する場合�E注意点を詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/tag-header.html">
-    <meta name="twitter:title" content="<header> タグの役割と使ぁE�� | HTML Master リファレンス">
-    <meta name="twitter:description" content="ウェブ�Eージの導�E部を定義するheaderタグの役割、ナビゲーションとの関係、褁E��使用する場合�E注意点を詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "<header> タグの役割と使ぁE�� | HTML Master リファレンス",
-        "description": "ウェブ�Eージの導�E部を定義するheaderタグの役割、ナビゲーションとの関係、褁E��使用する場合�E注意点を詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/tag-header.html"
-        }
-    }
-    </script>
+    <meta name="description" content="ウェブページの導入部を定義するheaderタグの役割、ナビゲーションとの関係、複数使用する場合の注意点を詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -151,91 +108,34 @@
             <a href="../index.html" class="logo">
                 <h1>HTML Master</h1>
             </a>
-            <nav class="home-nav"><a href="index.html">一覧に戻めE/a><a href="../levels.html">レベル</a></nav>
+            <nav class="home-nav"><a href="index.html">一覧に戻る</a><a href="../levels.html">レベル</a></nav>
         </header>
         <main class="detail-container">
             <article class="detail-content">
                 <header class="detail-header">
                     <div class="tag-info-bar"><span class="tag-badge">&lt;header&gt;</span></div>
-                    <h1>ヘッダータグ�E�Eeader�E�E/h1>
-                    <p>ペ�EジめE��セクションの「顔」となる導�E部刁E��定義するセマンチE��チE��要素、E/p>
+                    <h1>ヘッダータグ（header）</h1>
+                    <p>ページや各セクションの「顔」となる導入部分を定義するセマンティック要素。</p>
                 </header>
                 <div class="detail-body">
-                    <h2>headerタグとは�E�：�EージめE��報の「�Eり口」を定義する</h2>
-                    <p>Webサイトにアクセスしたとき、最初に目に飛�E込んでくる領域——そこにはロゴがあり、メニューがあり、サイト�Eタイトルがあります、ETML5で導�EされぁE`&lt;header&gt;`
-                        タグは、そぁE��た�Eージ全体�E「顔」や、各章�E�セクション�E��E「導�E部」をひとまとめにするための特別な意味を持つタグです、E/p>
-                    <p>かつてのWeb制作では、これらをすべて `&lt;div id="header"&gt;`
-                        などの適当な名前の箱で代用してぁE��したが、E`&lt;header&gt;`
-                        を使ぁE��とで、ブラウザめE��索エンジン、そして補助技術（スクリーンリーダーなど�E�に対して「ここがこ�E惁E��の概要やナビゲーションが集まってぁE��場所ですよ」とはっきりと伝えることができるようになりました、E
-                    </p>
-
+                    <h2>headerタグとは？</h2>
+                    <p>`&lt;header&gt;` は、その範囲（ページ全体、あるいは記事の一部など）における導入部や、ナビゲーションの集まりを示します。</p>
+                    <p>通常、サイトのロゴ、検索フォーム、メインメニューなどがこの中に含まれます。単なる `&lt;div&gt;`
+                        と違い、ブラウザや検索エンジンに対して「ここが始まりの部分ですよ」という明確な意味（セマンティクス）を伝えることができます。</p>
                     <div class="example-box">
-                        <h4>標準的なヘッダーの構造</h4>
+                        <h4>コード例</h4>
                         <div class="example-code">
                             &lt;header&gt;<br>
-                            &nbsp;&nbsp;&lt;a href="/"&gt;&lt;img src="logo.svg" alt="サイトロゴ"&gt;&lt;/a&gt;<br>
-                            &nbsp;&nbsp;&lt;nav&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;...メニュー頁E��...&lt;/ul&gt;<br>
-                            &nbsp;&nbsp;&lt;/nav&gt;<br>
-                            &nbsp;&nbsp;&lt;form action="/search"&gt;...検索...&lt;/form&gt;<br>
+                            &nbsp;&nbsp;&lt;h1&gt;サイトタイトル&lt;/h1&gt;<br>
+                            &nbsp;&nbsp;&lt;nav&gt;メニュー&lt;/nav&gt;<br>
                             &lt;/header&gt;
                         </div>
                     </div>
-
-                    <h2>1. サイト�EチE��ーとセクションヘッダー�E�Eペ�Eジに褁E��あってもいぁE��E/h2>
-                    <p>多くの初忁E��E��「�EチE��ーはペ�Eジの一番上に1つだけ」と勘違ぁE��がちですが、実�E **1ペ�Eジの中で何度でも使ぁE��とができます、E*
-                        そ�E使われ方は主に2つのパターンに刁E��れます、E/p>
-                    <ul>
-                        <li><strong>グローバルヘッダー�E�サイト�EチE��ー�E�E</strong>
-                            ペ�Eジ最上部にあり、サイト�E体�EロゴめE��ビゲーションを含むも�E。通常、E`&lt;body&gt;` 直下に置かれます、E/li>
-                        <li><strong>セクションヘッダー:</strong>
-                            `&lt;article&gt;` めE`&lt;section&gt;`
-                            の中にあり、その記事�EタイトルめE�E開日、著老E��報などをまとめるも�E。「その惁E��のまとまりにおける�E口」としての役割を果たします、E/li>
-                    </ul>
-
-                    <h2>2. アクセシビリチE���E�スクリーンリーダーの強力な助ぁE/h2>
-                    <p>視覚障がい老E��Webサイトを利用する際、E`&lt;header&gt;`
-                        タグは「ランド�Eーク」として機�Eします。多くのスクリーンリーダー�E�音声読み上げソフト�E�には、特定�E要素へ一瞬でジャンプする機�Eがあり、正しい
-                        `&lt;header&gt;` 持E��がされてぁE��ば、ユーザーは煩わしぁE��斁E��飛�Eして、すぐにサイト�EメニューめE��イトルにアクセスすることができるのです、E/p>
-
-                    <h2>3. headerタグの中に入れてはぁE��なぁE��の</h2>
-                    <p>非常に自由度の高いタグですが、いくつか�E「お作法」があります、E/p>
-                    <ul>
-                        <li><strong>別のheaderタグを�EれなぁE</strong> `&lt;header&gt;` の中にさらに `&lt;header&gt;` を�Eれることはできません、E
-                        </li>
-                        <li><strong>footerタグと混ぜなぁE</strong> 原則として、E`&lt;header&gt;` の中に `&lt;footer&gt;`
-                            を�Eれる構造�E�あるいはそ�E送E���E避けましょぁE��情報の「�E口」と「�E口」を明確に刁E��る�Eが良いHTMLの条件です、E/li>
-                    </ul>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q:
-                            サイトロゴをh1にすべきですか�E�！Eeader冁E�Eh1の扱ぁE��E/h4>
-                        <p>A:
-                            これには諸説ありますが、トチE�Eペ�Eジでは「ロゴをh1にする�E�＝サイト�E名前が�Eージ全体�EメインチE�Eマ）」とし、下層ペ�Eジでは「記事�Eタイトルをh1にし、ロゴは単なるaタグとして扱ぁE��とぁE��構�Eが、現在のSEOめE��マンチE��クスの観点から一般皁E��推奨されてぁE��す、E
-                        </p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: headerタグに背景画像を設定してもいぁE��すか�E�E/h4>
-                        <p>A:
-                            はぁE��CSSで自由に裁E��可能です。現代のサイトでは、headerに大きな画像や動画、グラチE�Eションを�E置する「ヒーローエリア」と呼ばれるチE��インが一般皁E��す。ただし、背景が派手すぎてメニュー斁E��が見づらくならなぁE��ぁE��視認性�E�コントラスト）には注意しましょぁE��E
-                        </p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q:
-                            headerタグを使わずに、すべてdivで作ってもいぁE��すか�E�E/h4>
-                        <p>A:
-                            ブラウザ上での「見た目」�E変わりませんが、検索エンジンからの評価めE��E��がい老E��の優しさ�E�アクセシビリチE���E�において、�E確に劣るサイトになってしまぁE��す。�Eロを目持E��のであれば、E��刁E��意味を持つタグ�E�Eeader、footer、mainなど�E�を使ぁE��なすことが忁E��条件です、E
-                        </p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>ヘッダーは、あなた�Eサイトが何老E��あるかをユーザーと機械に伝える、最も重要なスチE�Eジです。正しい `&lt;header&gt;`
-                        タグの知識を身につけることは、単なるコーチE��ングスキルの向上だけでなく、情報を整琁E��、すべてのユーザーに等しく届けるため�E「Webの精神」を琁E��することに他なりません、E
-                    </p>
+                    <h2>複数使ってもいい？</h2>
+                    <p>はい、問題ありません。ページ全体のヘッダーだけでなく、各 `&lt;article&gt;` や `&lt;section&gt;` の中にそれぞれの `&lt;header&gt;`
+                        を置くことができます。これにより、構造がより論理的になります。</p>
+                    <h2>まとめ</h2>
+                    <p>ヘッダーはユーザーに安心感を与える重要なエリアです。適切なセマンティックタグを使用して、機械にも人間にも優しいサイト構造を意識しましょう！</p>
                 </div>
             </article>
         </main>
@@ -245,9 +145,9 @@
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 HTML Master. All rights reserved.</p>
             </div>

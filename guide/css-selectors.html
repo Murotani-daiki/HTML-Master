@@ -4,51 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>セレクタと詳細度�E�適用されるルールを理解する | HTML Master リファレンス</title>
-    <meta name="description" content="CSSのセレクタの種類（要素、クラス、ID�E�と、スタイルの優先頁E��を決定する「詳細度」�E仕絁E��につぁE��初忁E��E��けに詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/css-selectors.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/css-selectors.html">
-    <meta property="og:title" content="セレクタと詳細度�E�適用されるルールを理解する | HTML Master リファレンス">
-    <meta property="og:description" content="CSSのセレクタの種類（要素、クラス、ID�E�と、スタイルの優先頁E��を決定する「詳細度」�E仕絁E��につぁE��初忁E��E��けに詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/css-selectors.html">
-    <meta name="twitter:title" content="セレクタと詳細度�E�適用されるルールを理解する | HTML Master リファレンス">
-    <meta name="twitter:description" content="CSSのセレクタの種類（要素、クラス、ID�E�と、スタイルの優先頁E��を決定する「詳細度」�E仕絁E��につぁE��初忁E��E��けに詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "セレクタと詳細度�E�適用されるルールを理解する | HTML Master リファレンス",
-        "description": "CSSのセレクタの種類（要素、クラス、ID�E�と、スタイルの優先頁E��を決定する「詳細度」�E仕絁E��につぁE��初忁E��E��けに詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/css-selectors.html"
-        }
-    }
-    </script>
+    <title>セレクタと詳細度：適用されるルールを理解する | HTML Master リファレンス</title>
+    <meta name="description" content="CSSのセレクタの種類（要素、クラス、ID）と、スタイルの優先順位を決定する「詳細度」の仕組みについて初心者向けに詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -173,7 +130,7 @@
             </a>
             <nav class="home-nav">
                 <a href="index.html">解説一覧</a>
-                <a href="../index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -181,119 +138,78 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); color: #38bdf8;">CSS基礁E/span>
+                        style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); color: #38bdf8;">CSS基礎</span>
                     <h1>セレクタと詳細度</h1>
-                    <p>「どの要素」にスタイルを当てるか、その優先頁E���Eルールを学ぼぁE/p>
+                    <p>「どの要素」にスタイルを当てるか、その優先順位のルールを学ぼう</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>セレクタとは何か�E�：デザインを「狙ぁE��つ」ため�E技衁E/h2>
-                    <p>CSSの記述は「セレクタ」から始まります。セレクタとは、HTMLの中にある膨大な要素の中から、スタイルを適用したぁE��ーゲチE��を正確に見つけ�Eすため�E「検索条件」�Eようなも�Eです、E
-                    </p>
-                    <p>単純にタグを選ぶだけでなく、特定�E状態（�Eウスが乗ってぁE��時など�E�や、特定�E頁E��にある要素だけを狙い撁E��ことができるようになると、CSSの表現力�E飛躍的に向上します。このガイドでは、基本のセレクタから、優先頁E��を決定する「詳細度」�E計算まで、�Eロが日常皁E��使ぁE��識を深掘りします、E
-                    </p>
+                    <h2>セレクタの種類</h2>
+                    <p>CSSには、HTML要素を選択するための様々な方法があります。代表的なものをマスターしましょう。</p>
 
-                    <h2>1. 基本セレクタの使ぁE�EぁE/h2>
-                    <p>まず�E基本となめEつの手法を整琁E��ましょぁE��E/p>
-
-                    <div class="item-props"
-                        style="background: rgba(56, 189, 248, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); margin: 2rem 0;">
-                        <ul>
-                            <li><strong>要素セレクタ (`h1`, `p`):</strong>
-                                HTMLタグそ�Eも�Eを指定します。�E通�Eベ�EスチE��インを作るのに適してぁE��す、E/li>
-                            <li><strong>クラスセレクタ (`.card`):</strong>
-                                汎用性が最も高い持E��方法です。�Eージ冁E�E褁E��の場所に同じチE��インを適用したぁE��に使ぁE��す、E/li>
-                            <li><strong>IDセレクタ (`#header`):</strong>
-                                ペ�Eジ冁E��唯一の要素を指定します。優先度が非常に高いため、多用するとスタイルの打ち消しが難しくなる点に注意が忁E��です、E/li>
-                            <li><strong>全称セレクタ (`*`):</strong> 全ての要素に一括で適用します。�E期設定�EリセチE��によく使われます、E/li>
-                        </ul>
-                    </div>
-
-                    <h2>2. セレクタの絁E��合わせ（結合子！E/h2>
-                    <p>要素同士の関係性�E��Eれ子構造など�E�を使ってターゲチE��を絞り込めます、E/p>
+                    <h3>1. 要素セレクタ</h3>
+                    <p>HTMLタグの名前で直接指定します。ページ内の全てのそのタグに適用されます。</p>
                     <div class="code-block-guide">
-                        <span class="code-label">CSS�E�結合子�E侁E/span>
-                        <pre>/* 子孫結合子！Enav の中にある a 全て */
-.nav a { color: blue; }
-
-/* 子結合子！Elist の直下にある li だぁE*/
-.list > li { border-bottom: 1px solid; }
-
-/* 隣接允E��結合子：h2 の直後に来めEp だぁE*/
-h2 + p { margin-top: 0; }</pre>
+                        <span class="code-label">CSS</span>
+                        <pre>p { color: gray; }</pre>
                     </div>
 
-                    <h2>3. 擬似クラスと擬似要素�E�状態と場所を指定すめE/h2>
-                    <p>HTMLには書かれてぁE��ぁE��状態」や「パーチE��をチE��インできます、E/p>
-                    <ul>
-                        <li><strong>:hover:</strong> マウスが乗った時だけ変化させます（�Eタンなどで忁E��）、E/li>
-                        <li><strong>:nth-child(n):</strong>
-                            、E番目の要素だけ」「�E数の要素だけ」とぁE��た指定が可能です。表�E�テーブル�E��E縞、E��様などに便利です、E/li>
-                        <li><strong>::before / ::after:</strong>
-                            要素の前後にある「空のスペ�Eス」を擬似皁E��作り出します。アイコンの表示めE��E��皁E��ラインを�Eれるのに重宝します、E/li>
-                    </ul>
+                    <h3>2. クラスセレクタ</h3>
+                    <p>特定の名前がついたグループに適用します。最も頻繁に使われるセレクタです。ドット `.` で始めます。</p>
+                    <div class="code-block-guide">
+                        <span class="code-label">CSS</span>
+                        <pre>.main-text { font-size: 18px; }</pre>
+                    </div>
 
-                    <h2>4. 詳細度�E�Epecificity�E�：スコアで決まる優先頁E��E/h2>
-                    <p>同じ要素に別のスタイルが指定された場合、ブラウザは以下�E「スコア制」で勝敗を決めます、E/p>
+                    <h3>3. IDセレクタ</h3>
+                    <p>ページ内でたった一つの要素だけに適用します。ハッシュ `#` で始めます。</p>
+                    <div class="code-block-guide">
+                        <span class="code-label">CSS</span>
+                        <pre>#header { background: #333; }</pre>
+                    </div>
+
+                    <h2>詳細度（優先順位）</h2>
+                    <p>同じ要素に対して複数のスタイルが競合したとき、どちらが優先されるかを決定するのが「詳細度」というスコアです。</p>
 
                     <table class="specificity-table">
                         <thead>
                             <tr>
-                                <th>種顁E/th>
-                                <th>スコア�E�目安！E/th>
-                                <th>侁E/th>
+                                <th>セレクタ</th>
+                                <th>詳細度の強さ</th>
+                                <th>例</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>インラインスタイル</td>
-                                <td>1000点</td>
+                                <td>インライン</td>
+                                <td>最強</td>
                                 <td>style="..."</td>
                             </tr>
                             <tr>
                                 <td>IDセレクタ</td>
-                                <td>100点</td>
-                                <td>#title</td>
+                                <td>強</td>
+                                <td>#menu</td>
                             </tr>
                             <tr>
-                                <td>クラス / 擬似クラス</td>
-                                <td>10点</td>
-                                <td>.btn, :hover</td>
+                                <td>クラスセレクタ</td>
+                                <td>中</td>
+                                <td>.button</td>
                             </tr>
                             <tr>
-                                <td>要素 / 擬似要素</td>
-                                <td>1点</td>
-                                <td>div, ::before</td>
+                                <td>要素セレクタ</td>
+                                <td>弱</td>
+                                <td>div, p, h1</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p><strong>!important</strong>
-                        とぁE��魔法�E言葉を値の末尾に付けると、この計算を全て無視して最優先されますが、メンチE��ンス性を著しく下げるため、�Eロの現場では「最終手段」とされてぁE��す、E/p>
 
-                    <h2>よくある質啁E(Q&A)</h2>
+                    <p>例えば、同じ段落に対して要素セレクタで `blue` 、クラスセレクタで `red` が指定されていた場合、クラスセレクタの方が優先度が高いため、文字は `red` になります。</p>
 
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: クラス名を2つ重�Eて持E��できますか�E�E/h4>
-                        <p>A: はぁE��`.btn.is-active` のようにスペ�Eスを�Eれずに繋げると、E*「両方のクラスを同時に持ってぁE��要素、E*
-                            にだけ適用されます。これにより詳細度も上がり、より強力な持E��になります、E/p>
-                    </div>
+                    <h2>後勝ちの法則</h2>
+                    <p>詳細度が全く同じだった場合は、CSSファイルの下の方（後から書かれた方）が優先されます。</p>
 
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 擬似クラスの `:` ぁEつ、擬似要素の `::`
-                            ぁEつなのはなぜ！E/h4>
-                        <p>A:
-                            歴史皁E��琁E��ですが、最新のルールでは「状態」を表す�Eがコロン1つの擬似クラス、「要素の一部」を作るのがコロン2つの擬似要素と区別されてぁE��す。ただし、古ぁE��ラウザ対応�Eために擬似要素をコロン1つで書く習�Eも残ってぁE��す、E
-                        </p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 思い通りのスタイルが反映されません、E/h4>
-                        <p>A:
-                            ほとんどの原因は「詳細度負け」です。ブラウザの検証チE�Eル�E�Elementsタブ）を見て、�E刁E�E書ぁE��スタイルが打ち消し線（横線）で消されてぁE��ぁE��確認してみましょぁE��E/p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>セレクタを�Eスターすることは、CSSとぁE��武器を�E由自在に操れるよぁE��なることと同じです。詳細度のルールを味方につけ、効玁E��で美しぁE��ードを目持E��ましょぁE��E
+                    <h2>まとめ</h2>
+                    <p>セレクタを使い分けることで、ページ全体の共通デザインと、特定の場所だけの特別デザインを効率よく作り分けることができます。思った通りに色が反映されないときは、この「詳細度」を確認してみましょう。
                     </p>
                 </div>
             </article>
@@ -305,9 +221,9 @@ h2 + p { margin-top: 0; }</pre>
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 HTML Master. All rights reserved.</p>
             </div>

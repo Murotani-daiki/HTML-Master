@@ -4,51 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScriptの基礎知識：Webを動かす魔況E| JavaScript Master 学習ガイチE/title>
-    <meta name="description" content="JavaScriptの基本斁E��、変数、データ型、DOM操作�E基礎など、�E忁E��E��けに詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/js-basics.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/js-basics.html">
-    <meta property="og:title" content="JavaScriptの基礎知識：Webを動かす魔況E| JavaScript Master 学習ガイチE>
-    <meta property="og:description" content="JavaScriptの基本斁E��、変数、データ型、DOM操作�E基礎など、�E忁E��E��けに詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/js-basics.html">
-    <meta name="twitter:title" content="JavaScriptの基礎知識：Webを動かす魔況E| JavaScript Master 学習ガイチE>
-    <meta name="twitter:description" content="JavaScriptの基本斁E��、変数、データ型、DOM操作�E基礎など、�E忁E��E��けに詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "JavaScriptの基礎知識：Webを動かす魔況E| JavaScript Master 学習ガイチE,
-        "description": "JavaScriptの基本斁E��、変数、データ型、DOM操作�E基礎など、�E忁E��E��けに詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/js-basics.html"
-        }
-    }
-    </script>
+    <title>JavaScriptの基礎知識：Webを動かす魔法 | JavaScript Master 学習ガイド</title>
+    <meta name="description" content="JavaScriptの基本文法、変数、データ型、DOM操作の基礎など、初心者向けに詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -154,7 +111,7 @@
             </a>
             <nav class="home-nav">
                 <a href="../js_levels.html">レベル</a>
-                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -162,78 +119,48 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">学習ガイチE/span>
-                    <h1>JavaScriptの基礎知譁E/h1>
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">学習ガイド</span>
+                    <h1>JavaScriptの基礎知識</h1>
                     <p>動的なWebサイトを支える、最もパワフルな言語を学ぶ</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>JavaScriptとは何か�E�：Webに「命」を吹き込む魔況E/h2>
-                    <p>JavaScriptは、WebサイトにインタラクチE��ブな動きを加えるためのプログラミング言語です、E995年にわずぁE0日間で設計されたこ�E言語�E、今日では世界で最も庁E��使われる言語�E一つとなりました、E
+                    <h2>JavaScriptとは何か？</h2>
+                    <p>JavaScriptは、ウェブサイトにインタラクティブな動きを加えるためのプログラミング言語です。1995年に誕生して以来、ウェブの進化とともに成長し、現在ではブラウザ上だけでなく、サーバー（Node.js）やアプリ開発など、あらゆる場所で使用されています。
                     </p>
-                    <p>HTMLが「骨格�E�構造�E�」、CSSが「外見（裁E���E�」を司るとすれば、JavaScriptは「筋肉」や「知能�E�振る�EぁE��」に例えられます。�EタンをクリチE��した際�E反応、サーバ�EからのリアルタイムなチE�Eタ取得、洗練されたアニメーションの制御など、ブラウザ上で起こる動的な変化のすべてがJavaScriptによって制御されてぁE��す、E
-                    </p>
-
-                    <h2>1. ブラウザの中で何が起きてぁE��のか？！E8エンジンと実行環墁E��E/h2>
-                    <p>JavaScriptがこれほど高速に動作する�Eは、ブラウザ冁E��にある「JavaScriptエンジン」�Eおかげです、Eoogle
-                        Chromeに搭載されてぁE��「V8エンジン」などは、人間が書ぁE��ソースコードを即座に機械語へ翻訳し、E��異皁E��スピ�Eドで実行します、E
-                    </p>
-                    <p>また、JavaScriptは **「シングルスレチE��、E*
-                        とぁE��、一度に一つのことしかできなぁE��質を持ってぁE��す。しかし、「イベントループ」とぁE��賢ぁE��絁E��のおかげで、E��ぁE�E琁E��もブラウザをフリーズさせることなく、スムーズに操作を続けることができるのです、E
+                    <p>HTMLが「骨格」、CSSが「見た目」なら、JavaScriptは「筋肉」や「神経」に例えられます。ボタンをクリックした時の動作、データの読み込み、アニメーションの制御など、ユーザーの操作に反応してウェブページを変化させるのがJavaScriptの役割です。
                     </p>
 
-                    <h2>2. モダンな書き方�E�ES6以降�E進匁E/h2>
-                    <p>JavaScriptは2015年�E�ES6/ES2015�E�に劁E��な進化を遂げました。かつての `var`
-                        を使った古ぁE��き方は姿を消し、現在ではより安�Eで読みめE��ぁE��文が主流となってぁE��す、E/p>
-                    <ul>
-                        <li><strong>変数と定数:</strong> 値を�E代入できる `let` と、一度決めたら変えなぁE`const`。これにより、意図しなぁE��の書き換え（バグ�E�を防ぎます、E/li>
-                        <li><strong>アロー関数:</strong> `(x) => x * 2` のように、数学の公式�Eように簡潔に関数を記述できるようになりました、E/li>
-                        <li><strong>チE��プレートリチE��ル:</strong> バッククォート！E�E�を使ぁE��文字�Eの中に変数めE`${name}` 形式で直感的に埋め込むことができます、E/li>
-                    </ul>
+                    <h2>基本文法：変数と定数</h2>
+                    <p>プログラミングの基本は、データを一時的に保存する「変数」を扱うことです。モダンなJavaScriptでは、値を書き換えられる変数には `let`、一度決めたら変えない定数には `const`
+                        を使用します。</p>
 
                     <div class="code-block-guide">
-                        <pre>// モダンなJavaScriptの侁E
-const userName = "JavaScript Master";
-const greet = (name) => {
-    console.log(`こんにちは、E{name}さん�E�学習を開始しましょぁE��`);
-};
+                        <pre>const name = "JavaScript Master";
+let score = 100;
 
-greet(userName);</pre>
+score = score + 10; // 値の更新
+console.log(name + "のスコアは" + score);</pre>
                     </div>
 
-                    <h2>3. DOM操作：Webペ�Eジを�E由自在に操る</h2>
-                    <p>JavaScriptを学ぶ最大の動機�E **「DOM�E�Eocument Object Model�E�操作、E*
-                        にあります。これ�E、HTMLの吁E��素を「オブジェクト（操作可能な部品E��」としてJavaScriptから制御する仕絁E��です、E
-                        `document.querySelector()`
-                        とぁE��魔法�E言葉を使え�E、�Eージ冁E�E特定�E斁E��を書き換えたり、画像�E色を反転させたり、新しいボタンを作り出したりすることが�E由自在になります、E/p>
+                    <h2>データ型と演算</h2>
+                    <p>JavaScriptが扱うデータにはいくつかの「型」があります：</p>
+                    <ul>
+                        <li><strong>文字列 (String):</strong> "あいうえお" のようなテキスト。</li>
+                        <li><strong>数値 (Number):</strong> 10 や 3.14 などの数字。</li>
+                        <li><strong>真偽値 (Boolean):</strong> true（正しい）か false（間違い）かの2択。</li>
+                        <li><strong>配列 (Array):</strong> 複数のデータをまとめて管理する棚のようなもの。</li>
+                    </ul>
 
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: #facc15; margin-bottom: 0.5rem;">Q: JavaScriptとJavaは同じも�Eですか�E�E/h4>
-                        <p>A:
-                            全く�E別物です。名前�E似てぁE��すが、メロンとメロンパン、あるいはインドとインドネシアほども違ぁE��す、Eavaは主に大規模なシスチE��開発に使われ、JavaScriptはWebブラウザで動作するために開発されました、E
-                        </p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: #facc15; margin-bottom: 0.5rem;">Q: 学習を始める�Eに、何かソフトをインスト�Eルする忁E��がありますか�E�E/h4>
-                        <p>A:
-                            ぁE��え、忁E��ありません。今あなたが使ってぁE��ブラウザ�E�EhromeやSafariなど�E�には、すでにJavaScriptの実行環墁E��備わってぁE��す。ブラウザの「開発老E��ール�E�Eonsole�E�」を開けば、今すぁE行目からコードを実行できます、E
-                        </p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: #facc15; margin-bottom: 0.5rem;">Q: 初忁E��E��最初に覚えるべきことは何ですか�E�E/h4>
-                        <p>A:
-                            まず�E「変数(let/const)」「条件刁E��Eif)」「ルーチEfor)」、そして「イベンチEクリチE��筁E」�E4つです。これらを絁E��合わせるだけで、Webサイト�E基本皁E��インタラクションの8割は作ることができます、E
-                        </p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>JavaScriptの世界へようこそ。最初�Eエラーが�Eたり、思い通りに動かず悩むこともあるでしょぁE��しかし、一歩ずつコードを書き、それが画面上で形になった時の感動は、何物にも代えがたいも�Eです、E
+                    <h2>DOM操作：ページを書き換える</h2>
+                    <p>JavaScriptの真髄は「DOM（Document Object
+                        Model）操作」にあります。これは、JavaScriptを使ってHTML要素を自由自在に書き換える仕組みのことです。例えば、ボタンを押した時に文字の色を変えたり、新しいメッセージを表示したりするのは、すべてこのDOM操作によって行われています。
                     </p>
-                    <p>JavaScript Masterでは、環墁E��築�E手間を省き、コード�E楽しさに雁E��できるカリキュラムを用意してぁE��す。Webの世界に魔法をかける準備はできましたか！E/p>
+
+                    <h2>まとめ</h2>
+                    <p>JavaScriptは非常に奥が深い言語ですが、まずは「コードを書いて、画面が変わる」という楽しさを知ることが大切です。プログラミングの基本ロジックは他の言語とも共通しているため、JavaScriptをマスターすることは、エンジニアとしての確かな一歩になります。
+                    </p>
+                    <p>JavaScript Masterでは、環境構築不要で今すぐコードを試すことができます。さあ、あなたもWebに命を吹き込む魔法を使ってみませんか？</p>
                 </div>
             </article>
         </main>
@@ -244,9 +171,9 @@ greet(userName);</pre>
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
             </div>

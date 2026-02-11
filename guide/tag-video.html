@@ -4,51 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>videoタグの役割と使ぁE���E�モダンな動画埋め込み | HTML Master リファレンス</title>
-    <meta name="description" content="HTML5で動画を直接再生できるvideoタグの設定方法、主要な属性、動画形式�E注意点を詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/tag-video.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/tag-video.html">
-    <meta property="og:title" content="videoタグの役割と使ぁE���E�モダンな動画埋め込み | HTML Master リファレンス">
-    <meta property="og:description" content="HTML5で動画を直接再生できるvideoタグの設定方法、主要な属性、動画形式�E注意点を詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/tag-video.html">
-    <meta name="twitter:title" content="videoタグの役割と使ぁE���E�モダンな動画埋め込み | HTML Master リファレンス">
-    <meta name="twitter:description" content="HTML5で動画を直接再生できるvideoタグの設定方法、主要な属性、動画形式�E注意点を詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "videoタグの役割と使ぁE���E�モダンな動画埋め込み | HTML Master リファレンス",
-        "description": "HTML5で動画を直接再生できるvideoタグの設定方法、主要な属性、動画形式�E注意点を詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/tag-video.html"
-        }
-    }
-    </script>
+    <title><video> タグの役割と使い方 | HTML Master リファレンス</title>
+    <meta name="description" content="HTML5で動画を直接再生できるvideoタグの設定方法、主要な属性、動画形式の注意点を詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -149,87 +106,35 @@
             <a href="../index.html" class="logo">
                 <h1>HTML Master</h1>
             </a>
-            <nav class="home-nav"><a href="index.html">一覧に戻めE/a><a href="../levels.html">レベル</a></nav>
+            <nav class="home-nav"><a href="index.html">一覧に戻る</a><a href="../levels.html">レベル</a></nav>
         </header>
         <main class="detail-container">
             <article class="detail-content">
                 <header class="detail-header">
                     <div class="tag-info-bar"><span class="tag-badge">&lt;video&gt;</span></div>
-                    <h1>動画タグ�E�Eideo�E�E/h1>
-                    <p>外部サービスを使わずに、Webサイト上で動画ファイルを直接再生するための要素、E/p>
+                    <h1>動画タグ（video）</h1>
+                    <p>外部サービスを使わずに、Webサイト上で動画ファイルを直接再生するための要素。</p>
                 </header>
                 <div class="detail-body">
-                    <h2>videoタグとは�E�：�Eラグイン不要�E動画体験を実現する</h2>
-                    <p>かつてWebサイトで動画を�E生するには、Flashなどの外部プラグインをインスト�Eルする忁E��がありました。しかし、HTML5で登場した `&lt;video&gt;`
-                        タグはそ�E常識を打ち破り、ブラウザ標準�E機�Eだけで動画を直接再生することを可能にしました。現在では、YouTubeのような巨大プラチE��フォームから、サイト�E背景で流れる小さな裁E��動画まで、幁E��E��活用されてぁE��す、E
-                    </p>
-                    <p>単に動画を置くだけでなく、�E生速度の変更、字幕�E表示、さらにはJavaScriptと絁E��合わせた高度なインタラクションなど、Web開発老E��とって強力な武器となるタグです、E/p>
-
+                    <h2>videoタグとは？</h2>
+                    <p>`&lt;video&gt;`
+                        タグは、サーバー上の動画ファイルを読み込んで表示します。かつては動画再生に特別なプラグインが必要でしたが、HTML5からはこのタグだけで簡単に再生できるようになりました。</p>
                     <div class="example-box">
-                        <h4>最も推奨される動画の書き方�E�褁E��形式対応！E/h4>
+                        <h4>コード例</h4>
                         <div class="example-code">
-                            &lt;video controls poster="thumbnail.jpg" width="640" height="360"&gt;<br>
-                            &nbsp;&nbsp;&lt;source src="movie.webm" type="video/webm"&gt;<br>
-                            &nbsp;&nbsp;&lt;source src="movie.mp4" type="video/mp4"&gt;<br>
-                            &nbsp;&nbsp;お使ぁE�Eブラウザは動画の再生に対応してぁE��せん、Ebr>
+                            &lt;video src="movie.mp4" controls width="400"&gt;<br>
+                            &nbsp;&nbsp;お使いのブラウザは動画の再生に対応していません。<br>
                             &lt;/video&gt;
                         </div>
                     </div>
-
-                    <h2>1. 基本皁E��主要属性とそ�E役割</h2>
-                    <p>`&lt;video&gt;` タグには、ユーザー体験を左右する重要な属性が多数用意されてぁE��す、E/p>
+                    <h2>主な属性</h2>
                     <ul>
-                        <li><strong>controls:</strong> 再生・一時停止、E��量、シークバ�Eなどの標準コントローラーを表示します、E/li>
-                        <li><strong>autoplay &amp; muted:</strong> 自動�E生を実現します。現代の多くのブラウザでは、E
-                            `muted`�E�消音�E�がセチE��になってぁE��ぁE��自動�E生がブロチE��される仕様になってぁE��す、E/li>
-                        <li><strong>poster:</strong>
-                            動画が読み込まれる前、あるいは再生ボタンが押される前に表示しておく「表紙画像（サムネイル�E�」を持E��します、E/li>
-                        <li><strong>preload:</strong>
-                            `none`�E��E生されるまで読み込まなぁE��、E`metadata`�E�長さなどの惁E��だけ読む�E�、E
-                            `auto`�E��Eージ読み込み時に動画チE�Eタも読み込む�E�から選択し、E��信量をコントロールします、E/li>
+                        <li><strong>controls:</strong> 再生ボタンや音量調節などのコントローラーを表示します。</li>
+                        <li><strong>autoplay:</strong> ページを開いた瞬間に自動で再生を開始します（ミュート状態でないと動かないブラウザが多いです）。</li>
+                        <li><strong>loop:</strong> 動画を繰り返し再生します。</li>
                     </ul>
-
-                    <h2>2. 互換性のための褁E��ソース�E�Eourceタグ�E�E/h2>
-                    <p>動画形式にはMP4、WebM、Oggなど褁E��の種類があり、ブラウザによって得意刁E��が異なります、E`&lt;video&gt;`
-                        タグの中に褁E��の `&lt;source&gt;` を記述することで、ブラウザが�E刁E��再生できる最適な形式を上から頁E��探し�Eし、�E動的に選択してくれます、E/p>
-                    <p>特に、E��画質で軽量な **WebM** を�Eに書き、汎用性の高い **MP4** を予備�E�フォールバック�E�として後に書く�Eが、現在のWeb制作における�Eスト�EラクチE��スです、E/p>
-
-                    <h2>3. アクセシビリチE��とパフォーマンスの最適匁E/h2>
-                    <p>動画はWebコンチE��チE�E中でも非常にチE�Eタ量が大きいため、扱ぁE��注意が忁E��です、E/p>
-                    <ul>
-                        <li><strong>字幕�E追加:</strong> `&lt;track&gt;`
-                            タグを併用することで、VTT形式�E字幕ファイルを追加できます。これ�E聴覚障がい老E��けでなく、E��が�EせなぁE��墁E�Eユーザーにとっても有益です、E/li>
-                        <li><strong>サイズの明示:</strong> `width` と `height`
-                            を指定しておくことで、動画が読み込まれる前にペ�Eジレイアウトが崩れる�E�Eayout Shift�E��Eを防ぐことができます、E/li>
-                    </ul>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: スマ�Eで動画の自動�E生が効きません、E/h4>
-                        <p>A: ほとんどのスマ�Eトフォン用ブラウザでは、E`playsinline` 属性を付け、かつ
-                            `muted`�E�消音�E�設定にしなぁE��自動�E生が許可されません。電池の消耗や意図しなぁE��信量�E発生を防ぐため�E安�E策です、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 背景動画として使ぁE��の注意点は�E�E/h4>
-                        <p>A: `loop`, `autoplay`, `muted`
-                            を指定し、E`controls`�E�操作パネル�E�を外します。また、CSSの `object-fit: cover;`
-                            を使ぁE��、画面ぁE��ぱぁE��比率を保ったまま動画を庁E��ることができます。ただし、低スペックな端末では動作が重くなるため、代替の静止画も用意しておくべきです、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: YouTubeの動画を表示するのもvideoタグですか�E�E
-                        </h4>
-                        <p>A:
-                            ぁE��え、YouTubeやVimeoなどの外部サービスを埋め込む場合�E、一般皁E�� `&lt;iframe&gt;`
-                            タグを使用します、E`&lt;video&gt;`
-                            は、�E刁E�Eサーバ�Eに直接保存してある動画ファイルを�E生するため�Eも�Eです、E/p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>videoタグは、Webサイトに「動き」と「感動」を与える強力なチE�Eルです。適刁E��形式�E選択、属性の使ぁE�Eけ、そしてユーザーへの配�E�E�字幕や通信量）を忘れなぁE��とで、最高�EリチE��コンチE��チE��験を提供することができるでしょぁE��E
-                    </p>
+                    <h2>まとめ</h2>
+                    <p>動画コンテンツは視覚的に強力ですが、ファイルサイズが大きくなりがちです。適切な属性設定と最適化を心がけて、快適なページ作りを行いましょう！</p>
                 </div>
             </article>
         </main>
@@ -239,9 +144,9 @@
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 HTML Master. All rights reserved.</p>
             </div>

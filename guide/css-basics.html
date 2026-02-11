@@ -4,51 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSSの基礎知識：デザインの魔況E| HTML Master 学習ガイチE/title>
-    <meta name="description" content="CSSの書き方、セレクタの種類、�EチE��スモチE��、色の持E��方法など、�E忁E��E��けに詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/css-basics.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/css-basics.html">
-    <meta property="og:title" content="CSSの基礎知識：デザインの魔況E| HTML Master 学習ガイチE>
-    <meta property="og:description" content="CSSの書き方、セレクタの種類、�EチE��スモチE��、色の持E��方法など、�E忁E��E��けに詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/css-basics.html">
-    <meta name="twitter:title" content="CSSの基礎知識：デザインの魔況E| HTML Master 学習ガイチE>
-    <meta name="twitter:description" content="CSSの書き方、セレクタの種類、�EチE��スモチE��、色の持E��方法など、�E忁E��E��けに詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "CSSの基礎知識：デザインの魔況E| HTML Master 学習ガイチE,
-        "description": "CSSの書き方、セレクタの種類、�EチE��スモチE��、色の持E��方法など、�E忁E��E��けに詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/css-basics.html"
-        }
-    }
-    </script>
+    <title>CSSの基礎知識：デザインの魔法 | HTML Master 学習ガイド</title>
+    <meta name="description" content="CSSの書き方、セレクタの種類、ボックスモデル、色の指定方法など、初心者向けに詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,7 +109,7 @@
             </a>
             <nav class="home-nav">
                 <a href="../levels.html">レベル</a>
-                <a href="../index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -160,108 +117,69 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(251, 191, 36, 0.1); color: #fbbf24; border-color: rgba(251, 191, 36, 0.2);">学習ガイチE/span>
-                    <h1>CSSの基礎知譁E/h1>
-                    <p>ウェブサイトに美しさと使ぁE��すさを加えるチE��インの技衁E/p>
+                        style="background: rgba(251, 191, 36, 0.1); color: #fbbf24; border-color: rgba(251, 191, 36, 0.2);">学習ガイド</span>
+                    <h1>CSSの基礎知識</h1>
+                    <p>ウェブサイトに美しさと使いやすさを加えるデザインの技術</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>CSSとは何か�E�：Webペ�Eジに命を吹き込む「デザインの魔法、E/h2>
-                    <p>CSS�E�Eascading Style
-                        Sheets�E��E、HTMLで作られた「骨絁E��」に対して、色めE��、E�E置とぁE��た「裁E��」を施すため�E言語です、ETMLが「何がそこにあるか」を定義するのに対し、CSSは「それがどのように見えるか」を決定します、E
+                    <h2>CSSとは何か？</h2>
+                    <p>CSS（Cascading Style
+                        Sheets）は、HTMLで作られたウェブページの「見た目」を指定するための言語です。HTMLが文書の構造（見出しや段落など）を担当するのに対し、CSSはその文字の色、大きさ、配置、背景デザイン、アニメーションなどを担当します。
                     </p>
-                    <p>CSS�E�カスケード）とぁE��名前には「上から下へと流れる」とぁE��意味があり、褁E��の持E��が重なった時に、どのルールを優先するかを決める強力なルールセチE��が備わってぁE��す。この仕絁E��を理解することが、思い通りのチE��インを実現するための第一歩となります、E
+                    <p>「Cascading（カスケード）」には「階段状に流れる」という意味があり、CSSでは複数のスタイル指定が重なった際に、どのルールを優先的に適用するかという仕組みが備わっています。これによって、サイト全体のスタイルを一括で管理でき、効率的なデザイン制作が可能になります。
                     </p>
 
-                    <h2>1. CSSの書き方�E�セレクタ・プロパティ・値</h2>
-                    <p>CSSは非常にシンプルな構造をしてぁE��す。「どの要素�E�セレクタ�E�」�E、「何（�Eロパティ�E�」を、「どぁE��える（値�E�」かとぁE��セチE��で記述します、E/p>
+                    <h2>CSSの基本構造：セレクタとプロパティ</h2>
+                    <p>CSSは基本的に「どの要素に」「何を」「どう変えるか」という形式で記述します。この「どの要素に」を<strong>セレクタ</strong>、「何を」を<strong>プロパティ</strong>、「どう変えるか」を<strong>値</strong>と呼びます。
+                    </p>
 
                     <div class="code-block-guide">
-                        <span class="code-label">CSS�E�基本の構文</span>
-                        <pre>/* セレクタ { プロパティ: 値; } */
-h1 {
-    color: #3b82f6;      /* 斁E��色をブルーに */
-    font-size: 32px;      /* 斁E��サイズめE2pxに */
-    text-align: center;   /* 中央揁E��に */
+                        <pre>h1 {
+    color: blue;
+    font-size: 24px;
 }</pre>
                     </div>
-                    <p>波カチE�� `{ }` の中に褁E��の命令�E�宣言�E�を書くことができます。各命令の末尾には忁E��セミコロン `;` を忘れなぁE��ぁE��しましょぁE��これ�E、褁E��の命令を区刁E��ための重要な記号です、E/p>
+                    <p>上記の場合、`h1`（セレクタ）に対して、`color`（プロパティ）を `blue`（値）にする、という命令になります。これらを波括弧 `{ }` で囲むのがCSSの基本ルールです。</p>
 
-                    <h2>2. カスケード（優先頁E��）�E仕絁E��</h2>
-                    <p>同じ要素に対して褁E��のスタイルが指定された場合、CSSは以下�Eルールに従ってどれを採用するかを決定します、E/p>
-                    <ul>
-                        <li><strong>後から書ぁE��も�Eが勝つ:</strong> 同じ強さ�E持E��であれば、ファイル冁E��より下に書かれたルールが優先されます、E/li>
-                        <li><strong>具体性は力なめE</strong> <code>h1</code> とぁE��タグ持E��よりも、特定�EID�E�侁E
-                            <code>#main-title</code>�E�を持E��した方が優先されます、E
-                        </li>
-                        <li><strong>スタイルの継承:</strong> 親要素に持E��した文字色めE��ォント�E、特に持E��がなければ子要素にも引き継がれます、E/li>
-                    </ul>
-
-                    <h2>3. CSSを適用する3つの方況E/h2>
-                    <p>ウェブ�EージにCSSを読み込ませるには、主に3つの方法があります。開発現場では「外部ファイル」による管琁E��最も一般皁E��す、E/p>
-                    <ul>
-                        <li><strong>外部CSS�E�推奨�E�E</strong> <code>&lt;link&gt;</code> タグを使って <code>.css</code>
-                            ファイルを読み込みます。褁E��のペ�EジでチE��インを�E有できるため、メンチE��ンス性が最高です、E/li>
-                        <li><strong>冁E��CSS:</strong> HTMLの <code>&lt;head&gt;</code> 冁E�� <code>&lt;style&gt;</code>
-                            タグを書ぁE��記述します。そのペ�Eジ専用のスタイルを書きたぁE��に使ぁE��す、E/li>
-                        <li><strong>インラインCSS:</strong> HTMLタグに直接 <code>style="..."</code>
-                            と書きます。特定�E一箁E��だけを急ぎで変えたい時�E最終手段です、E/li>
-                    </ul>
-
-                    <div class="code-block-guide">
-                        <span class="code-label">HTML�E�外部ファイルの読み込み侁E/span>
-                        <pre>&lt;head&gt;
-    &lt;link rel="stylesheet" href="style.css"&gt;
-&lt;/head&gt;</pre>
-                    </div>
-
-                    <h2>4. ボックスモチE��の概念</h2>
-                    <p>CSSを扱ぁE��で、�Eての要素は「四角い箱」であると老E��る忁E��があります。この箱�E��EチE��ス�E��E隙間をどぁE��整するかが、レイアウト�E基本です、E/p>
-                    <div class="box-note"
-                        style="background: rgba(251, 191, 36, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color);">
-                        <ul>
-                            <li><strong>Margin:</strong> ボックスの外�Eの余白�E�他�E要素との距離�E�E/li>
-                            <li><strong>Border:</strong> ボックスの枠緁E/li>
-                            <li><strong>Padding:</strong> 枠線と中身�E�文字など�E��E間�E冁E�Eの余白</li>
-                            <li><strong>Content:</strong> 実際のチE��ストや画像が表示される領域</li>
-                        </ul>
-                    </div>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: CSSが効きません�E�どぁE��れ�EぁE��ですか�E�E/h4>
-                        <p>A: まず�E「スペルミス」と「セミコロン <code>;</code>
-                            の付け忘れ」を確認しましょぁE��また、ブラウザの「検証チE�Eル�E�E12�E�」を使ぁE��、どのスタイルが打ち消されてぁE��か一目で刁E��ります、E/p>
-                    </div>
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: コメント�EどぁE��って書きますか�E�E/h4>
-                        <p>A: <code>/* 隠したぁE�E容 */</code>
-                            で囲みます、ETMLのコメントとは書き方が違ぁE�Eで注意してください。メモを残したり、一時的にスタイルを無効化したりするのに便利です、E/p>
-                    </div>
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: IDとクラス、どちらを使ぁE��きですか�E�E/h4>
-                        <p>A: 基本皁E��は **クラス (.class-name)**
-                            を使ぁE��しょぁE��EDはペ�Eジ冁E��一つしか存在できなぁE��め、デザインの使ぁE��しがきかなくなります。クラスなら、褁E��の要素に同じチE��インを簡単に適用できます、E/p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>CSSは、あなた�Eウェブサイトを「ただのチE��スト」から「感動を与えるデジタル体験」へと進化させる魔法�EチE�Eルです。まず�E色を変える、中央に寁E��る、とぁE��た小さな一歩から始めてみましょぁE��コードを一行書くたびに、画面が�EロフェチE��ョナルな表惁E��変わってぁE��楽しさを、ぜひ味わってください�E�E
+                    <h2>ボックスモデルの理解</h2>
+                    <p>CSSを理解する上で最も重要な概念のひとつに「ボックスモデル」があります。ウェブページ上の全ての要素は、目に見えない「四角い箱（ボックス）」として扱われます。このボックスは、以下の4つの層で構成されています：
                     </p>
+                    <ul>
+                        <li><strong>Content (コンテンツ):</strong> 文字や画像自体が表示される領域。</li>
+                        <li><strong>Padding (パディング):</strong> コンテンツと枠線の間の内側の余白。</li>
+                        <li><strong>Border (ボーダー):</strong> パディングの外側を囲む枠線。</li>
+                        <li><strong>Margin (マージン):</strong> 枠線の外側にある、他の要素との間隔。</li>
+                    </ul>
+                    <p>このボックスモデルの仕組みを理解することで、要素同士を正確に配置し、バランスの取れたレイアウトを実現できるようになります。</p>
+
+                    <h2>色の指定方法</h2>
+                    <p>CSSでは、色は様々な方法で指定できます。代表的なものに以下の3つがあります：</p>
+                    <ul>
+                        <li><strong>色名:</strong> `red`, `blue`, `white` などの名前で直接指定。</li>
+                        <li><strong>HEX値:</strong> `#ffffff` や `#38bdf8` のような16進数で指定。</li>
+                        <li><strong>RGB/RGBA:</strong> `rgb(255, 0, 0)` や、透明度を含めた `rgba(0, 0, 0, 0.5)` で指定。</li>
+                    </ul>
+
+                    <h2>まとめ</h2>
+                    <p>CSSをマスターすることで、シンプルなHTML文書を、洗練された「ウェブサイト」へと昇華させることができます。最初は覚えることが多いように感じるかもしれませんが、基本のセレクタとプロパティさえ押さえれば、あとはそれらの組み合わせです。
+                    </p>
+                    <p>HTML Masterでは、実際に色を変えたり余白を調整したりしながら、CSSの力（パワー）を体感することができます。さあ、一緒にデザインの世界を駆け抜けましょう！</p>
                 </div>
             </article>
         </main>
+
         <footer class="home-footer">
             <div class="footer-content">
-                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;"><a
-                        href="../privacy.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a><a
-                        href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a><a
-                        href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                <div class="footer-links" style="display: flex; gap: 2rem; margin-bottom: 1rem;">
+                    <a href="../privacy.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
+                    <a href="../terms.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
+                    <a href="../contact.html"
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
-                <p>&copy;
-                    2026 HTML Master. All rights reserved.</p>
+                <p>&copy; 2026 HTML Master. All rights reserved.</p>
             </div>
         </footer>
     </div>

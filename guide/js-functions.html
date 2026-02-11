@@ -4,51 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>関数�E�Eunction�E�：�E琁E��部品化して再利用する | JavaScript Master リファレンス</title>
-    <meta name="description" content="JavaScriptの関数につぁE��。関数の定義方法、引数、戻り値、アロー関数の使ぁE��を�E忁E��E��けに詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/js-functions.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/js-functions.html">
-    <meta property="og:title" content="関数�E�Eunction�E�：�E琁E��部品化して再利用する | JavaScript Master リファレンス">
-    <meta property="og:description" content="JavaScriptの関数につぁE��。関数の定義方法、引数、戻り値、アロー関数の使ぁE��を�E忁E��E��けに詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/js-functions.html">
-    <meta name="twitter:title" content="関数�E�Eunction�E�：�E琁E��部品化して再利用する | JavaScript Master リファレンス">
-    <meta name="twitter:description" content="JavaScriptの関数につぁE��。関数の定義方法、引数、戻り値、アロー関数の使ぁE��を�E忁E��E��けに詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "関数�E�Eunction�E�：�E琁E��部品化して再利用する | JavaScript Master リファレンス",
-        "description": "JavaScriptの関数につぁE��。関数の定義方法、引数、戻り値、アロー関数の使ぁE��を�E忁E��E��けに詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/js-functions.html"
-        }
-    }
-    </script>
+    <title>関数（Function）：処理を部品化して再利用する | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScriptの関数について。関数の定義方法、引数、戻り値、アロー関数の使い方を初心者向けに詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -141,7 +98,7 @@
             </a>
             <nav class="home-nav">
                 <a href="js_index.html">解説一覧</a>
-                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -149,103 +106,53 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">プログラム設訁E/span>
+                        style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">プログラム設計</span>
                     <h1>関数</h1>
-                    <p>レシピをまとめて名付ける：�E琁E�E使ぁE��しで効玁E��チE�E</p>
+                    <p>レシピをまとめて名付ける：処理の使い回しで効率アップ</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>処琁E��「部品」にする�E�関数の本質</h2>
-                    <p>プログラミングにおいて、何度も使ぁE��連の処琁E��ひとまとめにして名前をつけたも�Eを「関数�E�Eunction�E�」と呼びます。料琁E��例えるなら、E��数は「特定�E料理を作るためのレシピ」�Eようなも�Eです。一度レシピを書ぁE��おけば、材料（データ�E�を渡すだけで、何度でも同じ味�E�結果�E�を再現できます、E
-                    </p>
-                    <p>大規模なアプリケーション開発では、一つの大きなプログラムを一から書く�Eではなく、小さくて再利用可能な「関数の部品」をたくさん作り、それらを絁E��合わせて全体を構築してぁE��ます。これにより、コード�E再利用性が高まり、バグの修正めE���Eの追加が格段に楽になります、E
+                    <h2>処理を部品にする</h2>
+                    <p>何度も使う一連の処理をひとまとめにして名前をつけたものを「関数」と呼びます。例えば、「挨拶を表示して日付を出力する」という処理に関数を作っておけば、1行呼び出すだけでいつでもその処理を再現できます。
                     </p>
 
-                    <h2>1. 関数の作り方と使ぁE��</h2>
-                    <p>もっとも標準的な「関数宣言」�E書き方です。キーワーチE`function` の後に任意�E関数名をつけ、続く `{ }` の中に実行したい処琁E��記述します、E/p>
+                    <h2>関数の作り方 (定義)</h2>
+                    <p>もっとも一般的な「関数宣言」の書き方です。</p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�関数宣言</span>
-                        <pre>function greet() {
-    console.log("こんにちは�E�E);
-    console.log("プログラミングの学習�E頁E��ですか�E�E);
+                        <pre>function sayHi() {
+    console.log("こんにちは！");
+    console.log("JS Masterへようこそ！");
+}</pre>
+                    </div>
+
+                    <h2>関数を使う (実行)</h2>
+                    <p>定義しただけでは動きません。名前にカッコ `()` をつけて呼び出します。</p>
+                    <div class="code-block-guide">
+                        <pre>sayHi(); // これで中の処理が実行される</pre>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>💡 引数と戻り値</h3>
+                        <p><strong>引数（ひきすう）:</strong> 関数に渡す「材料」です。</p>
+                        <p><strong>戻り値（もどりち）:</strong> 関数の「結果」を返すものです。</p>
+                        <div class="code-block-guide">
+                            <pre>function add(a, b) {
+    return a + b; // 結果を返す
 }
-
-greet(); // 関数の呼び出し（実行！E/pre>
+const result = add(5, 3); // 8 が返ってくる</pre>
+                        </div>
                     </div>
-                    <p>注意点として、E��数を「作る�E�定義する�E�」ことと「使ぁE��実行する）」ことは別物です。定義しただけでは何も起きず、名前にカチE�� `()` をつけて呼び出すことで初めて中のコードが動き出します、E
-                    </p>
 
-                    <h2>2. 引数と戻り値�E�情報のめE��取り</h2>
-                    <p>関数をより強力にするのが、情報を渡すため�E「引数�E��EきすぁE��」と、結果を受け取るため�E「戻り値�E�もどりち�E�」です、E/p>
-
-                    <h3>引数�E�関数の「材料、E/h3>
-                    <p>呼び出し�Eから関数へ渡すデータです。関数の中で変数のように扱ぁE��とができます。現代のJavaScriptでは、値を渡さなかった時のための「デフォルト引数」も設定可能です、E/p>
+                    <h2>アロー関数</h2>
+                    <p>モダンなJavaScriptで非常に好まれる、短く書ける関数の書き方です。</p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�引数の活用</span>
-                        <pre>function sayHello(name = "ゲスチE) {
-    console.log(`こんにちは、E{name}さん�E�`);
-}
-
-sayHello("田中"); // "こんにちは、田中さん�E�E
-sayHello();      // "こんにちは、ゲストさん！E�E�デフォルト値�E�E/pre>
+                        <pre>const sayHi = () => {
+    console.log("Hi!");
+};</pre>
                     </div>
 
-                    <h3>戻り値�E�関数の「結果、E/h3>
-                    <p>キーワーチE`return` を使ぁE��、E��数の処琁E��果を呼び出し�Eに返すことができます。返された値は変数に代入して再利用できます。また、`return`
-                        が実行された瞬間に、その関数の処琁E�E終亁E��ます、E/p>
-                    <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�計算結果を返す</span>
-                        <pre>function add(a, b) {
-    if (a < 0 || b < 0) return 0; // 0未満なら即座に終亁E��ガード句�E�E
-    return a + b;
-}
-
-const total = add(10, 20); // total に 30 が格納される</pre>
-                    </div>
-
-                    <h2>3. アロー関数�E�モダンスタイルの標溁E/h2>
-                    <p>ES6で登場した「アロー関数�E�Errow Function�E�」�E、現在のフロントエンド開発において最も好まれる書き方です、E`=>` �E�矢の形�E�を使って、より簡潔に記述できます、E/p>
-                    <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�アロー関数</span>
-                        <pre>// 従来の書き方
-const double = function(x) { return x * 2; };
-
-// アロー関数の書き方
-const doubleArrow = (x) => x * 2; // 一行なめEreturn も省略可能�E�E/pre>
-                    </div>
-
-                    <div class="point-card">
-                        <h4>💡 関数と「スコープ」�E重要な関俁E/h4>
-                        <p>関数の中で `const` めE`let`
-                            を使って宣言した変数は、その関数の外から�E一刁E��ることができません�E�ローカルスコープ）。これにより、同じ変数名を使ってぁE��も他�E場所のコードと干渉し合うことがなく、安�Eにプログラムを管琁E��きます。送E��関数の外で宣言された変数は、E��数の中から参�Eすることが可能です、E
-                        </p>
-                    </div>
-
-                    <h2>4. 高度な手法：コールバック関数</h2>
-                    <p>JavaScriptの大きな特徴の一つは、E*「関数自体を別の関数の引数として渡せる、E*ことです。これをコールバック関数と呼びます。�EタンがクリチE��された時の処琁E��イベントリスナ�E�E�や、一定時間後�E処琁E��EetTimeout�E�などで頻繁に利用されます、E
-                    </p>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 関数宣言とアロー関数、どちらを使ぁE��きですか�E�E/h4>
-                        <p>A: 現代の開発では、短く書ける **アロー関数**
-                            が主流です。ただし、E��数宣言には「巻き上げ�E�実行コードより後ろに定義があっても動く）」とぁE��性質があるため、好みに応じて使ぁE�Eけられます、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 引数の数に制限�Eありますか�E�E/h4>
-                        <p>A: 琁E��上�Eありませんが、引数が多すぎると�E�例えば5つ以上など�E�使ぁE�Eが難しくなります。その場合�E、褁E��の引数を一つの「オブジェクト」にまとめて渡す�Eが�EロのチE��ニックです、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: return を書かなぁE��どぁE��りますか�E�E/h4>
-                        <p>A: 戻り値として `undefined` が返ります。結果を期征E��て呼び出す関数の場合�E、忁E�� `return` を忘れずに記述しましょぁE��E/p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>関数は、�Eログラムを整琁E��頓し、論理皁E��絁E��立てるため�E最も協力な道�Eです。最初�E「引数」や「戻り値」�E概念に戸惑うかもしれませんが、これらを使ぁE��なせるようになると、あなた�Eコード�E格段に美しく、�E利用しやすいも�Eに変わります。小さな成功�E�関数の動作確認）を積み重�Eて、E��品化のメリチE��を肌で感じてみてください、E
-                    </p>
+                    <h2>まとめ</h2>
+                    <p>関数は、プログラムを整理整頓するための道具です。大きなプログラムも、小さな関数の集まりとして作ることで、バグが少なくメンテナンスしやすいコードになります。</p>
                 </div>
             </article>
         </main>
@@ -256,9 +163,9 @@ const doubleArrow = (x) => x * 2; // 一行なめEreturn も省略可能�E�E/pre
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
             </div>

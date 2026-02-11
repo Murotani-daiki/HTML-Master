@@ -4,51 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>imgタグの役割と使ぁE���E�画像を正しく表示する | HTML Master リファレンス</title>
-    <meta name="description" content="HTMLの画像タグ�E�Emg�E��E属性、alt属性の重要性、アスペクト比�E維持方法などを�E忁E��E��けに詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/tag-img.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/tag-img.html">
-    <meta property="og:title" content="imgタグの役割と使ぁE���E�画像を正しく表示する | HTML Master リファレンス">
-    <meta property="og:description" content="HTMLの画像タグ�E�Emg�E��E属性、alt属性の重要性、アスペクト比�E維持方法などを�E忁E��E��けに詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/tag-img.html">
-    <meta name="twitter:title" content="imgタグの役割と使ぁE���E�画像を正しく表示する | HTML Master リファレンス">
-    <meta name="twitter:description" content="HTMLの画像タグ�E�Emg�E��E属性、alt属性の重要性、アスペクト比�E維持方法などを�E忁E��E��けに詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "imgタグの役割と使ぁE���E�画像を正しく表示する | HTML Master リファレンス",
-        "description": "HTMLの画像タグ�E�Emg�E��E属性、alt属性の重要性、アスペクト比�E維持方法などを�E忁E��E��けに詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/tag-img.html"
-        }
-    }
-    </script>
+    <title>imgタグの役割と使い方：画像を正しく表示する | HTML Master リファレンス</title>
+    <meta name="description" content="HTMLの画像タグ（img）の属性、alt属性の重要性、アスペクト比の維持方法などを初心者向けに詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -163,7 +120,7 @@
                 <h1>HTML Master</h1>
             </a>
             <nav class="home-nav">
-                <a href="index.html">一覧に戻めE/a>
+                <a href="index.html">一覧に戻る</a>
                 <a href="../levels.html">レベル</a>
             </nav>
         </header>
@@ -174,79 +131,44 @@
                     <div class="tag-info-bar">
                         <span class="tag-badge">&lt;img&gt;</span>
                     </div>
-                    <h1>画像タグ�E�Emage�E�E/h1>
-                    <p>斁E��だけでは伝えきれなぁE��報を視覚的に表現するための要素、E/p>
+                    <h1>画像タグ（Image）</h1>
+                    <p>文字だけでは伝えきれない情報を視覚的に表現するための要素。</p>
                 </header>
 
                 <div class="detail-body">
-                    <h2>imgタグとは�E�：Webサイトに「鮮めE��さ」を添える魔法�E突E/h2>
-                    <p>Webサイトにおいて、テキストだけでは伝えられなぁE��緒や、褁E��な惁E��を一目で琁E��させる力を持つのぁE`&lt;img&gt;`
-                        タグ�E�Emage�E�です。このタグは、ブラウザに対して外部にある画像ファイルを読み込み、その場所に表示するように持E��を�Eします、E/p>
-                    <p>技術的な特徴として、E`&lt;img&gt;`
-                        は **「空要素、E*
-                        と呼ばれ、終亁E��グ�E�Elt;/img&gt;�E�が忁E��ありません。一つのタグの中に、画像へのパスめE��イズ、説明文などの惁E��を「属性」として詰め込んでぁE��、E��常に効玁E��な仕絁E��になってぁE��す、E
+                    <h2>imgタグとは？</h2>
+                    <p>`&lt;img&gt;` タグは、ページに写真、図解、ロゴなどの画像を表示するために使用されます。他の多くのタグとは異なり、終了タグ（&lt;/img&gt;）を持たない「空要素」です。
+                    </p>
+                    <p>画像はHTMLファイルの中に直接「埋め込まれている」わけではありません。ブラウザが「ここにこの画像を表示して」という指示を読み取り、指定された場所（URLやパス）から画像ファイルを読み込んで表示します。
                     </p>
 
                     <div class="example-box">
-                        <h4>パフォーマンスを老E�Eした画像�EークアチE�E</h4>
+                        <h4>コード例</h4>
                         <div class="example-code">
-                            &lt;img src="images/sunset.webp" <br>
-                            &nbsp;&nbsp;alt="江�E島の海岸から見える、燃えるような夕焼け�E景色" <br>
-                            &nbsp;&nbsp;width="800" height="450" <br>
-                            &nbsp;&nbsp;loading="lazy"&gt;
+                            &lt;img src="images/photo.jpg" alt="青空を飛ぶ鳥の様子" width="600" height="400"&gt;
                         </div>
                     </div>
 
-                    <h2>1. alt属性�E�画像に「言葉」を与える責任</h2>
-                    <p>imgタグにおいて `alt`
-                        属性は、単なる「補足」ではありません。画像が見えなぁE��あるいは見ることができなぁE��らゆる状況において、画像�E代わりを務める **「代替チE��スト、E* です、E/p>
+                    <h2>src属性とalt属性</h2>
+                    <p>imgタグには、最低限2つの属性が不可欠です：</p>
                     <ul>
-                        <li><strong>アクセシビリチE��:</strong> 目の不�E由な方が使ぁE��み上げソフトは、このaltチE��ストを読み上げます、E/li>
-                        <li><strong>エラー時�E保険:</strong> ネット環墁E��悪く画像が読み込めなかった際、枠の中にこ�EチE��ストが表示されます、E/li>
-                        <li><strong>SEO�E�検索エンジン最適化！E</strong>
-                            GoogleのAIは画像を解析しますが、最終的にはこ�EaltチE��ストを最も強く信頼して「何が写ってぁE��か」を判断します、E/li>
+                        <li><strong>src:</strong> 画像ファイルの場所を指定します。</li>
+                        <li><strong>alt:</strong> 画像の説明を記述します。画像が読み込めなかった時や、目の不自由な方が読み上げソフトで内容を理解するために非常に重要です。</li>
                     </ul>
 
-                    <h2>2. パフォーマンス最適化：loading="lazy" とサイズ持E��E/h2>
-                    <p>現代のWeb制作では、�Eージの読み込み速度が極めて重要です。そこで欠かせなぁE�EぁE`loading="lazy"`
-                        属性です。これを記述することで、ユーザーがその画像�E場所までスクロールした瞬間に初めて読み込みを開始します。これにより、�Eージを開ぁE��瞬間�E通信量を劁E��に減らすことができます、E/p>
-                    <p>また、E`width` と `height`
-                        属性をHTMLに記述しておくことも重要です。これによって、画像が読み込まれる前にあらかじめ「場所を確保」することができ、画像が表示された瞬間に画面がガタンと揺れる
-                        **「レイアウトシフト�E�ELS�E�、E* を防ぐことができます、E/p>
-
-                    <h2>3. 次世代画像フォーマット�E活用</h2>
-                    <p>かつては `.jpg` めE`.png` が主流でしたが、現在はより軽量で高画質な **`.webp`** めE**`.avif`**
-                        とぁE��たフォーマットが推奨されてぁE��す。同じ見た目でもファイルサイズを半刁E��下に抑えることができるため、HTML Masterではこれら�E最新フォーマット�E使用を推奨してぁE��す、E/p>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: alt属性に「〜�E画像」と書ぁE��もいぁE��すか�E�E/h4>
-                        <p>A:
-                            **避けるべきです、E*
-                            読み上げソフトは自動的に「〜！Eltの冁E���E��E画像」と読み上げるため、altに「〜�E画像」と書くと「青空の画像、�E画像」と重褁E��てしまぁE��す。中身の説明（例：「晴れ渡った青空」）だけで十�Eです、E
+                    <div class="warning-box">
+                        <h4>alt属性を忘れずに！</h4>
+                        <p>alt属性を空にするのは避けましょう。検索エンジンは画像の中身を完璧には理解できないため、altテキストを頼りに画像をインデックスします。適切なaltを設定することは、SEO対策としても基本中の基本です。
                         </p>
                     </div>
 
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 裁E��用のアイコンめE��様にもaltは忁E��ですか�E�E/h4>
-                        <p>A:
-                            意味を持たなぁE��E���E�背景の模様など�E��E場合�E、E`alt=""`
-                            とあえと空にしておきましょぁE��これにより、読み上げソフトに「これ�E無視してぁE��裁E��ですよ」と伝えることができます。属性自体を削除してはぁE��ません、E/p>
-                    </div>
+                    <h2>レスポンシブ対応</h2>
+                    <p>スマホとPCで画像のサイズを調整するために、CSSで `max-width: 100%; height: auto;`
+                        を設定するのが一般的です。これにより、画像が親要素の幅を突き抜けず、アスペクト比を維持したまま伸び縮みするようになります。</p>
 
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: CSSで画像サイズを変えたら、HTMLの
-                            width/height は不要E��E/h4>
-                        <p>A:
-                            ぁE��え、E*どちらも書く�Eが正解です、E*
-                            HTMLの属性は「アスペクト比（縦横比）」をブラウザに伝え、CSSは実際の「表示サイズ」を決定します。両方書くことで、画面のガタつき（レイアウトシフト�E�を最も確実に抑えられます、E
-                        </p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>imgタグを使ぁE��なすことは、サイトに「命」を吹き込むと同時に、その「健康状態（表示速度�E�」を管琁E��ることでもあります。美しさだけでなく、alt属性による優しさ、そして適刁E��属性による速さを�Eね備えた、�EロフェチE��ョナルな画像�E置を目持E��ましょぁE��E
-                    </p>
+                    <h2>まとめ</h2>
+                    <p>画像を正しく扱うことは、サイトの見た目だけでなく、使いやすさ（アクセシビリティ）にも直結します。HTML
+                        Masterの演習では、画像を適切な位置に配置し、正しい属性を設定するテクニックを磨くことができます！</p>
                 </div>
             </article>
         </main>
@@ -257,9 +179,9 @@
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 HTML Master. All rights reserved.</p>
             </div>

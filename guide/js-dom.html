@@ -4,53 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM操作：Webペ�Eジを動皁E��変えめE| JavaScript Master リファレンス</title>
-    <meta name="description" content="JavaScriptの真髁E��あるDOM操作につぁE��、ETML要素の取得方法、イベントリスナ�E、スタイルの変更などを�E忁E��E��けに刁E��りやすく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/js-dom.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/js-dom.html">
-    <meta property="og:title" content="DOM操作：Webペ�Eジを動皁E��変えめE| JavaScript Master リファレンス">
-    <meta property="og:description"
-        content="JavaScriptの真髁E��あるDOM操作につぁE��、ETML要素の取得方法、イベントリスナ�E、スタイルの変更などを�E忁E��E��けに刁E��りやすく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/js-dom.html">
-    <meta name="twitter:title" content="DOM操作：Webペ�Eジを動皁E��変えめE| JavaScript Master リファレンス">
-    <meta name="twitter:description"
-        content="JavaScriptの真髁E��あるDOM操作につぁE��、ETML要素の取得方法、イベントリスナ�E、スタイルの変更などを�E忁E��E��けに刁E��りやすく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "DOM操作：Webペ�Eジを動皁E��変えめE| JavaScript Master リファレンス",
-        "description": "JavaScriptの真髁E��あるDOM操作につぁE��、ETML要素の取得方法、イベントリスナ�E、スタイルの変更などを�E忁E��E��けに刁E��りやすく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/js-dom.html"
-        }
-    }
-    </script>
+    <title>DOM操作：Webページを動的に変える | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScriptの真髄であるDOM操作について。HTML要素の取得方法、イベントリスナー、スタイルの変更などを初心者向けに分かりやすく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -175,7 +130,7 @@
             </a>
             <nav class="home-nav">
                 <a href="js_index.html">解説一覧</a>
-                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -184,105 +139,62 @@
                 <header class="guide-header">
                     <span class="badge"
                         style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">実践スキル</span>
-                    <h1>DOM操佁E/h1>
-                    <p>JavaScriptでHTMLを�E由自在に操る技衁E/p>
+                    <h1>DOM操作</h1>
+                    <p>JavaScriptでHTMLを自由自在に操る技術</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>DOM�E�ドム�E�とは何か�E�：Webペ�Eジの生命緁E/h2>
-                    <p>DOMは **Document Object Model**
-                        の略称で、簡単に言え�E「HTMLを�Eログラムから自由に操れるよぁE��するための窓口」です。ブラウザがHTMLファイルを読み込むと、それを冁E��皁E��「ツリー構造�E�木のような形�E�」�EチE�Eタに変換します。これがDOMです、E
+                    <h2>DOM（ドム）とは何か？</h2>
+                    <p>DOMは <strong>Document Object Model</strong>
+                        の略称で、ブラウザがHTMLを読み込んだ時に作る「ページの設計図」のようなものです。JavaScriptはこの設計図を通して、HTML要素を新しく作ったり、既存の要素の文字を変えたり、削除したりすることができます。
                     </p>
-                    <p>JavaScriptはこ�EDOMとぁE��窓口を通して、HTML要素を新しく作ったり、既存�E斁E��を書き換えたり、不要な部刁E��削除したり、デザイン�E�ESS�E�を動的に変更したりすることができます、EOM操作ができるようになると、Webサイト�E単なる情報の提示から、ユーザーの入力に応じて変化し続ける「アプリケーション」へと進化します、E
-                    </p>
+                    <p>まさに、Webページに「魂」を吹き込み、動的に変化させるためのプラットフォームです。</p>
 
-                    <h2>1. 要素を取得する：狙った獲物を送E��なぁE/h2>
-                    <p>操作�E第一歩は、HTMLの中から操作したい要素を特定して「取得」することです。現代のJavaScript開発では、CSSセレクタと同じ記法が使える `querySelector`
-                        が最も一般皁E��す、E/p>
+                    <h2>1. 要素を取得する</h2>
+                    <p>まずは、操作したいHTML要素をJavaScriptの世界に連れてくる必要があります。以下の方法がよく使われます。</p>
 
-                    <h3>主要な取得メソチE��</h3>
-                    <ul>
-                        <li><strong>document.querySelector(".class-name"):</strong> 持E��した条件に一致する「最初�E一つ」を取得します、E/li>
-                        <li><strong>document.querySelectorAll(".class-name"):</strong>
-                            一致する「すべて」を配�Eのような形式！EodeList�E�で取得します、E/li>
-                        <li><strong>document.getElementById("id-name"):</strong> 特定�EIDを持つ要素を高速に取得します、E/li>
-                    </ul>
+                    <h3>getElementById</h3>
+                    <p>HTMLで `id="..."` を設定した要素を、名前で直接指名して取得します。</p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�要素の取征E/span>
-                        <pre>const title = document.querySelector("h1");
-const items = document.querySelectorAll(".list-item");
+                        <span class="code-label">JavaScript</span>
+                        <pre>const myButton = document.getElementById("main-btn");</pre>
+                    </div>
 
-// 全てに処琁E��行う場合�EforEachが便利�E�E
-items.forEach(item => {
-    item.style.color = "blue";
+                    <h3>querySelector</h3>
+                    <p>CSSと同じセレクタを使って要素を取得します。非常に汎用性が高く、現代のWeb開発で最も推奨される方法です。</p>
+                    <div class="code-block-guide">
+                        <span class="code-label">JavaScript</span>
+                        <pre>const message = document.querySelector(".info-text");</pre>
+                    </div>
+
+                    <h2>2. 内容を書き換える</h2>
+                    <p>取得した要素に対して、中身を書き換えるプロパティを使います。</p>
+
+                    <h3>textContent</h3>
+                    <p>要素の中にある「テキスト」だけを書き換えます。</p>
+                    <div class="code-block-guide">
+                        <span class="code-label">JavaScript</span>
+                        <pre>message.textContent = "読み込みが完了しました！";</pre>
+                    </div>
+
+                    <h2>3. イベントに反応する</h2>
+                    <p>「ボタンがクリックされたら」「キーボードが押されたら」といったユーザーの動作（イベント）を待機し、処理を実行します。</p>
+
+                    <div class="code-block-guide">
+                        <span class="code-label">JavaScript</span>
+                        <pre>myButton.addEventListener("click", () => {
+    console.log("ボタンが押されました");
+    message.style.color = "yellow";
 });</pre>
                     </div>
 
-                    <h2>2. 冁E��と外見を操る�E�動皁E��変化</h2>
-                    <p>取得した要素に対して、中身�E�文字）や見た目�E�スタイル�E�を変更する方法を学びましょぁE��E/p>
-
-                    <h3>チE��スト�E変更�E�textContent</h3>
-                    <p>要素冁E�E斁E��だけを安�Eに書き換えます。`innerHTML` とぁE��プロパティもありますが、セキュリチE���E�ESS攻撁E��ど�E��E観点から、単なる文字�E変更には `textContent`
-                        を使ぁE�Eが�Eロの鉁E��です、E/p>
-
-                    <h3>クラスの操作：classList</h3>
-                    <p>要素のスタイルを変えるとき、JavaScriptで直接 `element.style.color = "red"`
-                        と書く�Eはあまり推奨されません。代わりに、CSSであらかじめ用意したクラスを付け外しする **`classList`** を使ぁE�Eが最もスマ�Eトな方法です、E/p>
-                    <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�クラス操作�E黁E��征E/span>
-                        <pre>const card = document.querySelector(".card");
-
-card.classList.add("active");    // クラスを追加
-card.classList.remove("hidden"); // クラスを削除
-card.classList.toggle("dark");   // あれば消す、なければ付ける！E/pre>
-                    </div>
-
-                    <h2>3. 要素を生み出し、削除する</h2>
-                    <p>既存�Eも�Eを変えるだけでなく、新しいHTML要素をゼロから作り出すことも可能です、E/p>
-                    <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�要素の動的生�E</span>
-                        <pre>// 1. 新しい div を作�E
-const newDiv = document.createElement("div");
-
-// 2. 中身を設宁E
-newDiv.textContent = "新しく追加された要素でぁE;
-newDiv.classList.add("dynamic-item");
-
-// 3. 画面上�E親要素に追加
-const container = document.querySelector("#container");
-container.appendChild(newDiv);</pre>
-                    </div>
-
                     <div class="point-card">
-                        <h4>🚀 パフォーマンスの知恵�E�リフロー�E��E描画�E�を抑えめE/h4>
-                        <p>DOM操作�EJavaScriptの処琁E�E中でも「高コスト（重ぁE��」な部類に入ります、E00個�E要素を追加するのに100囁E`appendChild`
-                            すると画面がカクつくことがあります。そのような場合�E、一時的なメモリ上�EコンチE��である `DocumentFragment`
-                            を使ぁE��一気にまとめて画面に追加するのが上級老E�EチE��ニックです、E/p>
+                        <h4>💡 「イベントリスナー」は耳を傾ける人</h4>
+                        <p>`addEventListener` は、特定の操作が行われるのをずっと監視している「門番」のような役割を果たします。</p>
                     </div>
 
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: querySelector
-                            で要素が見つからなぁE��どぁE��りますか�E�E/h4>
-                        <p>A: `null` が返ってきます。見つからなかった場合にエラーにならなぁE��ぁE��`if (element) { ... }` のようにチェチE��を挟むのが安�Eな書き方です、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: HTMLタグごと斁E���Eで流し込みたい時�E�E�E/h4>
-                        <p>A: `innerHTML` を使ぁE��す。ただし、ユーザーが�E力した文字をそ�Eまま `innerHTML`
-                            に入れるとウイルス�E�スクリプト�E�が実行される危険があるため、細忁E�E注意が忁E��です、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 親要素めE�E弟要素を取得するには�E�E/h4>
-                        <p>A:
-                            `parentElement`�E�親�E�、`children`�E�子リスト）、`nextElementSibling`�E�隣の弟要素�E�などのプロパティを辿ることで、DOMチE��ーを�E由自在に移動できます、E
-                        </p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>「要素を取得し、クラスを操作し、忁E��に応じて新しい要素を作る」。これがモダンなWebフロントエンド開発の基本サイクルです、EOM操作をマスターすれば、jQueryなどのライブラリに頼らずとも、美しく動くユーザーインターフェースを�E刁E�E手で作り上げることができるようになります、E
+                    <h2>まとめ</h2>
+                    <p>「要素を取得し、イベントを待ち、内容を書き換える」。これがモダンなWebフロントエンド開発の基本サイクルです。DOM操作をマスターすれば、ユーザーと対話するインタラクティブなアプリケーションを自由に作れるようになります。
                     </p>
                 </div>
             </article>
@@ -294,9 +206,9 @@ container.appendChild(newDiv);</pre>
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
             </div>

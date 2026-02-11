@@ -4,51 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>チE�Eタ構造�E�情報を整琁E��て扱ぁE| Python Master リファレンス</title>
-    <meta name="description" content="Pythonの主要なチE�Eタ構造�E�リスト、辞書、タプル、E��合）につぁE��。それぞれ�E特徴と使ぁE�Eけ、操作方法を初忁E��E��けに刁E��りやすく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/py-data-structures.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/py-data-structures.html">
-    <meta property="og:title" content="チE�Eタ構造�E�情報を整琁E��て扱ぁE| Python Master リファレンス">
-    <meta property="og:description" content="Pythonの主要なチE�Eタ構造�E�リスト、辞書、タプル、E��合）につぁE��。それぞれ�E特徴と使ぁE�Eけ、操作方法を初忁E��E��けに刁E��りやすく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/py-data-structures.html">
-    <meta name="twitter:title" content="チE�Eタ構造�E�情報を整琁E��て扱ぁE| Python Master リファレンス">
-    <meta name="twitter:description" content="Pythonの主要なチE�Eタ構造�E�リスト、辞書、タプル、E��合）につぁE��。それぞれ�E特徴と使ぁE�Eけ、操作方法を初忁E��E��けに刁E��りやすく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "チE�Eタ構造�E�情報を整琁E��て扱ぁE| Python Master リファレンス",
-        "description": "Pythonの主要なチE�Eタ構造�E�リスト、辞書、タプル、E��合）につぁE��。それぞれ�E特徴と使ぁE�Eけ、操作方法を初忁E��E��けに刁E��りやすく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/py-data-structures.html"
-        }
-    }
-    </script>
+    <title>データ構造：情報を整理して扱う | Python Master リファレンス</title>
+    <meta name="description" content="Pythonの主要なデータ構造（リスト、辞書、タプル、集合）について。それぞれの特徴と使い分け、操作方法を初心者向けに分かりやすく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -159,7 +116,7 @@
             </a>
             <nav class="home-nav">
                 <a href="py_index.html">解説一覧</a>
-                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -167,109 +124,44 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">チE�Eタ活用</span>
-                    <h1>チE�Eタ構造</h1>
-                    <p>惁E��を�Eとまとめにして管琁E��、効玁E��く�Eログラムを動かそぁE/p>
+                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">データ活用</span>
+                    <h1>データ構造</h1>
+                    <p>情報をひとまとめにして管理し、効率よくプログラムを動かそう</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>惁E��をどぁE��とめるか？：データ構造の重要性</h2>
-                    <p>プログラムでは単一の数値めE��字�Eだけでなく、「褁E��のチE�Eタの雁E��り」を扱ぁE��とがほとんどです。Pythonには、用途に合わせて使ぁE�Eけられる強力なチE�Eタ構造�E�コンチE��とも呼ばれます）が標準で備わってぁE��す、E
-                    </p>
-                    <p>適刁E��チE�Eタ構造を選ぶことは、�Eログラムの「読みめE��さ」だけでなく「実行速度」にも直結します。名簿を作るなら辞書、履歴を保存するならリスト、とぁE��た�E合に、それぞれ�E特性を理解することが�Eロへの第一歩です、E
-                    </p>
+                    <h2>情報をどうまとめるか？</h2>
+                    <p>プログラムでは単一の数値や文字列だけでなく、「複数のデータの集まり」を扱うことがよくあります。Pythonには、用途に合わせて使い分けられる強力なデータ構造が備わっています。</p>
 
                     <div class="structure-grid">
                         <div class="structure-card">
-                            <h4>リスチE[list]</h4>
-                            <p>頁E���E�インチE��クス�E��EあるチE�Eタの雁E��り。中身の書き換えが自由自在です、E/p>
+                            <h4>リスト [list]</h4>
+                            <p>順番があるデータの集まり。インデックス(0から始まる番号)で管理します。中身を自由に変更できます。</p>
                         </div>
                         <div class="structure-card">
                             <h4>辞書 {dict}</h4>
-                            <p>「名前（キー�E�」と「値」をセチE��で管琁E��検索スピ�Eドが驚異皁E��速いです、E/p>
+                            <p>「キー」と「値」をセットにして保存。名簿のように、特定の名前から情報を素早く引き出すのに最適です。</p>
                         </div>
                     </div>
 
-                    <h2>1. リスチE[list]�E�並び頁E��命の丁E�E選扁E/h2>
-                    <p>最も頻繁に使われるデータ構造です。カチE�� `[ ]` で囲み、カンマで区刁E��ます、E/p>
-
+                    <h2>1. リストの基本</h2>
                     <div class="code-block-guide">
-                        <span class="code-label">Python�E�リスト�E操佁E/span>
-                        <pre>colors = ["Red", "Green", "Blue"]
-
-colors.append("Yellow") # 末尾に追加
-colors[0] = "Crimson"   # 0番目を書き換ぁE
-print(colors[1:3])      # スライス�E�E番目から2番目まで取征E/pre>
+                        <pre>fruits = ["Apple", "Banana"]
+fruits.append("Cherry") # 追加
+print(fruits[0])        # "Apple"を取得</pre>
                     </div>
-                    <p>リスト�E強力な機�Eの一つぁE**スライス** です、E`[開姁E終亁E` と書くことで、リスト�E一部を一気に刁E��出すことができます、E
-                    </p>
 
-                    <h2>2. 辞書 {dict}�E��E大なチE�Eタから一瞬で見つけ�EぁE/h2>
-                    <p>キー(Key)と値(Value)を絁E��合わせて保存します。数丁E��のチE�Eタがあっても、キーを指定すれ�E一瞬で値を取り�Eせるのが最大の特徴です（ハチE��ュマップ構造�E�、E/p>
-
+                    <h2>2. 辞書の基本</h2>
                     <div class="code-block-guide">
-                        <span class="code-label">Python�E�辞書の活用</span>
-                        <pre>user_scores = {"Alice": 95, "Bob": 80, "Charlie": 70}
-
-# チE�Eタの取征E
-print(user_scores["Alice"])
-
-# チE�Eタの追加・更新
-user_scores["David"] = 85</pre>
+                        <pre>user = {"name": "Taro", "age": 20}
+print(user["name"]) # "Taro"を取得</pre>
                     </div>
 
-                    <h2>3. タプル (tuple) と 雁E�� {set}</h2>
-                    <p>これら二つも、特定�E場面で非常に強力な力を発揮します、E/p>
+                    <h2>3. タプル (tuple)</h2>
+                    <p>丸カッコ `( )` を使います。リストと似ていますが、**一度作った後で中身を変更できない**という特徴があります。設定値など、変えたくないデータを扱うのに適しています。</p>
 
-                    <h3>タプル�E�不夁EImmutable)なリスチE/h3>
-                    <p>丸カチE�� `( )` を使ぁE��す。最大の特徴は、一度作ると **「中身を変更できなぁE��E* ことです、E
-                        <br>侁E `coordinate = (35.6895, 139.6917)` # 座標など、変わっては困るデータに、E
-                    </p>
-
-                    <h3>雁E���E�重褁E��許さなぁE��数学皁E��雁E��めE/h3>
-                    <p>波カチE�� `{ }` を使ぁE��す。重褁E��る値は自動的に一つにまとめられます、E
-                        <br>侁E `tags = {"Python", "HTML", "Python"}` # 重褁E��消え `{"Python", "HTML"}` になる、E
-                    </p>
-
-                    <h2>4. Pythonの魔法：リスト�E匁E��訁E/h2>
-                    <p>Pythonには、既存�Eリストから新しいリストを一行で作る非常にエレガントな書き方があります、E/p>
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E�リスト�E匁E��訁E/span>
-                        <pre>numbers = [1, 2, 3, 4, 5]
-# すべてめE倍にした新しいリストを作る
-doubled = [n * 2 for n in numbers]
-# print(doubled) -> [2, 4, 6, 8, 10]</pre>
-                    </div>
-
-                    <div class="structure-card" style="margin-top: 2rem;">
-                        <h4>🚀 パフォーマンスの豁E��識：計算量</h4>
-                        <p>・リストから特定�E値を「探す」�Eは、データ量が増えるほど時間がかかります、E
-                            <br>・辞書からキーを使って値を「探す」�Eは、データがどれだけ増えても常に一定�E速さです、E
-                            <br>賢ぁE��ータ構造の選択が、�E速�Eアプリを生み出します、E
-                        </p>
-                    </div>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: リスト�E中に別のリストを入れることはできますか�E�E/h4>
-                        <p>A: 可能です。これを「多次允E��スト（ネスト）」と呼びます。表形式�EチE�EタめE��ゲームのマップ情報�E�E, Y座標）などを表す際によく使われます、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 辞書のキーにリストを使ぁE��とはできますか�E�E/h4>
-                        <p>A: できません。辞書のキーには「変更不可能なチE�Eタ�E�不変）」である忁E��があります。そのため、リスト�E代わりにタプルをキーとして使ぁE��とは可能です、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: リストを並び替えるには�E�E/h4>
-                        <p>A: `list.sort()` メソチE��を使ぁE��中身を直接書き換えてソートします。�Eのリストを壊したくなぁE��合�E `sorted(list)` 関数を使ぁE��しょぁE��E/p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>それぞれのチE�Eタ構造には得意・不得意があります。データの頁E��が大事なめE**リスチE*、名前で管琁E��たいなめE**辞書**、不変性を保ちたいなめE**タプル**、E��褁E��除きたぁE��めE
-                        **雁E��**。これらを意識して使ぁE�Eけることで、あなた�EPythonコード�Eより洗練されたものになります！E
-                    </p>
+                    <h2>まとめ</h2>
+                    <p>それぞれのデータ構造には得意・不得意があります。データの順序が大事ならリスト、名前で管理したいなら辞書、不変性を保ちたいならタプル、というように使い分けていきましょう。</p>
                 </div>
             </article>
         </main>
@@ -280,9 +172,9 @@ doubled = [n * 2 for n in numbers]
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 Python Master. All rights reserved.</p>
             </div>

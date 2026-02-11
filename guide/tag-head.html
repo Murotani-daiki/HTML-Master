@@ -6,52 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
 
-        <head> タグの役割と使ぁE�� | HTML Master リファレンス
+        <head> タグの役割と使い方 | HTML Master リファレンス
     </title>
-    <meta name="description" content="Webペ�Eジのメタ惁E��、タイトル、外部リソースの読み込みなどを制御するheadタグの機�Eを詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/tag-head.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/tag-head.html">
-    <meta property="og:title" content="<head> タグの役割と使ぁE�� | HTML Master リファレンス">
-    <meta property="og:description" content="Webペ�Eジのメタ惁E��、タイトル、外部リソースの読み込みなどを制御するheadタグの機�Eを詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/tag-head.html">
-    <meta name="twitter:title" content="<head> タグの役割と使ぁE�� | HTML Master リファレンス">
-    <meta name="twitter:description" content="Webペ�Eジのメタ惁E��、タイトル、外部リソースの読み込みなどを制御するheadタグの機�Eを詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "<head> タグの役割と使ぁE�� | HTML Master リファレンス",
-        "description": "Webペ�Eジのメタ惁E��、タイトル、外部リソースの読み込みなどを制御するheadタグの機�Eを詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/tag-head.html"
-        }
-    }
-    </script>
+    <meta name="description" content="ブラウザには表示されない「ページの裏方」、headタグに含まれるメタ情報やタイトル設定について詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,86 +109,35 @@
             <a href="../index.html" class="logo">
                 <h1>HTML Master</h1>
             </a>
-            <nav class="home-nav"><a href="index.html">一覧に戻めE/a><a href="../levels.html">レベル</a></nav>
+            <nav class="home-nav"><a href="index.html">一覧に戻る</a><a href="../levels.html">レベル</a></nav>
         </header>
         <main class="detail-container">
             <article class="detail-content">
                 <header class="detail-header">
                     <div class="tag-info-bar"><span class="tag-badge">&lt;head&gt;</span></div>
-                    <h1>メタ惁E���E�Eead�E�E/h1>
-                    <p>ブラウザの画面には映らなぁE��、検索エンジンめE��ラウザにとって最も重要な「�Eージの裏�E」�E設定画面、E/p>
+                    <h1>メタ情報（head）</h1>
+                    <p>ブラウザの画面には映らないが、検索エンジンやブラウザにとって最も重要な「ページの裏側」の設定画面。</p>
                 </header>
                 <div class="detail-body">
-                    <h2>headタグとは�E�：Webペ�Eジの「知性」と「設定」を司るエリア</h2>
-                    <p>Webペ�Eジの構�Eにおいて、E`&lt;body&gt;` タグが人間に見せるコンチE��チE��拁E��する�Eに対し、この `&lt;head&gt;`
-                        タグは **「�Eシン�E�ブラウザめE��索エンジン�E��Eための惁E��、E*
-                        を担当します。ここに記述された�E容は、基本皁E��ブラウザの白ぁE��面上には一刁E��示されません�E�タイトルなどを除く）、E/p>
-                    <p>しかし、画面に見えなぁE��らとぁE��て重要性が低いわけではありません。�Eしろ、文字化けを防ぎ、スマ�Eで正しく表示させ、Googleの検索結果で上位に表示させるため�E「司令塔」としての役割を担ってぁE��す。ここが正しく設定されてぁE��ぁE��、どんなに素晴らしぁE��ザインのサイトも、ユーザーに正しく届くことはありません、E
-                    </p>
-
+                    <h2>headタグとは？</h2>
+                    <p>Webページの「タイトル」や「文字コード（文字化け防止）」、「スマホ対応の設定」など、画面には表示されない設定情報を記述する場所です。</p>
+                    <p>ユーザーが直接見ることはありませんが、検索エンジンが「このページは何について書かれているか」を判断するための情報の宝庫であり、SEO対策において最も重要なタグのひとつです。</p>
                     <div class="example-box">
-                        <h4>head冁E�E標準的な設定侁E/h4>
+                        <h4>主な記述内容</h4>
                         <div class="example-code">
-                            &lt;head&gt;<br>
-                            &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt; &lt;!-- 斁E��化け防止 --&gt;<br>
-                            &nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-                            &lt;!-- スマ�E対忁E--&gt;<br>
-                            &nbsp;&nbsp;&lt;title&gt;サイト�Eタイトル&lt;/title&gt;<br>
-                            &nbsp;&nbsp;&lt;link rel="stylesheet" href="style.css"&gt;<br>
-                            &lt;/head&gt;
+                            &lt;title&gt;ページのタイトル&lt;/title&gt;<br>
+                            &lt;meta charset="UTF-8"&gt;<br>
+                            &lt;link rel="stylesheet" href="style.css"&gt;
                         </div>
                     </div>
-
-                    <h2>1. 忁E��級�Eメタ惁E���E�文字コードとビューポ�EチE/h2>
-                    <p>現代のWeb制作で「お紁E��」として記述される�Eが以下�E2つのメタタグです、E/p>
+                    <h2>主な役割</h2>
                     <ul>
-                        <li><strong>&lt;meta charset="UTF-8"&gt;:</strong>
-                            「このファイルはUTF-8とぁE��形式で書かれてぁE��す」と宣言します。これを忘れると、日本語が「あぁE��えお」ではなく意味不�Eな記号�E�文字化け）として表示されるリスクがあります、E/li>
-                        <li><strong>&lt;meta name="viewport" ...&gt;:</strong>
-                            スマ�Eトフォンなどの小さぁE��面で、サイトを適刁E��大きさで表示させるため�E魔法�E一行です。これがなぁE��、スマ�Eで見てもPC版が無琁E��り縮小されたような、E��常に使ぁE��くい表示になってしまぁE��す、E
-                        </li>
+                        <li><strong>タイトル設定:</strong> ブラウザのタブに表示される名前を決めます。</li>
+                        <li><strong>外部ファイルの読み込み:</strong> デザインを決めるCSSファイルや、動きを作るJavaScriptファイルを連結します。</li>
+                        <li><strong>SEO設定:</strong> 検索結果に表示される説明文（ディスクリプション）などを指定します。</li>
                     </ul>
-
-                    <h2>2. タイトルとチE��スクリプション�E�検索エンジンの顁E/h2>
-                    <p>検索結果に表示される情報は、�Eてheadタグの中で決まります、E/p>
-                    <ul>
-                        <li><strong>&lt;title&gt;:</strong>
-                            ブラウザのタブ名、そして検索結果の「青ぁE��ンク」になる最も重要なチE��ストです、Eペ�EジにつぁEつだけ、その冁E��を正確に表す名前を付けます、E/li>
-                        <li><strong>&lt;meta name="description" ...&gt;:</strong>
-                            検索結果のタイトルの下に表示される「説明文」です。ここを魁E��皁E��斁E��にすることで、ユーザーのクリチE��玁E��劁E��に高めることができます、E/li>
-                    </ul>
-
-                    <h2>3. リソースの連結：CSSとアイコン</h2>
-                    <p>チE��インの命であるCSSファイルめE��サイト�Eアイコン�E�Eavicon�E�もここで持E��します、E`&lt;link&gt;`
-                        タグを使ぁE��外部にあるファイルとこ�EHTMLを結�Eつけます。これにより、構造�E�ETML�E�とチE��イン�E�ESS�E�を綺麗に刁E��して管琁E��きるようになります、E/p>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: JavaScriptの &lt;script&gt;
-                            タグもここに入れますか�E�E/h4>
-                        <p>A:
-                            可能です。ただし、�Eは「�Eージの読み込みを遅くしなぁE��めにbodyの最後に入れる」�Eが定石でした。現代では `async` めE`defer`
-                            とぁE��た属性を使ぁE��とで、head冁E��入れても�Eージの読み込みを邪魔せずにスクリプトを実行できるようになってぁE��す、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: SNSでシェアされた時の画像�EどぁE��定しますか�E�E/h4>
-                        <p>A:
-                            **「Open Graph Protocol (OGP)、E* とぁE��特別なメタタグをhead冁E��記述します、E`&lt;meta property="og:image"
-                            content="..."&gt;`
-                            のように書くことで、TwitterやLINEでシェアされた際にかっこいぁE��イキャチE��画像が表示されるよぁE��なります、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: headの中にコメントを書ぁE��もいぁE��すか�E�E/h4>
-                        <p>A:
-                            はぁE���Eく問題ありません。�Eしろ、どのメタタグが何�E設定なのかをコメントでメモしておくことは、他�E開発老E��コードを読む際�E大きな助けになります、E/p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>headタグは、Webペ�Eジの「知性」です。ユーザーの目には見えませんが、ここでの丁寧な設定が、あなた�Eサイトを「単なるデータ」から「世界に開かれた質の高い公式ドキュメント」へと昁E��させます。美しぁEodyを作るのと同じくらぁE��賢ぁEeadを作ることに惁E�Eを注ぁE��みましょぁE��E
-                    </p>
+                    <h2>まとめ</h2>
+                    <p>見えない部分だからこそ丁寧に。headタグの中身を充実させることは、プロフェッショナルなウェブサイト制作の第一歩です！</p>
                 </div>
             </article>
         </main>
@@ -241,9 +147,9 @@
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 HTML Master. All rights reserved.</p>
             </div>

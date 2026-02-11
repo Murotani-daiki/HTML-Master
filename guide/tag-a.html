@@ -4,51 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aタグ�E�リンク�E��E役割と使ぁE���E�繋がるWebの基礁E| HTML Master リファレンス</title>
-    <meta name="description" content="HTMLのリンクタグ�E�E�E��E使ぁE��、href属性、target属性の種類、�E部リンクと外部リンクの違いなどを詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/tag-a.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/tag-a.html">
-    <meta property="og:title" content="aタグ�E�リンク�E��E役割と使ぁE���E�繋がるWebの基礁E| HTML Master リファレンス">
-    <meta property="og:description" content="HTMLのリンクタグ�E�E�E��E使ぁE��、href属性、target属性の種類、�E部リンクと外部リンクの違いなどを詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/tag-a.html">
-    <meta name="twitter:title" content="aタグ�E�リンク�E��E役割と使ぁE���E�繋がるWebの基礁E| HTML Master リファレンス">
-    <meta name="twitter:description" content="HTMLのリンクタグ�E�E�E��E使ぁE��、href属性、target属性の種類、�E部リンクと外部リンクの違いなどを詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "aタグ�E�リンク�E��E役割と使ぁE���E�繋がるWebの基礁E| HTML Master リファレンス",
-        "description": "HTMLのリンクタグ�E�E�E��E使ぁE��、href属性、target属性の種類、�E部リンクと外部リンクの違いなどを詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/tag-a.html"
-        }
-    }
-    </script>
+    <title>aタグ（リンク）の役割と使い方：繋がるWebの基礎 | HTML Master リファレンス</title>
+    <meta name="description" content="HTMLのリンクタグ（a）の使い方、href属性、target属性の種類、内部リンクと外部リンクの違いなどを詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -163,7 +120,7 @@
                 <h1>HTML Master</h1>
             </a>
             <nav class="home-nav">
-                <a href="index.html">一覧に戻めE/a>
+                <a href="index.html">一覧に戻る</a>
                 <a href="../levels.html">レベル</a>
             </nav>
         </header>
@@ -174,80 +131,46 @@
                     <div class="tag-info-bar">
                         <span class="tag-badge">&lt;a&gt;</span>
                     </div>
-                    <h1>リンクタグ�E�Enchor�E�E/h1>
-                    <p>World Wide Webの核となる、�Eージ同士を繋ぐ「ハイパ�Eリンク」を作�Eする要素、E/p>
+                    <h1>リンクタグ（Anchor）</h1>
+                    <p>World Wide Webの核となる、ページ同士を繋ぐ「ハイパーリンク」を作成する要素。</p>
                 </header>
 
                 <div class="detail-body">
-                    <h2>aタグとは�E�：世界を繋ぐ「ハイパ�Eリンク」�E正佁E/h2>
-                    <p>HTML�E�EyperText Markup
-                        Language�E��E「HT」�E「HyperText�E�ハイパ�EチE��スト）」を持E��ます。そして、そのハイパ�EチE��ストを実現するための主役こそが、この `&lt;a&gt;`
-                        タグ�E�Enchor�E�です。このタグがあるおかげで、私たちは一つの斁E��から別の斁E��へ、地琁E�E裏�Eにあるサーバ�Eへと一瞬でジャンプすることができます、E/p>
-                    <p>もしaタグが存在しなければ、インターネット�E単なる「独立したファイルの詰め合わせ」に過ぎなかったでしょぁE���Eージとペ�Eジを蜘蛛�E巣�E�Eeb�E��Eように繋ぎ合わせ、巨大な惁E��のネットワークへと進化させたのは、この小さなタグの功績なのです、E
+                    <h2>aタグとは？</h2>
+                    <p>`&lt;a&gt;`
+                        タグは「Anchor（アンカー）」の略で、ある場所から別の場所へのリンクを作成するために使用されます。このタグがあるからこそ、私たちはインターネット上でページを次々と移動（サーフィン）することができます。
                     </p>
+                    <p>`&lt;a&gt;` タグ単体では機能しません。必ずどこへ飛ぶかを指定する `href`（エイチレフ）属性が必要になります。</p>
 
                     <div class="example-box">
-                        <h4>リンクの書き方のバリエーション</h4>
+                        <h4>コード例</h4>
                         <div class="example-code">
-                            &lt;a href="https://google.com"&gt;Googleへ飛�E&lt;/a&gt; &lt;!-- 外部サイチE--&gt;<br>
-                            &lt;a href="about.html"&gt;自己紹介�Eージへ&lt;/a&gt; &lt;!-- 同じサイト�E --&gt;<br>
-                            &lt;a href="#contact"&gt;お問ぁE��わせ欁E��移勁Elt;/a&gt; &lt;!-- ペ�Eジ冁E��ンク --&gt;
+                            &lt;a href="https://example.com"&gt;外部サイトへのリンク&lt;/a&gt;<br>
+                            &lt;a href="contact.html"&gt;サイト内の別ページへ&lt;/a&gt;
                         </div>
                     </div>
 
-                    <h2>1. href属性�E�どこへ向かぁE�Eか！E/h2>
-                    <p>aタグにおいて、最も重要なのぁE`href`
-                        属性�E�エイチレフ）です。ここには、リンク先�E住所�E�ERLめE��ス�E�を記述します。リンク先にはぁE��つか�Eパターンがあります、E/p>
+                    <h2>主要な属性とその役割</h2>
+                    <p>リンクの動作をカスタマイズするために、いくつかの重要な属性があります：</p>
                     <ul>
-                        <li><strong>絶対URL:</strong> `https://`
-                            から始まる完�Eな住所です。主に他人のサイトへリンクを貼る際に使ぁE��す、E/li>
-                        <li><strong>相対パス:</strong>
-                            自刁E�Eサイト�Eの別ファイルへの道頁E��す。ファイル構�Eが変わってもリンクが�EれにくいとぁE��利点があります、E/li>
-                        <li><strong>ペ�Eジ冁E��ンク�E�アンカー�E�E</strong> `#id名`
-                            と持E��することで、同じ�Eージ冁E�E特定�E場所へ瞬時にスクロールさせることができます。「トチE�Eへ戻る」�Eタンなどはこれで作られます、E/li>
+                        <li><strong>href:</strong> リンク先のURLや、ファイルパスを指定します。</li>
+                        <li><strong>target:</strong> リンクをどこで開くか。`_blank` を指定すると新しいタブで開きます。</li>
+                        <li><strong>rel="noopener":</strong> `target="_blank"` を使う際に、セキュリティのために併記することが推奨されます。</li>
                     </ul>
 
-                    <h2>2. セキュリチE��とマナー�E�target属性とrel属性</h2>
-                    <p>リンクをクリチE��した時�E挙動を制御するのぁE`target` 属性です。特に `target="_blank"`
-                        を使ぁE��、現在開いてぁE��ペ�Eジを残したまま、新しいタブでリンク先を開くことができます、E/p>
-                    <p>ただし、ここで **セキュリチE��上�E注愁E* があります。新しいタブで開く際�E、忁E�� `rel="noopener"`
-                        をセチE��で記述しましょぁE��これがなぁE��、リンク先�E悪意ある�Eージが�Eペ�Eジを操作できてしまぁE��スク�E�タブジャチE��ング�E�が発生します。現代のWeb制作では、外部リンクは「新タブ＋rel属性」がセチE��として扱われます、E
-                    </p>
-
-                    <h2>3. 電話めE��ールを起動する特別なリンク</h2>
-                    <p>aタグは、Webペ�Eジ以外にもリンクを貼ることができます、E/p>
-                    <ul>
-                        <li><strong>tel:</strong> `&lt;a href="tel:090..."&gt;` と書け�E、スマ�EでタチE�Eした時に直接電話をかけられます、E/li>
-                        <li><strong>mailto:</strong> `&lt;a href="mailto:info@..."&gt;` と書け�E、メールソフトが�E動で立ち上がります、E/li>
-                    </ul>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: リンクの下線を消すことはできますか�E�E/h4>
-                        <p>A:
-                            はぁE��CSSで簡単に消せます、E`a { text-decoration: none; }`
-                            と持E��すれ�E下線�E消えます。ただし、下線がなぁE��ユーザーが「そこを触れる�E�リンクである�E�」と気づかなぁE��能性もあるため、色を変えるなどの配�Eを忘れなぁE��ぁE��しましょぁE��E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 「ここをクリチE��」とぁE��リンクチE��スト�Eなぜダメなの�E�E
-                        </h4>
-                        <p>A:
-                            主にSEO�E�検索エンジン対策）とアクセシビリチE��のためです。検索エンジンは「リンクされてぁE��斁E��」を、リンク先�E重要キーワードとして認識します。また、視覚障がい老E��使ぁE��フトでは「リンクだけ�E一覧」を表示することがあり、そこが全て「ここをクリチE��」だと、どこへ飛�Eのか�Eく�EからなくなってしまぁE��す、E
+                    <div class="info-panel">
+                        <h4>target="_blank" の使い分け</h4>
+                        <p>自分のサイト内の移動は「同じタブ」、外部サイトへ飛ばす場合は「新しいタブ（_blank）」で開くように設定するのが、一般的なウェブ制作のマナーです。これにより、ユーザーが元のページを見失うのを防ぎます。
                         </p>
                     </div>
 
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 画像�E体をリンクにしたぁE��合�E�E�E/h4>
-                        <p>A: `&lt;a&gt;` タグの中に `&lt;img&gt;` タグを丸ごと入れればOKです、E`&lt;a href="..."&gt;&lt;img
-                            src="..."&gt;&lt;/a&gt;`
-                            のように書くことで、その画像をクリチE��した時に持E���Eペ�Eジへ飛�Eすことができます、E/p>
-                    </div>
+                    <h2>アクセシビリティとリンクテキスト</h2>
+                    <p>「ここをクリック」というリンクテキストは避けましょう。Googleなどの検索エンジンや、読み上げソフトを使うユーザーにとって、「どこへ飛ぶのか」がテキストだけで分かる必要があります。（例：「HTML
+                        Masterの学習レベル一覧」）</p>
 
-                    <h2>まとめE/h2>
-                    <p>aタグは、あなた�Eサイトを無限に庁E��るWebの世界へと繋ぐ「扉」です。一つひとつの扉を、安�Eに�E�Eel属性�E�、そして刁E��りやすく�E�適刁E��チE��スト）記述することで、あなた�Eサイト�Eユーザーにとってより信頼できる、使ぁE��E��の良ぁE��所へと進化してぁE��でしょぁE��E
-                    </p>
+                    <h2>まとめ</h2>
+                    <p>リンクはWebの基本です。正しい属性の使い方と、分かりやすいリンクテキストを心がけるだけで、サイトの使い勝手とSEO効果は格段に向上します。HTML
+                        Masterの課題でも、リンクをマスターして自在にページを繋いでみましょう！</p>
                 </div>
             </article>
         </main>
@@ -258,9 +181,9 @@
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 HTML Master. All rights reserved.</p>
             </div>

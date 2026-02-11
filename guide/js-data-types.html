@@ -4,51 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>チE�Eタ型：データの種類を琁E��する | JavaScript Master リファレンス</title>
-    <meta name="description" content="JavaScriptで扱ぁE��ータの種類（データ型）につぁE��。文字�E、数値、真偽値、E�E列、オブジェクト�E違いと特徴を�E忁E��E��けに詳しく解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/js-data-types.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/js-data-types.html">
-    <meta property="og:title" content="チE�Eタ型：データの種類を琁E��する | JavaScript Master リファレンス">
-    <meta property="og:description" content="JavaScriptで扱ぁE��ータの種類（データ型）につぁE��。文字�E、数値、真偽値、E�E列、オブジェクト�E違いと特徴を�E忁E��E��けに詳しく解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/js-data-types.html">
-    <meta name="twitter:title" content="チE�Eタ型：データの種類を琁E��する | JavaScript Master リファレンス">
-    <meta name="twitter:description" content="JavaScriptで扱ぁE��ータの種類（データ型）につぁE��。文字�E、数値、真偽値、E�E列、オブジェクト�E違いと特徴を�E忁E��E��けに詳しく解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "チE�Eタ型：データの種類を琁E��する | JavaScript Master リファレンス",
-        "description": "JavaScriptで扱ぁE��ータの種類（データ型）につぁE��。文字�E、数値、真偽値、E�E列、オブジェクト�E違いと特徴を�E忁E��E��けに詳しく解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/js-data-types.html"
-        }
-    }
-    </script>
+    <title>データ型：データの種類を理解する | JavaScript Master リファレンス</title>
+    <meta name="description" content="JavaScriptで扱うデータの種類（データ型）について。文字列、数値、真偽値、配列、オブジェクトの違いと特徴を初心者向けに詳しく解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -167,7 +124,7 @@
             </a>
             <nav class="home-nav">
                 <a href="js_index.html">解説一覧</a>
-                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../js_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -176,111 +133,56 @@
                 <header class="guide-header">
                     <span class="badge"
                         style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); color: #facc15;">基本概念</span>
-                    <h1>チE�Eタ垁E/h1>
-                    <p>JavaScriptが扱ぁE��報の「種類」をマスターしよぁE/p>
+                    <h1>データ型</h1>
+                    <p>JavaScriptが扱う情報の「種類」をマスターしよう</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>チE�Eタには「型」がある�E�JavaScriptの刁E��学</h2>
-                    <p>プログラミングで扱ぁE��らゆるデータには、それぞれ決まった種類（型�E�があります、EavaScriptは、メモリ上�EチE�Eタを数値として計算し、文字として画面に表示し、あるいは褁E��な惁E��の雁E��体として管琁E��るために、この「データ型」を冁E��で厳寁E��区別してぁE��す、E
-                    </p>
-                    <p>JavaScriptのチE�Eタ型�E、大きく刁E��て **「�Eリミティブ型、E* と **「オブジェクト型、E*
-                        の2つのグループに刁E��されます。この違いを理解することが、思わぬバグを防ぎ、効玁E��なコードを書くため�E最大の鍵となります、E/p>
+                    <h2>データには「型」がある</h2>
+                    <p>プログラミングで扱うデータには、それぞれ決まった種類（型）があります。JavaScriptは、数値として計算するのか、文字として繋げるのかを、このデータ型を見て判断します。</p>
 
                     <div class="type-grid">
                         <div class="type-card">
-                            <h4>String (斁E���E)</h4>
-                            <p>名前めE��章など、テキストを扱ぁE�Eリミティブ型です。不変！Emmutable�E�とぁE��特徴があります、E/p>
+                            <h4>String (文字列)</h4>
+                            <p>名前や文章など、引用符 `"` や `'` で囲まれたテキストデータです。</p>
                         </div>
                         <div class="type-card">
                             <h4>Number (数値)</h4>
-                            <p>整数めE��数、EavaScriptでは全て、E4ビット浮動小数点数」として扱われます、E/p>
+                            <p>整数や小数。計算に使用される数字データです。</p>
                         </div>
                         <div class="type-card">
                             <h4>Boolean (真偽値)</h4>
-                            <p>`true` ぁE`false`。条件刁E��！Ef斁E���E忁E��部となる、最もシンプルな型です、E/p>
-                        </div>
-                        <div class="type-card">
-                            <h4>Special (特殊値)</h4>
-                            <p>`null` めE`undefined`。値が存在しなぁE��あるいは準備中の状態を表します、E/p>
+                            <p>`true`（真）か `false`（偽）の2つの値しか持たない型です。</p>
                         </div>
                     </div>
 
-                    <h2>1. プリミティブ型�E�不変�E基礎データ</h2>
-                    <p>数値めE��字�Eなどのプリミティブ型は、一度作�Eされたらそ�E値自体を変更することはできません�E�不変性�E�。例えば、文字�Eの特定�E一斁E��だけを書き換えることはできず、変更したぁE��合�E新しい斁E���Eを�E作�Eする忁E��があります、E
-                    </p>
-
-                    <h3>斁E���E (String) の進化：テンプレートリチE��ル</h3>
-                    <p>引用符 `"` めE`'` 以外に、バチE��チE��チE�� ( ` ) を使ぁE��とで、改行を含んだり、`${ }`
-                        を使って変数を直接埋め込んだりすることができます。これ�E現代のJavaScript開発において標準的な書き方です、E/p>
+                    <h2>1. 文字列 (String)</h2>
+                    <p>文字列は自由に文字を繋げることができます。また、`backtick` ( ` ) を使うと、文字列の中に変数を埋め込むこともできます。</p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�文字�E埋め込み</span>
-                        <pre>const lang = "JS";
-const message = `私�E ${lang} Master を目持E��てぁE��す、E
-毎日学習してぁE��す！`;
-console.log(message);</pre>
+                        <pre>const name = "JavaScript";
+console.log(`Hello, ${name}!`); // テンプレートリテラル</pre>
                     </div>
 
-                    <h2>2. 特殊な値�E�null と undefined の違い</h2>
-                    <p>どちらも「値がなぁE��ことを意味しますが、使われる文脈が明確に異なります、E
-                    </p>
-                    <ul>
-                        <li><strong>undefined:</strong> 「まだ値が決まってぁE��ぁE��状態。定義しただけ�E変数などはこれになります、E/li>
-                        <li><strong>null:</strong> 「意図皁E��空である」と明示した状態。開発老E��明示皁E��代入するも�Eです、E/li>
-                    </ul>
-                    <div class="point-card" style="border-left-color: #3b82f6; background: rgba(59, 130, 246, 0.05);">
-                        <h4>💡 歴史皁E��バグ�E�typeof null</h4>
-                        <p>`typeof null` を実行すると `"object"`
-                            が返ってきます。これ�EJavaScriptの最初期からある有名なバグですが、互換性のために修正されずに残ってぁE��す。「null
-                            はオブジェクトではなぁE��、typeofの結果はobjectになる」と覚えておきましょぁE��E/p>
-                    </div>
-
-                    <h2>3. オブジェクト型�E�参照による管琁E/h2>
-                    <p>配�E�E�Erray�E�やオブジェクト！Ebject�E��E、褁E��のチE�Eタをまとめて管琁E��るため�E褁E��な仕絁E��です。�Eリミティブとは異なり、これらは **「参照�E�リファレンス�E�、E* で扱われます、E
-                    </p>
-                    <p>変数にはチE�Eタそ�Eも�Eではなく、「データがメモリ上�EどこにあるかとぁE��住所�E�参照�E�」が保存されます。そのため、同じオブジェクトを褁E��の変数で共有することができ、一つの変数を経由して中身を書き換えると、他�E変数から見た中身も変わる、とぁE��挙動をします、E
-                    </p>
-
+                    <h2>2. 配列 (Array)</h2>
+                    <p>複数のデータをひとまとめにして管理する「棚」のようなデータ型です。各データには `0` から始まる番号（インデックス）でアクセスします。</p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�参照の仕絁E��</span>
-                        <pre>const a = [1, 2, 3];
-const b = a; // 参�E�E�住所�E�をコピ�E
-b.push(4);    // bを操作したつもりでめE..
-console.log(a); // [1, 2, 3, 4] になってぁE��す！E/pre>
+                        <pre>const colors = ["red", "blue", "yellow"];
+console.log(colors[0]); // "red" を表示</pre>
                     </div>
 
-                    <h2>4. 動的な型変換�E�型強制�E��E落とし穴</h2>
-                    <p>JavaScriptは、異なる型同士の計算をしよぁE��すると、良かれと思って自動的に型を変換してしまぁE��す（暗黙�E型変換�E�。これがし�Eし�E混乱の原因となります、E/p>
+                    <h2>3. オブジェクト (Object)</h2>
+                    <p>データに名前（キー）をつけて管理する型です。関連する情報をまとめて扱うのに非常に便利です。</p>
                     <div class="code-block-guide">
-                        <span class="code-label">JavaScript�E�型の衝突E/span>
-                        <pre>console.log(1 + "1");  // "11" �E�数値が文字�Eに変換されて連結される�E�E
-console.log("5" - 2);  // 3    �E�文字�Eが数値に変換されて計算される�E�E
-console.log("abc" * 2); // NaN  �E�数値に変換できず "Not a Number" となる！E/pre>
+                        <pre>const user = {
+    name: "Taro",
+    level: 10
+};
+console.log(user.name); // "Taro" を表示</pre>
                     </div>
 
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 配�E (Array) はオブジェクト�E一種ですか�E�E/h4>
-                        <p>A: はぁE��その通りです、EavaScriptの冁E��では、E�E列�E「数字�Eキーを持つ特殊なオブジェクト」として実裁E��れてぁE��す。そのため、`typeof []` は `"object"`
-                            になります、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 非常に大きな数値を扱ぁE��はどぁE��れ�EぁE��ですか�E�E/h4>
-                        <p>A: `Number` 型では扱ぁE��れなぁE��大な整数�E�Eの53乗以上）�Eために、E*BigInt** 型が用意されてぁE��す。数値の末尾に `n`
-                            をつける�E�例：`100n`�E�ことで使用できます、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 型を厳寁E��チェチE��するには�E�E/h4>
-                        <p>A: 比輁E��は忁E�� `===`�E�厳寁E��価演算子）を使ぁE��しょぁE��`==` だと `1 == "1"` ぁEtrue になってしまぁE��すが、`===`
-                            ならデータ型までチェチE��するため安忁E��す、E/p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>チE�Eタ型を正しく琁E��することは、意図しなぁE��算ミスを防ぎ、大規模で褁E��なプログラムを構築するため�E土台となります。一見やめE��しい「参照」や「型変換」�Eルールも、仕絁E��を知れ�E強力な味方になります。今、�E刁E�E書ぁE��コード�E変数が「どの型」なのか、常に意識することから始めましょぁE��E
-                    </p>
+                    <h2>まとめ</h2>
+                    <p>データ型を正しく理解することは、意図しない計算ミス（例：1 + "1" が "11"
+                        になる）を防ぐために不可欠です。今扱っているのがどの型なのかを意識しながらコードを書いてみましょう。型の確認には `typeof` 演算子が役立ちます。</p>
                 </div>
             </article>
         </main>
@@ -291,9 +193,9 @@ console.log("abc" * 2); // NaN  �E�数値に変換できず "Not a Number" と�
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 JavaScript Master. All rights reserved.</p>
             </div>

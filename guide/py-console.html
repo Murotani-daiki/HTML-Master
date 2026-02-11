@@ -4,53 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>出力とチE��チE���E�Erint�E�：�Eログラムの中身を見る | Python Master リファレンス</title>
-    <meta name="description" content="Pythonのprint関数につぁE��。基本皁E��使ぁE��から、f-stringを使った文字�Eへの変数埋め込み、デバッグの重要性を�E忁E��E��けに解説します、E>
-    <link rel="canonical" href="https://www.html-master.com/guide/py-console.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.html-master.com/guide/py-console.html">
-    <meta property="og:title" content="出力とチE��チE���E�Erint�E�：�Eログラムの中身を見る | Python Master リファレンス">
-    <meta property="og:description"
-        content="Pythonのprint関数につぁE��。基本皁E��使ぁE��から、f-stringを使った文字�Eへの変数埋め込み、デバッグの重要性を�E忁E��E��けに解説します、E>
-    <meta property="og:image" content="https://www.html-master.com/favicon.webp">
-    <meta property="og:site_name" content="HTML Master">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.html-master.com/guide/py-console.html">
-    <meta name="twitter:title" content="出力とチE��チE���E�Erint�E�：�Eログラムの中身を見る | Python Master リファレンス">
-    <meta name="twitter:description"
-        content="Pythonのprint関数につぁE��。基本皁E��使ぁE��から、f-stringを使った文字�Eへの変数埋め込み、デバッグの重要性を�E忁E��E��けに解説します、E>
-    <meta name="twitter:image" content="https://www.html-master.com/favicon.webp">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "出力とチE��チE���E�Erint�E�：�Eログラムの中身を見る | Python Master リファレンス",
-        "description": "Pythonのprint関数につぁE��。基本皁E��使ぁE��から、f-stringを使った文字�Eへの変数埋め込み、デバッグの重要性を�E忁E��E��けに解説します、E,
-        "image": "https://www.html-master.com/favicon.webp",
-        "author": {
-            "@type": "Organization",
-            "name": "HTML Master"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "HTML Master",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.html-master.com/favicon.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.html-master.com/guide/py-console.html"
-        }
-    }
-    </script>
+    <title>出力とデバッグ（print）：プログラムの中身を見る | Python Master リファレンス</title>
+    <meta name="description" content="Pythonのprint関数について。基本的な使い方から、f-stringを使った文字列への変数埋め込み、デバッグの重要性を初心者向けに解説します。">
     <link rel="icon" href="../favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -154,7 +109,7 @@
             </a>
             <nav class="home-nav">
                 <a href="py_index.html">解説一覧</a>
-                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホ�Eム</a>
+                <a href="../py_index.html" class="secondary-btn-home" style="padding: 0.5rem 1rem;">ホーム</a>
             </nav>
         </header>
 
@@ -162,109 +117,47 @@
             <article class="guide-content">
                 <header class="guide-header">
                     <span class="badge"
-                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">チE��チE��</span>
-                    <h1>出力とチE��チE��</h1>
-                    <p>print()�E��Eログラムの実行結果を画面に表示しよぁE/p>
+                        style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">デバッグ</span>
+                    <h1>出力とデバッグ</h1>
+                    <p>print()：プログラムの実行結果を画面に表示しよう</p>
                 </header>
 
                 <div class="guide-body">
-                    <h2>print() 関数�E��Eログラムの「声」を聞く</h2>
-                    <p>プログラムの中で起きてぁE��ことは、E��常、コンピュータのメモリとぁE��目に見えなぁE��所で処琁E��れてぁE��す。その中身を私たちの目に見える形にする魔法�E道�EぁE`print()` 関数です、E
-                    </p>
-                    <p>「正しく計算できてぁE��か？」「どこまで処琁E��進んだか？」とぁE��た確認作業�E�デバッグ�E�において、`print()`
-                        はプログラマ�Eにとって最も身近で強力な相棒となります。Pythonの学習において、最初から最後までお世話になる、最も重要な関数の一つです、E/p>
+                    <h2>print関数とは？</h2>
+                    <p>プログラムの中で起きていることを私たちの目に見える形にするのが `print()`
+                        関数です。変数の値が正しく計算されているか、プログラムがどこまで実行されたかを確認するための、プログラマーにとって最も身近な武器です。</p>
 
-                    <h2>1. 基本から一歩進んだ使ぁE��</h2>
-                    <p>ただ一つの値を�Eすだけでなく、カンチE`,` で区刁E��ことで褁E��の惁E��を一度に表示できます。その際、Pythonは自動的に単語�E間に半角スペ�Eスを挿入してくれます、E/p>
+                    <h2>基本の使い方</h2>
+                    <p>丸カッコの中に表示したいデータ（文字列や数値、変数）を入れます。</p>
 
                     <div class="code-block-guide">
-                        <span class="code-label">Python�E�基本皁E��出劁E/span>
-                        <pre>name = "Python"
-score = 100
-print("言誁E", name, " | スコア:", score)
-# 結果: 言誁E Python | スコア: 100</pre>
+                        <span class="code-label">Python</span>
+                        <pre>print("Hello Python")
+print(123)
+x = "Master"
+print(x)</pre>
                     </div>
 
-                    <h3>出力をカスタマイズする引数</h3>
-                    <p>`print()` には、�E力を細かく制御するための隠れたオプションがあります、E/p>
-                    <ul>
-                        <li><strong>sep (separator):</strong> 区刁E��斁E��を持E��します。デフォルト�E半角スペ�Eスです、E/li>
-                        <li><strong>end:</strong> 出力後�E末尾を指定します。デフォルト�E改衁E(`\n`) です、E/li>
-                    </ul>
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E�sepとendの活用</span>
-                        <pre># 区刁E��をハイフンにする
-print("apple", "orange", "banana", sep="-") 
-# apple-orange-banana
-
-# 改行せずに繋げめE
-print("Hello", end="")
-print("World")
-# HelloWorld</pre>
-                    </div>
-
-                    <h2>2. 斁E���Eフォーマット�E進化：f-strings</h2>
-                    <p>現代のPython�E�E.6以降）で最も推奨される�Eが、E*f斁E���E (f-strings)** です。文字�Eの先頭に `f` をつけ、�EれたぁE��数めE`{ }`
-                        で囲むだけで、E��くほど直感的に斁E��を絁E��立てられます、E/p>
+                    <h2>f-string（便利な埋め込み）</h2>
+                    <p>Python 3.6から導入された「f文字列」を使うと、文章の中に変数をとても簡単に埋め込むことができます。文字列の前に `f` をつけ、入れたい変数を `{ }` で囲みます。</p>
 
                     <div class="code-block-guide">
-                        <span class="code-label">Python�E�f-stringsの威力</span>
-                        <pre>user = "管琁E��E
-count = 5
-print(f"ようこそ、{user}さん。未読メチE��ージが{count}件あります、E)</pre>
+                        <span class="code-label">Python</span>
+                        <pre>name = "Taro"
+score = 80
+print(f"{name}さんのスコアは{score}点です")</pre>
                     </div>
 
-                    <h3>数値を綺麗に整える</h3>
-                    <p>f-stringsを使ぁE��、桁数の持E��や小数点の丸め込みも一瞬で行えます、E/p>
+                    <h2>カンマで複数の値を表示</h2>
+                    <p>カンマ `,` で区切ることで、複数の情報を同時に出力できます。自動的にスペースが挿入されるので便利です。</p>
+
                     <div class="code-block-guide">
-                        <span class="code-label">Python�E�書式指宁E/span>
-                        <pre>pi = 3.14159265
-print(f"冁E��玁E�E約{pi:.2f}でぁE) # 小数点第2位まで (3.14)
-
-price = 1280000
-print(f"価格: {price:,}冁E)       # カンマ区刁E�� (1,280,000)</pre>
+                        <span class="code-label">Python</span>
+                        <pre>print("結果は:", 100)</pre>
                     </div>
 
-                    <h2>3. チE��チE��の裏技�E�f"{var=}"</h2>
-                    <p>Python 3.8から導�Eされた最強のチE��チE��機�Eがこれです。変数名�E後に `=` をつけるだけで、「変数名とそ�E中身」を同時に出力してくれます、E/p>
-                    <div class="code-block-guide">
-                        <span class="code-label">Python�E��E速デバッグ</span>
-                        <pre>x = 10
-y = 20
-print(f"{x=}, {y=}")
-# 結果: x=10, y=20 (ぁE��ぁE��斁E��を書く手間が省ける！E</pre>
-                    </div>
-
-                    <div class="point-card">
-                        <h4>💡 昔�E書き方に遭遁E��たら</h4>
-                        <p>古ぁE��材やコードでは `%` を使ぁE��法や `.format()` を使ぁE��法が見られます。現在は `f-strings`
-                            が最も高速で推奨されてぁE��すが、これらを見かけても「古ぁE��き方だな」と琁E��できれば十�Eです、E/p>
-                    </div>
-
-                    <h2>よくある質啁E(Q&A)</h2>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 画面ではなく「ファイル」に書き�Eすことはできますか�E�E
-                        </h4>
-                        <p>A: 可能です！E`print("text", file=open("log.txt", "w"))` のように `file`
-                            引数を使ぁE��とで、コンソールではなくファイルへ直接書き�Eすことができます、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: print() で改行したくなぁE��は�E�E/h4>
-                        <p>A: `end=""` を指定してください。これで次の `print()` の冁E��が同じ行に続けて表示されるよぁE��なります、E/p>
-                    </div>
-
-                    <div class="qa-item" style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Q: 褁E��なリストや辞書を見やすく表示するには�E�E/h4>
-                        <p>A: Python標準�E `pprint` モジュールを使ぁE�Eがお勧めです！Eretty Printの略�E�。階層構造を綺麗にインチE��トして表示してくれます、E
-                        </p>
-                    </div>
-
-                    <h2>まとめE/h2>
-                    <p>「バグかな�E�」と思ったら、まず�E迷わず `print()`
-                        を使って中のチE�Eタを確認しましょぁE��f-stringsを使ぁE��なし、データの変化をリアルタイムで「見る」習�Eをつけることが、脱・初忁E��E��の最短ルートです。あなた�Eプログラムが何を老E��てぁE��のか、`print()`
-                        を通じて対話を楽しんでください�E�E/p>
+                    <h2>まとめ</h2>
+                    <p>「バグかな？」と思ったら、迷わず `print()` を使って中のデータを確認しましょう。プログラムが見える化されることで、理解がぐっと深まります。</p>
                 </div>
             </article>
         </main>
@@ -275,9 +168,9 @@ print(f"{x=}, {y=}")
                     <a href="../privacy.html"
                         style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">プライバシーポリシー</a>
                     <a href="../terms.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規紁E/a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">利用規約</a>
                     <a href="../contact.html"
-                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問ぁE��わせ</a>
+                        style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">お問い合わせ</a>
                 </div>
                 <p>&copy; 2026 Python Master. All rights reserved.</p>
             </div>
